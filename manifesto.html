@@ -1,0 +1,157 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sovereign Source AI — A Manifesto</title>
+<meta name="description" content="Sovereign Source AI is a proposed commercial open-source architecture for AI systems, software factories, institutional operating systems, and high-trust digital infrastructure.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<style>
+  .manifesto { max-width: 720px; margin: 0 auto; padding: clamp(4rem, 8vw, 7rem) var(--gutter); position: relative; z-index: 1; }
+  .manifesto p { font-size: clamp(1.05rem, 1.8vw, 1.2rem); line-height: 1.75; color: var(--text-dim); margin-bottom: 1.25rem; }
+  .manifesto h1 { font-size: clamp(2.2rem, 4vw, 3.6rem); font-weight: 400; letter-spacing: -0.025em; color: var(--text); line-height: 1.1; margin-bottom: 1rem; }
+  .manifesto h2 { font-size: clamp(1.3rem, 2.2vw, 1.7rem); font-weight: 500; letter-spacing: -0.02em; color: var(--text); margin: 2.5rem 0 0.75rem; padding-top: 1rem; border-top: 1px solid var(--rule); }
+  .manifesto h2:first-child { border-top: none; margin-top: 0; padding-top: 0; }
+  .manifesto em { color: var(--text); font-style: italic; }
+  .manifesto strong { color: var(--text); font-weight: 500; }
+  .manifesto blockquote { border-left: 2px solid var(--text-muted); padding: 0.5rem 0 0.5rem 1.5rem; margin: 1.5rem 0; color: var(--text); font-style: normal; }
+  .manifesto blockquote p { color: var(--text); margin-bottom: 0.5rem; }
+  .manifesto blockquote p:last-child { margin-bottom: 0; font-size: 0.95rem; color: var(--text-dim); }
+  .manifesto .byline { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 2.5rem; letter-spacing: 0.05em; text-transform: uppercase; }
+  .manifesto .rule { border: none; border-top: 1px solid var(--rule); margin: 2rem 0; }
+  .manifesto ol, .manifesto ul { margin: 0 0 1.25rem 1.5rem; color: var(--text-dim); line-height: 1.75; }
+  .manifesto li { margin-bottom: 0.4rem; }
+  .back-link { display: inline-block; margin-top: 2rem; color: var(--text-dim); font-size: 0.9rem; text-decoration: none; border-bottom: 1px solid var(--text-muted); transition: color 0.2s; }
+  .back-link:hover { color: var(--text); }
+</style>
+</head>
+<body>
+
+<!-- Ghost background -->
+<div class="ghost" aria-hidden="true">
+  <span class="ghost-line">Sovereign Source AI</span>
+  <span class="ghost-line">A manifesto</span>
+</div>
+
+<!-- Thin header -->
+<header class="header">
+  <div class="header-inner">
+    <a href="/" class="logo" aria-label="Sovereign Source AI — home">
+      <svg class="logo-mark" viewBox="0 0 32 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="0" y="0" width="32" height="6" rx="1" fill="currentColor"/>
+        <rect x="0" y="9" width="22" height="6" rx="1" fill="currentColor"/>
+        <rect x="0" y="18" width="28" height="6" rx="1" fill="currentColor"/>
+      </svg>
+      <span class="logo-text">Sovereign Source AI</span>
+    </a>
+  </div>
+</header>
+
+<article class="manifesto">
+  <p class="byline">Sovereign Source AI · Manifesto</p>
+
+  <h1>The organizations that thrive with AI<br>will not be the ones with the biggest models.</h1>
+
+  <p>They will be the ones who can defend their numbers to an auditor, replace a vendor without rebuilding, move a runtime without rewriting, and trace every artifact back to an intent they own.</p>
+
+  <hr class="rule">
+
+  <h2>The problem</h2>
+
+  <p>AI is everywhere, and control is nowhere.</p>
+
+  <p>You can self-host a model and still be locked in — through APIs, identity, proprietary data, undocumented prompts, agent runtimes, workflow engines, cloud infrastructure, or a single provider who becomes indispensable. Downloading an open-weight model is not sovereignty. Self-hosting an application is not sovereignty.</p>
+
+  <p><strong>Sovereignty is a system property.</strong></p>
+
+  <h2>What sovereign means</h2>
+
+  <p>A system is sovereign when its complete operational stack can be <em>owned, inspected, governed, deployed, modified, moved, and operated independently of any single external provider.</em></p>
+
+  <p>That spans source code, application state, data, documents, ontologies, prompts, models, embeddings, agents, skills, tools, APIs, MCP servers, workflows, dependencies, datasets, weights, infrastructure, secrets, identity, authorization, audit, provenance, evidence, deployment definitions, builds, jurisdictions, approvals, and the right to export or replace them all.</p>
+
+  <p>The goal is not to reject commercial services. The goal is <strong>credible exit and retained control.</strong></p>
+
+  <p>A sovereign system can answer seven questions:</p>
+
+  <ol>
+    <li>Can the primary vendor be replaced without rebuilding the institution?</li>
+    <li>Can the runtime move to another environment?</li>
+    <li>Can the organization retain and reconstruct its data and knowledge?</li>
+    <li>Can agent permissions and actions be inspected?</li>
+    <li>Can models be swapped without rewriting business logic?</li>
+    <li>Can critical functions operate privately or in restricted networks where required?</li>
+    <li>Does the organization retain identity, keys, policy, authorization, provenance, and audit?</li>
+  </ol>
+
+  <hr class="rule">
+
+  <h2>The architecture</h2>
+
+  <p>Sovereign Source AI rests on seven mutually reinforcing layers:</p>
+
+  <p><strong>1. Intent</strong> — what a human or institution wants to accomplish, expressed as a typed object linked to requirements, constraints, authority, and measurable outcomes.</p>
+
+  <p><strong>2. Governance</strong> — authority, policy, data classification, jurisdiction, model and tool permissions, network access, approvals. Authorization exists <em>outside the model</em>. A model may propose; it does not grant itself permission.</p>
+
+  <p><strong>3. Decision</strong> — deterministic rules, bounded models, statistical inference, LLM reasoning, and human judgment.</p>
+
+  <p><strong>4. Capability</strong> — explicitly declared, permissioned operations exposed as Sovereign Skills and MCP-style interfaces.</p>
+
+  <p><strong>5. Execution</strong> — isolated agents, workers, workflows, services, and infrastructure.</p>
+
+  <p><strong>6. Verification</strong> — tests, evaluations, policy checks, security analysis, simulation, approvals, outcome measurement. Claims become evidence.</p>
+
+  <p><strong>7. Evidence</strong> — durable provenance connecting intent to decisions, actions, artifacts, releases, and outcomes:</p>
+
+  <blockquote>
+    <p>source → observation → interpretation → intent → requirement → decision → work order → execution → artifact → verification → approval → deployment → outcome</p>
+    <p>genealogy of every artifact</p>
+  </blockquote>
+
+  <hr class="rule">
+
+  <h2>Three formulations</h2>
+
+  <blockquote>
+    <p>Intent → Decide → Constrain → Execute → Verify → Prove</p>
+    <p></p>
+  </blockquote>
+
+  <blockquote>
+    <p>Models reason. Policies authorize. Capabilities constrain. Execution acts. Audit proves.</p>
+    <p></p>
+  </blockquote>
+
+  <blockquote>
+    <p>No artifact without intent. No agent without policy. No execution without isolation. No dependency without provenance. No release without evidence.</p>
+    <p></p>
+  </blockquote>
+
+  <hr class="rule">
+
+  <h2>What it is not</h2>
+
+  <p><strong>SSA is not a model.</strong> It is LLM-neutral, cloud-neutral, and vendor-replaceable. Palantir, Payload, Supabase, PostHog, MCP servers, open models, proprietary frontier models, and other systems may participate — but none owns the canonical institutional model.</p>
+
+  <p><strong>SSA is not a compliance checkbox.</strong> It is an institutional operating layer in which organizational knowledge, policies, requirements, authority, capabilities, markets, software, evidence, and outcomes become typed, executable, auditable objects.</p>
+
+  <hr class="rule">
+
+  <h2>The claim</h2>
+
+  <p>The organizations that thrive with AI will not be the ones with the biggest models. They will be the ones who can defend their numbers to an auditor, replace a vendor without rebuilding, move a runtime without rewriting, and trace every artifact back to an intent they own.</p>
+
+  <p>Sovereign Source AI is the architecture for that. Open, portable, auditable, and worth defending.</p>
+
+  <a href="/" class="back-link">← Back to the manifesto</a>
+</article>
+
+</body>
+</html>
