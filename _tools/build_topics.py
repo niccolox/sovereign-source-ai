@@ -144,7 +144,7 @@ PAGE = """<!DOCTYPE html>
 <header class="header">
   <div class="header-inner">
     <a href="../index.html" class="logo" aria-label="Sovereign Source AI home">
-      <img class="logo-mark" src="../logo.svg" alt="Sovereign Source AI" height="24" width="32">
+      <img class="logo-mark" src="../logo.svg" alt="Sovereign Source AI" height="20" width="38">
       <span class="logo-text">Sovereign Source AI</span>
     </a>
     <nav class="nav" aria-label="Main navigation">

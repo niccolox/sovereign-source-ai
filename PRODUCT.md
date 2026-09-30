@@ -44,7 +44,7 @@ SSA is an LLM-neutral, cloud-neutral, vendor-replaceable architecture built on s
 ## Brand Commitments
 
 - Names: "Sovereign Source AI" (descriptive), "SovSrc" / sovsrc.ai (concise). The research lists sovereignsource.ai as a possible manifesto or specification destination; it is not in use.
-- Existing assets: `logo.svg` and `favicon.svg` (star-and-bars mark).
+- Existing assets: `logo.svg` and `favicon.svg` (the US flag).
 - Voice: declarative and plain, as in the manifesto. The canonical formulations are "Intent → Decide → Constrain → Execute → Verify → Prove"; "Models reason. Policies authorize. Capabilities constrain. Execution acts. Audit proves."; and "No artifact without intent. No agent without policy. No execution without isolation. No dependency without provenance. No release without evidence."
 - Trademarks are not cleared. Do not add ™ or ® marks or imply registered status.
 

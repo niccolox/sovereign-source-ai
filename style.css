@@ -106,8 +106,8 @@ body {
 .logo:hover { opacity: 0.7; }
 
 .logo-mark {
-  width: 32px;
-  height: 24px;
+  width: 38px;
+  height: 20px;
   flex-shrink: 0;
   display: block;
 }
