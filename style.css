@@ -542,34 +542,3 @@ body {
   .pager { grid-template-columns: 1fr; }
   .pager-next { text-align: left; align-items: flex-start; }
 }
-
-/* Hero: Star Wars style 3D crawl (hero-crawl.js). Static hero is the fallback. */
-:root { --crawl: #ffe81f; }
-
-.crawl-canvas { display: none; }
-
-.hero.crawl-active {
-  min-height: calc(100vh - 57px);
-  min-height: calc(100svh - 57px);
-  padding: 0;
-  overflow: hidden;
-}
-
-.hero.crawl-active .crawl-canvas {
-  display: block;
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
-
-/* Keep the real text available to assistive tech and search while the crawl shows. */
-.hero.crawl-active .hero-inner {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
