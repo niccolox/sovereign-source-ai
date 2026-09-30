@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Architecture Overview · Sovereign Source AI</title>
+<meta name="description" content="Sovereign Source AI treats sovereignty as a property of the complete operational system.">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<div class="ghost" aria-hidden="true">
+  <span class="ghost-line">Sovereign Source AI</span>
+  <span class="ghost-line">Architecture Overview</span>
+</div>
+
+<header class="header">
+  <div class="header-inner">
+    <a href="../index.html" class="logo" aria-label="Sovereign Source AI home">
+      <img class="logo-mark" src="../logo.svg" alt="Sovereign Source AI" height="24" width="32">
+      <span class="logo-text">Sovereign Source AI</span>
+    </a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="../index.html#the-architecture">The architecture</a>
+      <a href="../index.html#topics">Topics</a>
+      <a href="../manifesto.html" class="nav-cta">Read the manifesto</a>
+    </nav>
+  </div>
+</header>
+
+<article class="prose topic">
+  <p class="byline">Topic 01 of 10</p>
+  <h1>Architecture Overview</h1>
+<p class="topic-summary">Sovereign Source AI treats sovereignty as a property of the complete operational system. An organization retains control when it can inspect, govern, modify, move, and independently operate its institutional logic and supporting infrastructure. Seven layers describe the responsibilities within that system. Four durable planes connect those responsibilities across the lifecycle. Together they preserve the relationship between an intended outcome, authorized action, verified results, and evidence that informs future work.</p>
+<h2 id="seven-layers">Seven layers</h2>
+<p>The layers separate responsibilities that would otherwise become entangled inside an application, agent, or provider.</p>
+<ol><li><strong>Intent</strong> expresses what a person or institution wants to accomplish. It connects the objective to requirements, constraints, authority, and measurable outcomes.</li><li><strong>Governance</strong> establishes who may act and under which conditions. It covers classification, jurisdiction, model permissions, tools, networks, and approvals.</li><li><strong>Decision</strong> selects or proposes a course of action using rules, bounded models, statistical inference, language models, or human judgment.</li><li><strong>Capability</strong> defines the operations available to an actor. Each operation has declared inputs, outputs, permissions, and limits.</li><li><strong>Execution</strong> performs authorized work through isolated agents, workers, workflows, and services.</li><li><strong>Verification</strong> checks conformance, safety, authorization, and effectiveness through tests, evaluations, review, and outcome measurement.</li><li><strong>Evidence</strong> preserves the provenance connecting intent, decisions, actions, artifacts, approvals, deployments, and outcomes.</li></ol>
+<p>These are architectural responsibilities, not a requirement for seven separate services. A reference build may combine components while retaining clear boundaries between reasoning, permission, action, and proof.</p>
+<h2 id="four-durable-planes">Four durable planes</h2>
+<p>The four planes are Intention, Governance, Verification, and Evidence. They provide an enduring institutional view of the seven layers.</p>
+<p>Intention preserves why work exists, including the observations and organizational decisions that justify it. Governance applies throughout planning, capability selection, execution, and release. Verification examines both intermediate results and the eventual outcome. Evidence connects all of these activities into a reconstructable history.</p>
+<p>Decision, Capability, and Execution provide the operational path within those planes. They turn approved objectives into bounded action. Their implementations can change while the institution retains its intent, policy, verification obligations, and evidence.</p>
+<p>The planes therefore continue across the lifecycle. Governance is relevant before a model receives data and again before a consequential action. Evidence begins with the source of an intent and continues after deployment.</p>
+<h2 id="the-operating-loop">The operating loop</h2>
+<p><code>Intent → Decide → Constrain → Execute → Verify → Prove</code></p>
+<p>Intent establishes the desired outcome. Decide produces a candidate plan or choice. Constrain applies authority, policy, and capability limits. Execute performs the permitted work. Verify evaluates the result. Prove preserves the supporting records and their relationships.</p>
+<p>This formulation does not postpone governance until after reasoning. Policy also limits which data and decision providers may participate. The constraint stage makes the boundary between a proposed action and an authorized action explicit.</p>
+<p>The loop closes through outcomes. A technically correct release may fail to solve the original problem. Observed results can justify revised requirements or a new intent, with their own review and authorization.</p>
+<h2 id="reference-implementation">Reference implementation</h2>
+<p>A generic reference build includes an institutional object store, an intent interface, a policy authority, interchangeable decision providers, a capability registry, isolated execution workers, verification services, and durable evidence storage.</p>
+<p>Typed contracts connect these components. The institutional ontology supplies shared meaning for actors, resources, requirements, actions, and outcomes. Interfaces and runtime products remain replaceable because the canonical objects and their relationships belong to the organization.</p>
+<p>This is a proposed architectural shape. It does not imply that every deployment target, attestation mechanism, or product layer has already been implemented.</p>
+<h2 id="from-the-research">From the research</h2>
+<ul><li>“Sovereignty is a system property.” The scope includes the operational stack and the ability to replace providers. [sovereign-source-ai-manifesto.md]</li><li>“Evidence changes future intention.” Outcomes return to the beginning of the lifecycle and influence subsequent work. [4.md]</li><li>The ontology, policy, evidence, and intent models must survive implementation changes. [sovereign-source-ai-master-summary.md]</li></ul>
+<h2 id="related">Related</h2>
+<ul><li><a href="intent-and-ssil.html">02-intent-and-ssil.md</a></li><li><a href="governance-and-policy.html">03-governance-and-policy.md</a></li><li><a href="decision-plane.html">04-decision-plane.md</a></li><li><a href="capabilities-skills-mcp.html">05-capabilities-skills-mcp.md</a></li><li><a href="reference-stack-and-exit.html">10-reference-stack-and-exit.md</a></li></ul>
+  <nav class="pager" aria-label="Topic navigation">
+    <span></span>
+    <a class="pager-next" href="intent-and-ssil.html"><span class="pager-label">Next</span>Intent and SSIL</a>
+  </nav>
+  <a href="../index.html#topics" class="back-link">← All topics</a>
+</article>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="footer-logo-text">Sovereign Source AI</span>
+      <p class="footer-tagline">sovsrc.ai</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verification and Evaluation · Sovereign Source AI</title>
+<meta name="description" content="Verification turns assertions about a system into evidence that can support institutional decisions.">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<div class="ghost" aria-hidden="true">
+  <span class="ghost-line">Sovereign Source AI</span>
+  <span class="ghost-line">Verification and Evaluation</span>
+</div>
+
+<header class="header">
+  <div class="header-inner">
+    <a href="../index.html" class="logo" aria-label="Sovereign Source AI home">
+      <img class="logo-mark" src="../logo.svg" alt="Sovereign Source AI" height="24" width="32">
+      <span class="logo-text">Sovereign Source AI</span>
+    </a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="../index.html#the-architecture">The architecture</a>
+      <a href="../index.html#topics">Topics</a>
+      <a href="../manifesto.html" class="nav-cta">Read the manifesto</a>
+    </nav>
+  </div>
+</header>
+
+<article class="prose topic">
+  <p class="byline">Topic 07 of 10</p>
+  <h1>Verification and Evaluation</h1>
+<p class="topic-summary">Verification turns assertions about a system into evidence that can support institutional decisions. Sovereign Source AI examines whether work satisfies its specification, respects authority, and produces the intended result. This requires technical checks, agent review, requirement traceability, and experience measurement. A plausible answer, successful build, or passing test suite establishes only part of that case.</p>
+<h2 id="verification-and-validation">Verification and validation</h2>
+<p>Verification asks whether the result conforms to its specification. Validation asks whether the resulting product or action solves the intended problem. Both connect to the original intent, but they answer different questions.</p>
+<p>A feature can satisfy every implementation requirement while failing to improve the experience it was meant to address. It can also improve a headline metric while violating a safety or accuracy constraint. The evidence model therefore retains objectives and guardrails together.</p>
+<p>An experience contract makes those expectations explicit. It links a requirement or feature to measurable outcomes and conditions that must remain satisfied. Measurements after deployment can support continued operation, revision, rollback, or a new intent.</p>
+<h2 id="four-areas-of-verification">Four areas of verification</h2>
+<p>Technical verification examines the artifact and its production process. Relevant evidence includes compilation results, tests, security analysis, dependency and license findings, policy checks, and build records. Each check supports a defined claim about a particular version.</p>
+<p>Agent verification examines the relationship between assigned work and agent behavior. It considers requirement coverage, architecture compliance, changes made, tools used, and the evidence returned. Independent review reduces dependence on an agent’s own account of its performance. Human authority remains necessary wherever policy requires it.</p>
+<p>Requirement verification connects each assertion to explicit evidence. A requirement should identify an acceptance condition and the tests, observations, or reviews that establish whether it was met. That connection must identify the artifact or deployment evaluated.</p>
+<p>Experience verification examines use after release. Exposure, task completion, errors, abandonment, latency, and user-visible outcomes help establish whether the feature works in practice. Institutional outcomes may also require authoritative operational signals beyond interface analytics.</p>
+<h2 id="the-evaluation-model">The evaluation model</h2>
+<p>Evaluation spans several levels because success at one level does not establish success at another:</p>
+<div class="table-wrap"><table><thead><tr><th>Level</th><th>Question</th></tr></thead><tbody><tr><td>Schema</td><td>Did the output satisfy its contract?</td></tr><tr><td>Capability</td><td>Did the operation remain within its declared function?</td></tr><tr><td>Model</td><td>Was the result sufficiently reliable?</td></tr><tr><td>Policy</td><td>Was the action authorized?</td></tr><tr><td>Security</td><td>Were isolation, network, dependency, and secret rules respected?</td></tr><tr><td>Experience</td><td>Did the feature work for users?</td></tr><tr><td>Outcome</td><td>Did it achieve the institutional objective?</td></tr><tr><td>Provenance</td><td>Can the result be reconstructed and explained?</td></tr></tbody></table></div>
+<p>Findings should preserve uncertainty. The proposed privacy assessment model uses PASS, FAIL, UNKNOWN, and NOT APPLICABLE so that missing evidence does not become an implied success. An automated assessment remains distinct from independent certification.</p>
+<h2 id="reference-implementation">Reference implementation</h2>
+<p>A reference build combines a requirement registry, test and evaluation services, independent review, release gates, experience measurement, and an evidence store. Results link to the relevant work order, artifact, policy, and evaluation context.</p>
+<p>Release gates consume those results under defined authority. Models can explain findings or propose further checks, but explanatory fluency does not determine whether a control passed. Subsequent outcome measurements extend the evidence record and inform future intent.</p>
+<h2 id="from-the-research">From the research</h2>
+<ul><li>Verification asks, “Did we build according to specification?” Validation asks whether the product solved the intended problem. (<code>4.md</code>)</li><li>“Claims become evidence.” (<code>sovereign-source-ai-manifesto.md</code>)</li><li>“LLMs explain; deterministic code and evidence decide the control result.” (<code>sovereign-source-ai-master-summary.md</code>)</li></ul>
+<h2 id="related">Related</h2>
+<ul><li><a href="intent-and-ssil.html">Intent and SSIL</a></li><li><a href="governance-and-policy.html">Governance and policy</a></li><li><a href="execution-and-runtime.html">Execution and runtime</a></li><li><a href="evidence-provenance-supply-chain.html">Evidence and provenance</a></li><li><a href="data-ontology-events.html">Data, ontology, and events</a></li></ul>
+  <nav class="pager" aria-label="Topic navigation">
+    <a class="pager-prev" href="execution-and-runtime.html"><span class="pager-label">Previous</span>Execution and Runtime</a>
+    <a class="pager-next" href="evidence-provenance-supply-chain.html"><span class="pager-label">Next</span>Evidence, Provenance, and Supply Chain</a>
+  </nav>
+  <a href="../index.html#topics" class="back-link">← All topics</a>
+</article>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="footer-logo-text">Sovereign Source AI</span>
+      <p class="footer-tagline">sovsrc.ai</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

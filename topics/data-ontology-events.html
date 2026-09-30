@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data, Ontology, and Events · Sovereign Source AI</title>
+<meta name="description" content="The sovereign ontology gives institutional knowledge a durable structure across applications, models, and workflows.">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<div class="ghost" aria-hidden="true">
+  <span class="ghost-line">Sovereign Source AI</span>
+  <span class="ghost-line">Data, Ontology, and Events</span>
+</div>
+
+<header class="header">
+  <div class="header-inner">
+    <a href="../index.html" class="logo" aria-label="Sovereign Source AI home">
+      <img class="logo-mark" src="../logo.svg" alt="Sovereign Source AI" height="24" width="32">
+      <span class="logo-text">Sovereign Source AI</span>
+    </a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="../index.html#the-architecture">The architecture</a>
+      <a href="../index.html#topics">Topics</a>
+      <a href="../manifesto.html" class="nav-cta">Read the manifesto</a>
+    </nav>
+  </div>
+</header>
+
+<article class="prose topic">
+  <p class="byline">Topic 09 of 10</p>
+  <h1>Data, Ontology, and Events</h1>
+<p class="topic-summary">The sovereign ontology gives institutional knowledge a durable structure across applications, models, and workflows. It represents objects, relationships, and authorized actions while the data architecture separates current operational state from historical evidence. Governed events connect these views across time and organizational boundaries. Privacy policy determines which collection, derivation, movement, and use are permitted throughout that lifecycle.</p>
+<h2 id="ontology-as-institutional-source-of-truth">Ontology as institutional source of truth</h2>
+<p>The ontology describes the institution in terms it owns. Its objects include actors, authority, intents, requirements, resources, capabilities, decisions, work orders, evidence, and outcomes. Relationships explain how those objects connect, while authorized actions define what may be done with them.</p>
+<p>This structure bridges human understanding and executable systems. An interface can display a work order, an agent can reason about it, and a workflow can act on it without making any one application the sole owner of its meaning.</p>
+<p>The ontology must survive implementation changes. Its definitions and institutional relationships remain portable when an application, model, storage system, or enterprise integration changes.</p>
+<h2 id="operational-state-and-historical-evidence">Operational state and historical evidence</h2>
+<p>The architecture assigns different responsibilities to different data components:</p>
+<div class="table-wrap"><table><thead><tr><th>Component</th><th>Architectural role</th></tr></thead><tbody><tr><td>Operational store</td><td>Current entities, permissions, relationships, and active state</td></tr><tr><td>Open table format</td><td>Historical analytical datasets, snapshots, and reproducible views</td></tr><tr><td>Object storage</td><td>Raw documents, datasets, artifacts, and evidence</td></tr><tr><td>Product analytics</td><td>Experience events, experiments, and outcome measurements</td></tr><tr><td>Lineage relationships</td><td>Connections among sources, derivations, decisions, and actions</td></tr></tbody></table></div>
+<p>A transactional database such as Postgres, an open table format such as Iceberg, and product analytics such as PostHog are replaceable reference choices for these roles.</p>
+<p>Historical data supports reconstruction of a decision against the data and feature state available at the time. Current operational state supports what the institution is permitted and prepared to do now. Neither should silently substitute for the other.</p>
+<h2 id="observations-features-inferences-and-declarations">Observations, features, inferences, and declarations</h2>
+<p>Four classes remain distinct: raw observations, computed features, inferred attributes, and user-declared facts.</p>
+<p>An observation records something captured from a source. A feature records a derivation. An inference expresses an interpretation with uncertainty. A declaration records what a subject explicitly stated. Converting these into a single undifferentiated profile would erase distinctions needed for explanation and governance.</p>
+<p>Lineage connects source, observation, feature, inference, decision, and action. Inferences remain explainable and revocable, with their supporting observations preserved as distinct records.</p>
+<h2 id="sovereign-event-architecture">Sovereign event architecture</h2>
+<p>Regional cells retain local operational authority and exchange governed events across boundaries. The architectural rule is local synchronous coordination and global asynchronous exchange.</p>
+<p>An event gateway enforces identity, message integrity, schemas, classification, access policy, provenance, and audit. Idempotency and controlled replay make repeated delivery an explicit operational concern. Crossing a regional boundary does not itself transfer authority over the receiving institution’s actions.</p>
+<h2 id="privacy-as-runtime-policy">Privacy as runtime policy</h2>
+<p>Data availability does not establish permission to use it. Policy governs collection, purpose, retention, joins, inference, model access, jurisdictional movement, capability access, deletion propagation, and human review.</p>
+<p>A datum envelope can carry its source, subject, timestamp, confidence, authorization, purpose, sensitivity, permitted uses, and derivation lineage. This context allows privacy constraints to accompany data into later decisions.</p>
+<h2 id="reference-implementation">Reference implementation</h2>
+<p>A reference build combines an institutional ontology, transactional state, historical tables, raw-evidence storage, an event gateway, analytics, and externally enforced policy. Derived features and inferences retain links to their sources. Permitted capabilities consume governed views, and outcomes return through the evidence loop.</p>
+<h2 id="from-the-research">From the research</h2>
+<ul><li>“Data does not equal permission.” (<code>sovereign-source-ai-master-summary.md</code>)</li><li>“Do not overwrite observations with inferences.” (<code>sovereign-source-ai-master-summary.md</code>)</li><li>“Evidence changes future intention.” (<code>4.md</code>)</li></ul>
+<h2 id="related">Related</h2>
+<ul><li><a href="intent-and-ssil.html">Intent and SSIL</a></li><li><a href="governance-and-policy.html">Governance and policy</a></li><li><a href="decision-plane.html">Decision plane</a></li><li><a href="verification-and-evaluation.html">Verification and evaluation</a></li><li><a href="evidence-provenance-supply-chain.html">Evidence and provenance</a></li><li><a href="reference-stack-and-exit.html">Reference stack and exit</a></li></ul>
+  <nav class="pager" aria-label="Topic navigation">
+    <a class="pager-prev" href="evidence-provenance-supply-chain.html"><span class="pager-label">Previous</span>Evidence, Provenance, and Supply Chain</a>
+    <a class="pager-next" href="reference-stack-and-exit.html"><span class="pager-label">Next</span>Reference Stack and Exit</a>
+  </nav>
+  <a href="../index.html#topics" class="back-link">← All topics</a>
+</article>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="footer-logo-text">Sovereign Source AI</span>
+      <p class="footer-tagline">sovsrc.ai</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
