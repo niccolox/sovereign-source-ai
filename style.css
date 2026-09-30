@@ -104,8 +104,8 @@ body {
 .logo-mark {
   width: 32px;
   height: 24px;
-  color: var(--text);
   flex-shrink: 0;
+  display: block;
 }
 
 .logo-text {
