@@ -1,0 +1,3 @@
+# https://niccolox.github.io/sovereign-source-ai/
+user-agent: *
+allow: /
