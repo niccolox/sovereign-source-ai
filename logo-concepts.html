@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sovereign Source AI — Logo Concepts</title>
+<style>
+  :root {
+    --bg: #000;
+    --text: #fff;
+    --red: #BF0D3E;
+    --blue: #0A3168;
+    --white: #fff;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    padding: 3rem 1.5rem;
+  }
+  h1 { font-size: 1.2rem; color: #555; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 3rem; text-align: center; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .card {
+    background: #0a0a0a;
+    border: 1px solid #1a1a1a;
+    border-radius: 4px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .card h2 {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-align: center;
+  }
+  .logo-preview {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+    border-radius: 50%;
+    border: 1px solid #222;
+  }
+  .logo-preview svg { width: 80px; height: 80px; }
+  .desc { font-size: 0.8rem; color: #555; text-align: center; line-height: 1.6; }
+  .swatch { display: flex; gap: 0.5rem; justify-content: center; margin-top: 0.5rem; }
+  .swatch span { width: 20px; height: 20px; border-radius: 50%; }
+  .swatch .red { background: var(--red); }
+  .swatch .blue { background: var(--blue); }
+  .swatch .white { background: var(--white); border: 1px solid #444; }
+</style>
+</head>
+<body>
+
+<h1>Sovereign Source AI — Logo Concepts</h1>
+<p style="text-align:center; color:#444; font-size:0.8rem; margin-bottom:3rem;">Patriotic USA inspired · dark-site aesthetic · unique, not cliché</p>
+
+<div class="grid">
+
+  <!-- Concept 1: Three bars + star -->
+  <div class="card">
+    <div class="logo-preview">
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Three patriotic bars (flag stripe reference) -->
+        <rect x="15" y="50" width="70" height="7" rx="1" fill="#BF0D3E"/>
+        <rect x="15" y="62" width="70" height="7" rx="1" fill="#0A3168"/>
+        <rect x="15" y="74" width="70" height="7" rx="1" fill="#BF0D3E"/>
+        <!-- Star above -->
+        <polygon
+          points="50,15 57.5,33 76,33 61,45 66,63 50,52 34,63 39,45 24,33 42.5,33"
+          fill="#BF0D3E" stroke="#0A3168" stroke-width="1.5" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <h2>The Sovereign Star</h2>
+    <div class="swatch"><span class="red"></span><span class="white"></span><span class="blue"></span><span class="red"></span><span class="white"></span><span class="blue"></span></div>
+    <p class="desc">Three horizontal bars (flag stripe echo) in red-white-blue, topped by a single five-point star in patriotic red with a blue outline. The star sits sovereign above the bars.</p>
+  </div>
+
+  <!-- Concept 2: Negative-space star in a shield/badge -->
+  <div class="card">
+    <div class="logo-preview">
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Shield shape -->
+        <path d="M50,8 L92,28 L92,62 Q92,88 50,96 Q8,88 8,62 L8,28 Z" fill="#0A3168" stroke="#BF0D3E" stroke-width="3"/>
+        <!-- Inner white border -->
+        <path d="M50,14 L86,31 L86,61 Q86,83 50,90 Q14,83 14,61 L14,31 Z" fill="none" stroke="#fff" stroke-width="1.5" opacity="0.4"/>
+        <!-- Star in white, negative-space feel -->
+        <polygon
+          points="50,22 55.5,36 70,36 58.5,44.5 62.5,58.5 50,50 37.5,58.5 41.5,44.5 30,36 44.5,36"
+          fill="#fff"/>
+      </svg>
+    </div>
+    <h2>The Sovereign Shield</h2>
+    <div class="swatch"><span class="red"></span><span class="blue"></span><span class="white"></span></div>
+    <p class="desc">A minimalist shield (sovereignty / defense) in deep navy with a red border. A white five-point star sits at center — the star as the core, the shield as the guarantee. Clean, distinctive, not a flag.</p>
+  </div>
+
+  <!-- Concept 3: Three bars form a star -->
+  <div class="card">
+    <div class="logo-preview">
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Three bars that flare into a star shape at top -->
+        <!-- Left bar -->
+        <path d="M20,90 L25,55 L35,30 L38,25 L32,25 L28,30 L22,55 L25,90 Z" fill="#BF0D3E"/>
+        <!-- Center bar (tallest, becomes top point of star) -->
+        <path d="M47,90 L47,18 L53,18 L53,90 Z" fill="#0A3168"/>
+        <!-- Right bar -->
+        <path d="M75,90 L78,55 L88,30 L85,25 L82,25 L78,30 L75,55 L72,90 Z" fill="#BF0D3E"/>
+        <!-- White star overlay at top connecting the three -->
+        <polygon
+          points="50,18 54,30 66,30 57,38 60,50 50,42 40,50 43,38 34,30 46,30"
+          fill="#fff" opacity="0.9"/>
+      </svg>
+    </div>
+    <h2>The Convergent Star</h2>
+    <div class="swatch"><span class="red"></span><span class="blue"></span><span class="white"></span></div>
+    <p class="desc">Three vertical bars (in red, white-tinted, blue) converge upward into a single five-point star. The structure reads as both stripes and a star simultaneously — sovereign source emerging from three foundations.</p>
+  </div>
+
+  <!-- Concept 4: Minimal star mark (monogram-like) -->
+  <div class="card">
+    <div class="logo-preview">
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Big bold 5-point star, single color, modern -->
+        <polygon
+          points="50,10 61,36 90,36 66,54 75,80 50,64 25,80 34,54 10,36 39,36"
+          fill="#BF0D3E"/>
+        <!-- Inner detail: small star cutout -->
+        <polygon
+          points="50,30 54,37 61,37 56,41.5 58,48 50,44.5 42,48 44,41.5 39,37 46,37"
+          fill="#0A3168"/>
+      </svg>
+    </div>
+    <h2>The Star Mark</h2>
+    <div class="swatch"><span class="red"></span><span class="blue"></span><span class="white"></span></div>
+    <p class="desc">A single bold five-point star — red, with a navy inner star as a counterpoint. No bars, no shield. Just the star, treated as a monogram mark. The most minimal option, closest to a brand mark you'd use as a favicon.</p>
+  </div>
+
+  <!-- Concept 5: Stripes as infinity/sovereign loop -->
+  <div class="card">
+    <div class="logo-preview">
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Three horizontal stripes (like flag) but as a Möbius/loop -->
+        <path d="M10,45 L90,45 L90,55 L10,55 Z" fill="#BF0D3E"/>
+        <path d="M10,45 L25,45 L25,30 L55,30 L55,55 L70,55 L70,70 L10,70 Z" fill="#0A3168"/>
+        <path d="M90,45 L75,45 L75,30 L45,30 L45,55 L30,55 L30,70 L90,70 Z" fill="#BF0D3E"/>
+        <!-- White star in center -->
+        <polygon
+          points="50,32 54,41 63,41 56,47 58,56 50,51 42,56 44,47 37,41 46,41"
+          fill="#fff"/>
+      </svg>
+    </div>
+    <h2>The Sovereign Loop</h2>
+    <div class="swatch"><span class="red"></span><span class="blue"></span><span class="white"></span></div>
+    <p class="desc">A twisted three-stripe form — reads as stripes but with a Möbius-loop tension suggesting continuity, sovereignty, and a closed system. A white star sits at center. Suggests both the flag and the "no dependency without provenance" principle.</p>
+  </div>
+
+  <!-- Concept 6: Star + wordmark lockup -->
+  <div class="card">
+    <div class="logo-preview" style="background:#000; border-color:#333;">
+      <svg viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:180px; height:72px;">
+        <!-- Star mark -->
+        <polygon
+          points="20,10 27,26 42,26 31,34 34,50 20,43 6,50 9,34 0,26 15,26"
+          fill="#BF0D3E"/>
+        <!-- Wordmark -->
+        <text x="52" y="44" font-family="'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="500" fill="#fff" letter-spacing="-0.5">SovSrc</text>
+        <text x="52" y="60" font-family="'Helvetica Neue', Arial, sans-serif" font-size="8" font-weight="400" fill="#555" letter-spacing="2">SOVRSRC.AI</text>
+      </svg>
+    </div>
+    <h2>Star + Wordmark</h2>
+    <div class="swatch"><span class="red"></span><span class="white"></span><span class="blue"></span></div>
+    <p class="desc">The star mark (from concept 4) paired with a clean wordmark. "SovSrc" in white, "SOVRSRC.AI" in muted gray below. This is the full brand lockup — what you'd use in the site header and favicon.</p>
+  </div>
+
+</div>
+
+</body>
+</html>
