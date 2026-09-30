@@ -1,0 +1,4 @@
+# Jekyll (GitHub Pages) settings. Keep internal product and design records off the site.
+exclude:
+  - PRODUCT.md
+  - DESIGN.md
