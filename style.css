@@ -9,7 +9,7 @@
   --bg-elev: #0a0a0a;
   --text: #ffffff;
   --text-dim: #a3a3a3;
-  --text-muted: #5c5c5c;
+  --text-muted: #909090;
   --rule: #1a1a1a;
   --font: 'Instrument Sans', 'Helvetica Neue', Arial, sans-serif;
   --maxw: 1200px;
@@ -150,7 +150,7 @@ body {
 .hero-inner {
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: 0 var(--gutter);
+  padding: 24px 40px;
   width: 100%;
 }
 
@@ -184,14 +184,14 @@ body {
 .section {
   position: relative;
   z-index: 1;
-  padding: clamp(5rem, 10vw, 8rem) 0;
+  padding: 24px 0;
   border-top: 1px solid var(--rule);
 }
 
 .section-inner {
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: 0 var(--gutter);
+  padding: 24px 40px;
 }
 
 .section-heading {
@@ -335,7 +335,7 @@ body {
 .formulations-inner {
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: 0 var(--gutter);
+  padding: 24px 40px;
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
