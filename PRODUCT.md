@@ -8,19 +8,19 @@ web
 
 ## Users
 
-No primary audience is chosen yet (open decision). The site currently speaks to a mix of:
+The homepage leads with small businesses (since 2026-10-03): owners and operators running on several SaaS tools who want a data warehouse they own, integration across those tools, and AI agents for their industry (ecommerce and retail, professional services, field and local services, regulated and compliance-heavy work). The homepage and `business/` speak to them directly.
+
+Below that lead, the manifesto, architecture, and topic pages still speak to a mix of:
 
 - institutional buyers: technology, security, and architecture leaders at banks, public-sector bodies, and other regulated organizations weighing AI control and vendor exit;
 - builders: engineers and open-source developers who may adopt or contribute to the architecture and a future open core;
 - investors, advisors, and prospective design partners assessing the thesis.
 
-When a primary audience is chosen, record it here; until then, work should not optimize for one group at the others' expense.
-
-The small-business page (`business/`, on the `dev` branch) targets one audience directly: small businesses that want a data warehouse they own, integration across the SaaS tools they already use, and AI agents for their industry (ecommerce and retail, professional services, field and local services, regulated and compliance-heavy work).
+Whether small businesses are the primary audience beyond the homepage is still open; the manifesto and topic pages should keep serving the mixed audience above.
 
 ## Product Purpose
 
-sovsrc.ai publishes the Sovereign Source AI (SSA) thesis: the manifesto and a set of architecture topic pages. Its job is to make the argument clearly enough that the right readers want to talk.
+sovsrc.ai offers small businesses a done-for-you build on the Sovereign Source AI (SSA) architecture, and publishes the thesis behind it: the manifesto and a set of architecture topic pages. Its job is to make the offer and the argument clear enough that the right readers want to talk.
 
 Success: a reader who is convinced starts a conversation with the founder (design partner, pilot, advisory, or collaboration). The contact route is email: niccolox@devekko.com.
 
@@ -32,17 +32,19 @@ SSA is an LLM-neutral, cloud-neutral, vendor-replaceable architecture built on s
 
 ## Operating Context
 
-- Readers arrive to evaluate an idea, often before any product exists; the manifesto and topic pages are the whole product experience today.
+- Small-business visitors evaluate whether a build is worth a conversation; the homepage shows an illustrative sample shop's morning ("The same Monday, twice"), labeled as a composite, not a client.
+- Other readers arrive to evaluate the idea itself, often before any product exists; the manifesto and topic pages serve them.
 - Topic pages are generated from numbered markdown pages in the separate svrnsrc.ai research repo (`research/docs/sovereign-source-ai/`) by `_tools/build_topics.py`, which also rewrites the homepage table of contents.
 
 ## Capabilities and Constraints
 
 - Static HTML/CSS served by GitHub Pages (Jekyll, legacy build) at sovsrc.ai (`CNAME`). No framework or build step beyond the topic generator.
-- Pages: `index.html` (homepage), `manifesto.html`, `topics/*.html` (10 generated topic pages), `logo-concepts.html` (internal logo review page).
+- Pages: `index.html` (homepage: small-business offer, the SSA definition as its subheading, then the manifesto sections), `business/index.html` (small-business detail page), `manifesto.html`, `topics/*.html` (10 generated topic pages), `logo-concepts.html` (internal logo review page).
+- Work happens on the `dev` branch and is fast-forwarded to `main` to publish; GitHub Pages serves `main`.
 - Folders starting with `_` and files listed in `_config.yml` `exclude` are not published.
 - Terminology: "Sovereign Source AI" (SSA), "SovSrc" / sovsrc.ai, Sovereign Skills, SSIL (Sovereign Source Intent Language), work orders, seven layers, four planes (Intention, Governance, Verification, Evidence).
 - Offer: a done-for-you build service. The founder designs and builds the warehouse, integrations, and agents in the client's own accounts, then hands over code, documentation, and access. There is no self-serve software product.
-- Open decisions: primary audience; open-source license; trademark clearance; pricing and engagement terms (not published).
+- Open decisions: whether small businesses are the primary audience beyond the homepage; open-source license (the footer currently calls SSA "a commercial open-source architecture"); trademark clearance; pricing and engagement terms (not published).
 
 ## Brand Commitments
 
