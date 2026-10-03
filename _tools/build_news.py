@@ -38,43 +38,53 @@ THEMES = {
 esc = html.escape
 
 
-def long_date(iso: str) -> str:
-    d = dt.date.fromisoformat(iso)
-    return f"{d.day} {d.strftime('%B %Y')}"
+def span(start: str, end: str) -> str:
+    """'26 Sep to 3 Oct 2026', with both years only when they differ."""
+    s, e = dt.date.fromisoformat(start), dt.date.fromisoformat(end)
+    left = f"{s.day} {s.strftime('%b')}" + (f" {s.year}" if s.year != e.year else "")
+    return f"{left} to {e.day} {e.strftime('%b %Y')}"
 
 
 def short_date(iso: str) -> str:
     if iso == "unknown":
-        return "Date not given"
+        return "date not given"
     d = dt.date.fromisoformat(iso)
     return f"{d.day} {d.strftime('%b %Y')}"
+
+
+def count(n: int, one: str, many: str) -> str:
+    return f"{n} {one if n == 1 else many}"
 
 
 def render_scan(scan: dict) -> str:
     start, end = scan["window"]
     items = scan["kept"]
-    head = (f'<section class="section news-scan" id="scan-{esc(end)}">\n'
-            f'  <div class="section-inner">\n'
-            f'    <h2 class="section-heading">{esc(long_date(start))} to {esc(long_date(end))}</h2>\n')
+    searches = len(scan.get("searches") or [])
+    meta = count(len(items), "story", "stories")
+    if searches:
+        meta += f" from {count(searches, 'search', 'searches')}"
+    parts = [f'<section class="section news-scan" id="scan-{esc(end)}">\n'
+             f'  <div class="section-inner">\n'
+             f'    <h2 class="section-heading news-week">{esc(span(start, end))}</h2>\n'
+             f'    <p class="news-week-meta">{esc(meta)}</p>\n']
     if not items:
-        return head + '    <p class="section-intro">A quiet week. Nothing new met the bar.</p>\n  </div>\n</section>\n'
-    parts = [head]
+        parts.append('    <p class="section-intro">A quiet week. Nothing new met the bar.</p>\n')
     for key, label in THEMES.items():
         group = [i for i in items if i["theme"] == key]
         if not group:
             continue
-        parts.append(f'    <h3 class="news-theme">{esc(label)}</h3>\n    <ul class="news-list">\n')
+        parts.append(f'    <div class="news-group">\n'
+                     f'      <h3 class="news-theme">{esc(label)}</h3>\n'
+                     f'      <ul class="news-list">\n')
         for i in group:
             parts.append(
-                '      <li>\n'
-                f'        <p class="news-meta">{esc(i["source"])}<br>'
-                f'<time datetime="{esc(i["published"])}">{esc(short_date(i["published"]))}</time></p>\n'
-                '        <div class="news-body">\n'
+                '        <li>\n'
                 f'          <a class="news-title" href="{esc(i["url"], quote=True)}" rel="noopener">{esc(i["title"])}</a>\n'
+                f'          <p class="news-meta">{esc(i["source"])} · '
+                f'<time datetime="{esc(i["published"])}">{esc(short_date(i["published"]))}</time></p>\n'
                 f'          <p class="news-summary">{esc(i["summary"])}</p>\n'
-                '        </div>\n'
-                '      </li>\n')
-        parts.append('    </ul>\n')
+                '        </li>\n')
+        parts.append('      </ul>\n    </div>\n')
     parts.append('  </div>\n</section>\n')
     return "".join(parts)
 
