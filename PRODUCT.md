@@ -16,11 +16,13 @@ No primary audience is chosen yet (open decision). The site currently speaks to 
 
 When a primary audience is chosen, record it here; until then, work should not optimize for one group at the others' expense.
 
+The small-business page (`business/`, on the `dev` branch) targets one audience directly: small businesses that want a data warehouse they own, integration across the SaaS tools they already use, and AI agents for their industry (ecommerce and retail, professional services, field and local services, regulated and compliance-heavy work).
+
 ## Product Purpose
 
 sovsrc.ai publishes the Sovereign Source AI (SSA) thesis: the manifesto and a set of architecture topic pages. Its job is to make the argument clearly enough that the right readers want to talk.
 
-Success: a reader who is convinced starts a conversation with the founder (design partner, pilot, advisory, or collaboration). The site has no contact route yet; adding one is an open decision (channel not chosen).
+Success: a reader who is convinced starts a conversation with the founder (design partner, pilot, advisory, or collaboration). The contact route is email; the address is not chosen yet (the dev page uses the placeholder `contact@email-tbd.invalid`, which must be replaced before release).
 
 ## Positioning
 
@@ -39,7 +41,8 @@ SSA is an LLM-neutral, cloud-neutral, vendor-replaceable architecture built on s
 - Pages: `index.html` (homepage), `manifesto.html`, `topics/*.html` (10 generated topic pages), `logo-concepts.html` (internal logo review page).
 - Folders starting with `_` and files listed in `_config.yml` `exclude` are not published.
 - Terminology: "Sovereign Source AI" (SSA), "SovSrc" / sovsrc.ai, Sovereign Skills, SSIL (Sovereign Source Intent Language), work orders, seven layers, four planes (Intention, Governance, Verification, Evidence).
-- Open decisions: primary audience; contact channel; open-source license; trademark clearance.
+- Offer: a done-for-you build service. The founder designs and builds the warehouse, integrations, and agents in the client's own accounts, then hands over code, documentation, and access. There is no self-serve software product.
+- Open decisions: primary audience; contact email address; open-source license; trademark clearance; pricing and engagement terms (not published).
 
 ## Brand Commitments
 
@@ -54,7 +57,7 @@ SSA is an LLM-neutral, cloud-neutral, vendor-replaceable architecture built on s
 - Ten architecture topic pages (`topics/`), drafted from the research and quoting it with named sources.
 - Research documents in the svrnsrc.ai repo: master summary, four-plane architecture notes, sovereignty-test design.
 
-Absences that future work must not fabricate: released software, customers, pilots, design partners, users, testimonials, benchmarks, metrics, pricing, license terms, funding, team members beyond the founder, and partnerships with any named vendor.
+Absences that future work must not fabricate: released software, completed client engagements, case studies, timelines or prices for engagements, customers, pilots, design partners, users, testimonials, benchmarks, metrics, pricing, license terms, funding, team members beyond the founder, and partnerships with any named vendor.
 
 ## Product Principles
 
