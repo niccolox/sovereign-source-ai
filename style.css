@@ -166,7 +166,7 @@ body {
 .hero-inner {
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: 24px 40px;
+  padding: 24px var(--gutter);
   width: 100%;
 }
 
@@ -199,15 +199,25 @@ body {
 .section-inner {
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: 24px 40px;
+  padding: 24px var(--gutter);
 }
 
 .section-heading {
   font-size: clamp(1.6rem, 3vw, 2.6rem);
   font-weight: 450;
+  line-height: 1.15;
   letter-spacing: -0.02em;
   color: var(--text);
   margin-bottom: 1.5rem;
+  text-wrap: balance;
+}
+
+/* Lead paragraph that opens a manifesto section */
+.lede {
+  max-width: 65ch;
+  font-size: clamp(1.1rem, 1.6vw, 1.25rem);
+  line-height: 1.7;
+  color: var(--text-dim);
 }
 
 .section-intro {
@@ -350,7 +360,7 @@ body {
 .formulations-inner {
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: 24px 40px;
+  padding: 24px var(--gutter);
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
@@ -369,30 +379,6 @@ body {
   color: var(--text-dim);
   line-height: 1.4;
   font-style: normal;
-}
-
-/* Two-col not section */
-.two-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(2rem, 5vw, 5rem);
-  margin-top: 2rem;
-}
-
-.not-item {
-  font-size: 1rem;
-  color: var(--text-dim);
-  line-height: 1.7;
-}
-
-.not-item strong {
-  color: var(--text);
-  font-weight: 500;
-  display: block;
-  margin-bottom: 0.5rem;
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
 }
 
 /* Claim */
@@ -480,7 +466,6 @@ body {
 /* Responsive */
 @media (max-width: 768px) {
   .nav { display: none; }
-  .two-col { grid-template-columns: 1fr; gap: 2rem; }
   .hero { min-height: auto; padding: 3rem 0 2.5rem; }
   .hero-title { max-width: 100%; }
   .layers, .toc { --grid-cols: 1; }
