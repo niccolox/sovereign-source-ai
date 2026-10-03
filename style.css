@@ -11,6 +11,7 @@
   --text-dim: #a3a3a3;
   --text-muted: #909090;
   --rule: #1a1a1a;
+  --flag-red: #BF0D3E;
   --font: 'Instrument Sans', 'Helvetica Neue', Arial, sans-serif;
   --maxw: 1200px;
   --gutter: clamp(1.5rem, 5vw, 4rem);
@@ -169,14 +170,6 @@ body {
   width: 100%;
 }
 
-.eyebrow {
-  color: var(--text-muted);
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  margin-bottom: 2.5rem;
-}
 
 .hero-title {
   font-size: clamp(2.4rem, 5.5vw, 4.8rem);
@@ -225,29 +218,8 @@ body {
   margin-bottom: 2rem;
 }
 
-/* Stat block */
-.stat-block {
-  display: flex;
-  align-items: baseline;
-  gap: 1rem;
-  margin-top: 3rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--rule);
-}
 
-.stat-number {
-  font-size: clamp(3rem, 6vw, 5rem);
-  font-weight: 400;
-  letter-spacing: -0.03em;
-  line-height: 1;
-  color: var(--text);
-}
 
-.stat-label {
-  color: var(--text-muted);
-  font-size: 1rem;
-  font-weight: 450;
-}
 
 /* Questions */
 .questions-section { border-top: none; }
@@ -665,34 +637,226 @@ body {
 .verticals > li { padding-bottom: 1.5rem; }
 
 /* Guarantees */
-.guarantees {
+.guarantees > div {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 2rem clamp(1.5rem, 3vw, 2.5rem);
+  grid-template-columns: minmax(12rem, 18rem) minmax(0, 1fr);
+  column-gap: clamp(1.5rem, 4vw, 4rem);
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--rule);
 }
+
+.guarantees > div:last-child { border-bottom: 1px solid var(--rule); }
 
 .guarantees dt {
   font-size: 1.2rem;
   font-weight: 500;
   letter-spacing: -0.02em;
   color: var(--text);
-  margin-bottom: 0.5rem;
 }
 
 .guarantees dd {
-  font-size: 0.95rem;
+  max-width: 60ch;
+  font-size: 1rem;
   line-height: 1.6;
   color: var(--text-dim);
 }
 
 @media (max-width: 1100px) {
   .offer, .verticals, .steps { --grid-cols: 2; }
-  .flow, .guarantees { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 2rem; }
+  .flow { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 2rem; }
   .flow li:nth-child(2)::after { content: none; }
 }
 
 @media (max-width: 768px) {
   .offer, .verticals, .steps { --grid-cols: 1; }
-  .flow, .guarantees { grid-template-columns: 1fr; }
+  .flow { grid-template-columns: 1fr; }
+  .guarantees > div { grid-template-columns: 1fr; row-gap: 0.4rem; }
   .flow li::after { content: none !important; }
+}
+
+/* ============================================================
+   Homepage: small-business lead and "A Monday, twice"
+   ============================================================ */
+.hero-home {
+  min-height: auto;
+  padding: clamp(2rem, 4vh, 4rem) 0 0.5rem;
+}
+
+.hero-home .hero-title { font-size: clamp(2.4rem, 4.8vw, 4.6rem); }
+.hero-home .cta-row { margin-top: 1.75rem; }
+
+.monday-section .section-inner { padding-top: 0.5rem; }
+
+.monday-section { padding-top: 0; }
+.monday-section .section-heading { margin-bottom: 0.75rem; }
+.monday-section .monday-intro { margin-bottom: 0; }
+
+.hero-home .hero-title { max-width: 16ch; margin-bottom: 1.75rem; text-wrap: balance; }
+
+.hero-def {
+  max-width: 46ch;
+  font-size: clamp(1.1rem, 1.7vw, 1.4rem);
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+.hero-plain {
+  max-width: 56ch;
+  margin-top: 1rem;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--text-dim);
+}
+
+.inline-link {
+  color: var(--text);
+  white-space: nowrap;
+  text-decoration: underline;
+  text-decoration-color: var(--text-muted);
+  text-underline-offset: 0.2em;
+}
+
+.inline-link:hover { text-decoration-color: var(--text); }
+
+/* Shared 8:00-11:30 time axis in 15-minute slots; entries sit at their real times. */
+.monday {
+  --slot: 3.5rem;
+  --head: 2.5rem;
+  display: grid;
+  grid-template-columns: 3.5rem minmax(0, 1fr) minmax(0, 1fr);
+  column-gap: clamp(1.25rem, 3vw, 2.5rem);
+  margin-top: 1.25rem;
+}
+
+.monday-axis,
+.monday-track {
+  list-style: none;
+  display: grid;
+  grid-template-rows: repeat(14, minmax(var(--slot), auto));
+}
+
+.monday-axis { padding-top: var(--head); grid-template-rows: repeat(14, minmax(var(--slot), auto)) auto; }
+
+/* Hour hairlines at 8:00, 9:00, 10:00, 11:00 and a rule at 11:30, across both tracks. */
+.monday-track {
+  background-image: repeating-linear-gradient(to bottom, var(--rule) 0 1px, transparent 1px calc(var(--slot) * 4));
+  border-bottom: 1px solid var(--rule);
+}
+
+.monday-yours .monday-track { border-left: 1px solid var(--rule); }
+
+.monday-axis li {
+  grid-row: calc(var(--at) + 1);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.monday-axis .monday-axis-mark { color: var(--text); }
+
+.monday-head {
+  height: var(--head);
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.monday-track > li { grid-row: calc(var(--at) + 1) / span var(--span); }
+
+.monday time {
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.monday-today .monday-track > li {
+  margin-bottom: 0.35rem;
+  padding: 0.75rem 1rem;
+  background: var(--bg);
+  border-top: 1px solid var(--text-muted);
+  border-left: 1px solid #333;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text-dim);
+}
+
+.monday-today time { display: block; margin-bottom: 0.25rem; }
+
+.monday-burst {
+  padding: 0.45rem 1rem;
+  border-top: 1px solid var(--text-muted);
+}
+
+.monday-burst ol { list-style: none; }
+
+.monday-burst li {
+  display: grid;
+  grid-template-columns: 2.75rem minmax(0, 1fr);
+  padding: 0.1rem 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: var(--text);
+}
+
+.monday-burst time { padding-top: 0.1rem; }
+
+.monday-free {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem 0.5rem;
+  border-top: 1px solid var(--flag-red);
+}
+
+.monday-free-end { margin-top: auto; }
+
+.monday-free time { color: var(--text); }
+
+.monday-free-note {
+  font-size: 0.95rem;
+  color: var(--text-dim);
+}
+
+.monday-free-line {
+  max-width: 14ch;
+  margin-top: 0.75rem;
+  padding: 0.15em 0;
+  background: var(--bg);
+  font-size: clamp(1.5rem, 2.8vw, 2.4rem);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--text);
+  text-wrap: balance;
+}
+
+/* One authored moment: the warehouse morning settles in, in time order. */
+@keyframes monday-settle {
+  from { opacity: 0.2; transform: translateY(0.5rem); }
+}
+
+.monday-yours.is-in .monday-burst li,
+.monday-yours.is-in .monday-free {
+  animation: monday-settle 0.8s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+
+.monday-yours.is-in .monday-burst li:nth-child(2) { animation-delay: 0.12s; }
+.monday-yours.is-in .monday-burst li:nth-child(3) { animation-delay: 0.24s; }
+.monday-yours.is-in .monday-burst li:nth-child(4) { animation-delay: 0.36s; }
+.monday-yours.is-in .monday-free { animation-delay: 0.55s; }
+
+@media (max-width: 960px) {
+  .monday { --slot: 1.6rem; grid-template-columns: minmax(0, 1fr); row-gap: 3rem; }
+  .monday-axis { display: none; }
+  .monday-head { height: auto; margin-bottom: 1rem; }
+  .monday-track { background-image: none; }
+  .monday-today .monday-track { border-bottom: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .monday-yours.is-in .monday-burst li,
+  .monday-yours.is-in .monday-free { animation: none; }
 }

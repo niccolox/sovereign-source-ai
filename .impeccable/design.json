@@ -1,0 +1,339 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-03T18:50:00.493533+00:00",
+  "title": "Design System: Sovereign Source AI",
+  "extensions": {
+    "colorMeta": {
+      "ground-black": {
+        "role": "neutral",
+        "displayName": "Ground Black",
+        "canonical": "#000000",
+        "tonalRamp": [
+          "#000000",
+          "#050505",
+          "#0a0a0a",
+          "#111111",
+          "#1a1a1a",
+          "#262626",
+          "#333333",
+          "#404040"
+        ]
+      },
+      "band-black": {
+        "role": "neutral",
+        "displayName": "Band Black",
+        "canonical": "#0a0a0a",
+        "tonalRamp": [
+          "#000000",
+          "#050505",
+          "#0a0a0a",
+          "#111111",
+          "#1a1a1a",
+          "#262626",
+          "#333333",
+          "#404040"
+        ]
+      },
+      "type-white": {
+        "role": "primary",
+        "displayName": "Type White",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#262626",
+          "#404040",
+          "#5c5c5c",
+          "#7a7a7a",
+          "#909090",
+          "#a3a3a3",
+          "#d4d4d4",
+          "#ffffff"
+        ]
+      },
+      "body-gray": {
+        "role": "neutral",
+        "displayName": "Body Gray",
+        "canonical": "#a3a3a3",
+        "tonalRamp": [
+          "#262626",
+          "#404040",
+          "#5c5c5c",
+          "#7a7a7a",
+          "#909090",
+          "#a3a3a3",
+          "#d4d4d4",
+          "#f2f2f2"
+        ]
+      },
+      "label-gray": {
+        "role": "neutral",
+        "displayName": "Label Gray",
+        "canonical": "#909090",
+        "tonalRamp": [
+          "#262626",
+          "#404040",
+          "#5c5c5c",
+          "#7a7a7a",
+          "#909090",
+          "#a3a3a3",
+          "#d4d4d4",
+          "#f2f2f2"
+        ]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#1a1a1a",
+        "tonalRamp": [
+          "#0a0a0a",
+          "#111111",
+          "#1a1a1a",
+          "#262626",
+          "#333333",
+          "#5c5c5c",
+          "#909090",
+          "#d4d4d4"
+        ]
+      },
+      "stroke-dark": {
+        "role": "neutral",
+        "displayName": "Stroke Dark",
+        "canonical": "#333333",
+        "tonalRamp": [
+          "#0a0a0a",
+          "#1a1a1a",
+          "#262626",
+          "#333333",
+          "#404040",
+          "#5c5c5c",
+          "#909090",
+          "#d4d4d4"
+        ]
+      },
+      "flag-red": {
+        "role": "tertiary",
+        "displayName": "Flag Red",
+        "canonical": "#BF0D3E",
+        "tonalRamp": [
+          "oklch(15% 0.06 15)",
+          "oklch(25% 0.1 15)",
+          "oklch(35% 0.14 15)",
+          "oklch(45% 0.18 15)",
+          "oklch(52.5% 0.2 15)",
+          "oklch(65% 0.17 15)",
+          "oklch(80% 0.1 15)",
+          "oklch(95% 0.03 15)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The page's one headline, 14 to 16ch, balanced."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section headings."
+      },
+      "statement": {
+        "displayName": "Statement",
+        "purpose": "Formulations, the claim, and the time axis's closing line."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Row and grid titles, column heads, guarantee terms."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Descriptions and intros in Body Gray."
+      },
+      "prose": {
+        "displayName": "Prose",
+        "purpose": "Long-form manifesto and topic copy in a 720px column."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Index numbers, clock times, pager labels; tabular numerals."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease-settle",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "The homepage time axis's one settle-in (0.8s, from 20% opacity and 0.5rem down, 0.12s stagger)."
+      },
+      {
+        "name": "duration-state",
+        "value": "0.2s",
+        "purpose": "Opacity, color and border-color hover transitions."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "mobile",
+        "value": "768px"
+      },
+      {
+        "name": "nav-mid",
+        "value": "960px"
+      },
+      {
+        "name": "grid-2",
+        "value": "1100px"
+      },
+      {
+        "name": "nav-minor",
+        "value": "1240px"
+      }
+    ],
+    "depth": [
+      {
+        "name": "header-glass",
+        "value": "background: rgba(0,0,0,0.85); backdrop-filter: blur(12px)",
+        "purpose": "Sticky header over scrolling content."
+      },
+      {
+        "name": "ghost-layer",
+        "value": "position: fixed; z-index: 0; color: #1a1a1a; opacity: 0.18; rotate -6deg to 4deg",
+        "purpose": "Manifesto lines behind all content."
+      },
+      {
+        "name": "focus-ring",
+        "value": "outline: 1px solid #ffffff; outline-offset: 4px; border-radius: 2px",
+        "purpose": "Global keyboard focus."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The solid email action; always paired with a quiet link.",
+      "html": "<a class=\"ds-btn\" href=\"#\">Email us about your stack</a>",
+      "css": ".ds-btn{display:inline-block;padding:.85rem 1.4rem;background:#fff;color:#000;font-family:'Instrument Sans','Helvetica Neue',Arial,sans-serif;font-size:1rem;font-weight:500;text-decoration:none;border-radius:2px;transition:opacity .2s}.ds-btn:hover{opacity:.85}.ds-btn:focus-visible{outline:1px solid #fff;outline-offset:4px}"
+    },
+    {
+      "name": "Quiet Link Button",
+      "kind": "button",
+      "refersTo": "button-quiet",
+      "description": "The secondary path to depth, underlined in Label Gray.",
+      "html": "<a class=\"ds-btn-quiet\" href=\"#\">Details for small businesses</a>",
+      "css": ".ds-btn-quiet{color:#fff;font-family:'Instrument Sans','Helvetica Neue',Arial,sans-serif;font-size:1rem;text-decoration:none;border-bottom:1px solid #909090;padding-bottom:.1em;transition:border-color .2s}.ds-btn-quiet:hover{border-color:#fff}.ds-btn-quiet:focus-visible{outline:1px solid #fff;outline-offset:4px}"
+    },
+    {
+      "name": "Button Pair",
+      "kind": "custom",
+      "refersTo": "button-primary",
+      "description": "One solid action beside one quiet link in a wrapping row.",
+      "html": "<div class=\"ds-cta-row\"><a class=\"ds-btn\" href=\"#\">Email us about your stack</a><a class=\"ds-btn-quiet\" href=\"#\">Read the manifesto</a></div>",
+      "css": ".ds-cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.75rem;background:#000;padding:1.5rem;font-family:'Instrument Sans','Helvetica Neue',Arial,sans-serif}.ds-cta-row .ds-btn{display:inline-block;padding:.85rem 1.4rem;background:#fff;color:#000;font-weight:500;text-decoration:none;border-radius:2px;transition:opacity .2s}.ds-cta-row .ds-btn:hover{opacity:.85}.ds-cta-row .ds-btn-quiet{color:#fff;text-decoration:none;border-bottom:1px solid #909090;padding-bottom:.1em;transition:border-color .2s}.ds-cta-row .ds-btn-quiet:hover{border-color:#fff}"
+    },
+    {
+      "name": "Header Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Sticky translucent header: flag mark and wordmark left, gray links right, white underlined call to action.",
+      "html": "<header class=\"ds-header\"><a class=\"ds-logo\" href=\"#\"><svg width=\"38\" height=\"20\" viewBox=\"0 0 38 20\" aria-hidden=\"true\"><rect width=\"38\" height=\"20\" fill=\"#BF0D3E\"/><rect y=\"3\" width=\"38\" height=\"3\" fill=\"#fff\"/><rect y=\"9\" width=\"38\" height=\"3\" fill=\"#fff\"/><rect y=\"15\" width=\"38\" height=\"3\" fill=\"#fff\"/><rect width=\"16\" height=\"11\" fill=\"#0A3168\"/></svg><span>Sovereign Source AI</span></a><nav class=\"ds-nav\"><a href=\"#\">What we build</a><a href=\"#\">For small business</a><a href=\"#\" class=\"ds-nav-cta\">Talk to us</a></nav></header>",
+      "css": ".ds-header{display:flex;align-items:center;justify-content:space-between;gap:2rem;padding:1rem 1.5rem;background:rgba(0,0,0,.85);backdrop-filter:blur(12px);border-bottom:1px solid #1a1a1a;font-family:'Instrument Sans','Helvetica Neue',Arial,sans-serif}.ds-logo{display:flex;align-items:center;gap:.75rem;color:#fff;font-size:.95rem;font-weight:500;letter-spacing:-.01em;text-decoration:none;transition:opacity .2s}.ds-logo:hover{opacity:.7}.ds-nav{display:flex;gap:2rem}.ds-nav a{color:#a3a3a3;font-size:.9rem;font-weight:450;letter-spacing:-.01em;text-decoration:none;transition:color .2s}.ds-nav a:hover{color:#fff}.ds-nav a:focus-visible{outline:1px solid #fff;outline-offset:4px}.ds-nav .ds-nav-cta{color:#fff;border-bottom:1px solid #fff;padding-bottom:.1em}"
+    },
+    {
+      "name": "Rule-Lined Rows",
+      "kind": "card",
+      "refersTo": "rule-row",
+      "description": "The universal container: number, title and description stacked under a hairline, in an N-column grid. Never a card.",
+      "html": "<ol class=\"ds-rows\"><li><span class=\"ds-num\">01</span><span class=\"ds-title\">Intent</span><span class=\"ds-desc\">What a human or institution wants to accomplish, expressed as a typed object.</span></li><li><span class=\"ds-num\">02</span><span class=\"ds-title\">Governance</span><span class=\"ds-desc\">Authority, policy, permissions and approvals, outside the model.</span></li><li><span class=\"ds-num\">03</span><span class=\"ds-title\">Decision</span><span class=\"ds-desc\">Rules, bounded models, LLM reasoning and human judgment.</span></li></ol>",
+      "css": ".ds-rows{list-style:none;margin:0;padding:1.5rem;background:#000;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:clamp(1.5rem,3vw,2.5rem);font-family:'Instrument Sans','Helvetica Neue',Arial,sans-serif}.ds-rows li{display:flex;flex-direction:column;gap:.5rem;padding:1.25rem 0 2rem;border-top:1px solid #1a1a1a}.ds-num{font-size:.75rem;font-weight:500;letter-spacing:.1em;color:#909090;font-variant-numeric:tabular-nums}.ds-title{font-size:1.2rem;font-weight:500;line-height:1.3;letter-spacing:-.02em;color:#fff}.ds-desc{font-size:.95rem;line-height:1.6;color:#a3a3a3}"
+    },
+    {
+      "name": "Guarantee Rows",
+      "kind": "custom",
+      "refersTo": "guarantee-row",
+      "description": "Definition rows in a Band Black statement band: term beside description, hairline-separated.",
+      "html": "<dl class=\"ds-guarantees\"><div><dt>You own it</dt><dd>The warehouse, code, and credentials live in accounts you control.</dd></div><div><dt>You can leave</dt><dd>Open formats and written documentation mean anyone can take over without a rebuild.</dd></div></dl>",
+      "css": ".ds-guarantees{margin:0;padding:2.5rem 1.5rem;background:#0a0a0a;border-top:1px solid #1a1a1a;border-bottom:1px solid #1a1a1a;font-family:'Instrument Sans','Helvetica Neue',Arial,sans-serif}.ds-guarantees>div{display:grid;grid-template-columns:minmax(10rem,18rem) minmax(0,1fr);column-gap:clamp(1.5rem,4vw,4rem);padding:1.25rem 0;border-top:1px solid #1a1a1a}.ds-guarantees>div:last-child{border-bottom:1px solid #1a1a1a}.ds-guarantees dt{font-size:1.2rem;font-weight:500;letter-spacing:-.02em;color:#fff}.ds-guarantees dd{margin:0;max-width:60ch;font-size:1rem;line-height:1.6;color:#a3a3a3}"
+    },
+    {
+      "name": "Time-Axis Comparison",
+      "kind": "custom",
+      "refersTo": "time-entry",
+      "description": "Signature: two columns on one clock; entries sit at real times, and the freed stretch opens on the single Flag Red rule.",
+      "html": "<div class=\"ds-monday\"><div><h3>Today</h3><ol class=\"ds-track\"><li style=\"grid-row:1/span 3\"><time>8:00</time>Export orders and paste them into the stock spreadsheet.</li><li style=\"grid-row:4/span 3\"><time>8:45</time>Match last week's payouts against the books.</li></ol></div><div><h3>With your own warehouse</h3><ol class=\"ds-track ds-yours\"><li class=\"ds-burst\" style=\"grid-row:1/span 2\"><span><time>8:00</time>Sales, payouts, and stock synced overnight.</span><span><time>8:05</time>Approve two reorder suggestions.</span></li><li class=\"ds-free\" style=\"grid-row:3/span 4\"><time>8:30</time><span class=\"ds-free-line\">The rest of the morning is yours.</span></li></ol></div></div>",
+      "css": ".ds-monday{--slot:2.25rem;display:grid;grid-template-columns:1fr 1fr;column-gap:1.5rem;padding:1.5rem;background:#000;font-family:'Instrument Sans','Helvetica Neue',Arial,sans-serif}.ds-monday h3{margin:0 0 .75rem;font-size:1.2rem;font-weight:500;letter-spacing:-.02em;color:#fff}.ds-track{list-style:none;margin:0;padding:0;display:grid;grid-template-rows:repeat(6,minmax(var(--slot),auto));background-image:repeating-linear-gradient(to bottom,#1a1a1a 0 1px,transparent 1px calc(var(--slot)*4));border-bottom:1px solid #1a1a1a}.ds-yours{border-left:1px solid #1a1a1a}.ds-monday time{display:block;font-size:.75rem;letter-spacing:.05em;color:#909090;font-variant-numeric:tabular-nums}.ds-track>li:not(.ds-burst):not(.ds-free){margin-bottom:.35rem;padding:.75rem 1rem;background:#000;border-top:1px solid #909090;border-left:1px solid #333;font-size:.95rem;line-height:1.5;color:#a3a3a3}.ds-burst{display:flex;flex-direction:column;padding:.45rem 1rem;border-top:1px solid #909090;font-size:.9rem;line-height:1.4;color:#fff}.ds-burst span{display:grid;grid-template-columns:2.75rem 1fr}.ds-burst time{display:inline}.ds-free{display:flex;flex-direction:column;gap:.5rem;padding:.75rem 1rem;border-top:1px solid #BF0D3E}.ds-free time{color:#fff}.ds-free-line{max-width:14ch;background:#000;font-size:1.6rem;line-height:1.15;letter-spacing:-.025em;color:#fff}"
+    },
+    {
+      "name": "Statement Band",
+      "kind": "custom",
+      "refersTo": "guarantee-row",
+      "description": "Full-width Band Black section of large declarative sentences in gray.",
+      "html": "<section class=\"ds-band\"><p>Intent → Decide → Constrain → Execute → Verify → Prove</p><p>Models reason. Policies authorize. Capabilities constrain. Execution acts. Audit proves.</p></section>",
+      "css": ".ds-band{display:flex;flex-direction:column;gap:2.5rem;padding:clamp(3rem,6vw,5rem) 1.5rem;background:#0a0a0a;border-top:1px solid #1a1a1a;border-bottom:1px solid #1a1a1a;font-family:'Instrument Sans','Helvetica Neue',Arial,sans-serif}.ds-band p{margin:0;font-size:clamp(1.2rem,2.5vw,1.8rem);font-weight:400;line-height:1.4;letter-spacing:-.02em;color:#a3a3a3}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Plain Declaration",
+    "overview": "**Creative North Star: \"The Plain Declaration\"**\n\nThe site is a statement printed in white on black. There are no images, no illustrations, no cards and no color fields: the argument is set in one sans family, and every structural decision is made with a 1px hairline, a change between white and gray, or a step in type size. The only atmosphere is the ghost layer, oversized lines of the manifesto set behind the page at near-invisible contrast, rotated a few degrees, fixed while the content scrolls over them.\n\nDensity is architectural rather than busy: generous vertical padding, long measures held to 46 to 70 characters, and index grids where each item is a stack of number, title and description under a top rule. The voice is declarative and plain, and the visual system matches it. Emphasis comes from moving text from gray to white, never from adding a color, a box or a badge.\n\nColor is withheld until it means something. The flag red from the US flag mark appears exactly once in the shipped CSS, as the rule that marks the moment time is handed back in the homepage's \"A Monday, twice\" comparison.",
+    "keyCharacteristics": [
+      "Pure black ground (#000000) with one slightly lifted band (#0a0a0a) for statement sections.",
+      "One typeface, Instrument Sans variable (400 to 700), with weights 400, 450 and 500 doing all the work.",
+      "Hairline rules (#1a1a1a) as the only structural device; containers are rows, never boxes.",
+      "White for what matters, gray for what supports it.",
+      "Fixed ghost text behind all content as the signature atmosphere.",
+      "Flag red as a single, sparing time marker; the flag logo carries the full flag palette."
+    ],
+    "rules": [
+      {
+        "name": "The Gray-to-White Rule",
+        "body": "Emphasis is a move from Body Gray to Type White. No highlight color, no background tint, no badge.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Red Rule",
+        "body": "Flag Red appears as a single hairline marking handed-back time. If a second red element seems needed, the composition is wrong.",
+        "section": "colors"
+      },
+      {
+        "name": "The Light Weight Rule",
+        "body": "Nothing on the site is set heavier than 500. Hierarchy comes from size and white-versus-gray, not weight.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Time Rule",
+        "body": "Every number that counts or tells time (index numbers, clock times) uses tabular numerals in Label Gray.",
+        "section": "typography"
+      },
+      {
+        "name": "The Empty Space Is the Argument Rule",
+        "body": "When a layout represents time or quantity, space is allocated to scale, and the empty stretch is left empty rather than filled.",
+        "section": "layout"
+      },
+      {
+        "name": "The No-Shadow Rule",
+        "body": "Surfaces never lift. If something needs separation, give it a hairline or a tonal band.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Masking Ground Rule",
+        "body": "Where a hairline grid runs behind content (the time axis's hour lines), the elements that must interrupt it carry a Ground Black background so the lines stop at them instead of crossing them.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** build every container as a rule-lined row: a 1px #1a1a1a top rule, open sides, no fill.",
+      "**Do** signal emphasis by moving text from Body Gray (#a3a3a3) to Type White (#ffffff).",
+      "**Do** keep weights at 400, 450 or 500, and set large text at 400 with negative tracking (-0.02em to -0.025em).",
+      "**Do** pair one solid white button with one quiet underlined link, and make the solid one the email action.",
+      "**Do** set times and index numbers in 0.75rem tabular numerals in Label Gray (#909090).",
+      "**Do** give elements that sit over a hairline grid a Ground Black background so lines stop at them.",
+      "**Do** keep motion to one authored moment per page, starting from an already-visible state, and honor reduced motion."
+    ],
+    "donts": [
+      "**Don't** use cards: no tinted or fully bordered boxes around content, no rounded panels, no shadows. Full-width Band Black statement bands are sections, not cards.",
+      "**Don't** use Flag Red (#BF0D3E) for text, fills, buttons or decoration; it is a single hairline marker.",
+      "**Don't** add a second typeface for display or body; Instrument Sans carries every role.",
+      "**Don't** set anything heavier than 500 or use radii above 2px.",
+      "**Don't** add images, icons or illustrations to carry meaning the type and rules already carry; the flag mark is the only picture.",
+      "**Don't** fill empty time or space in a scaled layout to make it look busy."
+    ]
+  }
+}
