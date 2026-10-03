@@ -119,7 +119,18 @@ body {
 .nav {
   display: flex;
   align-items: center;
-  gap: 2.5rem;
+  gap: clamp(1.25rem, 2.6vw, 2.5rem);
+}
+
+.nav a { white-space: nowrap; }
+
+/* Narrower headers keep the most useful links; the footer always lists them all. */
+@media (max-width: 1240px) {
+  .nav .nav-minor { display: none; }
+}
+
+@media (max-width: 960px) {
+  .nav .nav-mid { display: none; }
 }
 
 .nav a {
