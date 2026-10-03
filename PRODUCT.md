@@ -22,7 +22,7 @@ The small-business page (`business/`, on the `dev` branch) targets one audience 
 
 sovsrc.ai publishes the Sovereign Source AI (SSA) thesis: the manifesto and a set of architecture topic pages. Its job is to make the argument clearly enough that the right readers want to talk.
 
-Success: a reader who is convinced starts a conversation with the founder (design partner, pilot, advisory, or collaboration). The contact route is email; the address is not chosen yet (the dev page uses the placeholder `contact@email-tbd.invalid`, which must be replaced before release).
+Success: a reader who is convinced starts a conversation with the founder (design partner, pilot, advisory, or collaboration). The contact route is email: niccolox@devekko.com.
 
 ## Positioning
 
@@ -42,7 +42,7 @@ SSA is an LLM-neutral, cloud-neutral, vendor-replaceable architecture built on s
 - Folders starting with `_` and files listed in `_config.yml` `exclude` are not published.
 - Terminology: "Sovereign Source AI" (SSA), "SovSrc" / sovsrc.ai, Sovereign Skills, SSIL (Sovereign Source Intent Language), work orders, seven layers, four planes (Intention, Governance, Verification, Evidence).
 - Offer: a done-for-you build service. The founder designs and builds the warehouse, integrations, and agents in the client's own accounts, then hands over code, documentation, and access. There is no self-serve software product.
-- Open decisions: primary audience; contact email address; open-source license; trademark clearance; pricing and engagement terms (not published).
+- Open decisions: primary audience; open-source license; trademark clearance; pricing and engagement terms (not published).
 
 ## Brand Commitments
 
