@@ -63,29 +63,26 @@ def render_scan(scan: dict) -> str:
     meta = count(len(items), "story", "stories")
     if searches:
         meta += f" from {count(searches, 'search', 'searches')}"
-    parts = [f'<section class="section news-scan" id="scan-{esc(end)}">\n'
-             f'  <div class="section-inner">\n'
-             f'    <h2 class="section-heading news-week">{esc(span(start, end))}</h2>\n'
+    parts = [f'  <section class="news-scan" id="scan-{esc(end)}">\n'
+             f'    <h2>{esc(span(start, end))}</h2>\n'
              f'    <p class="news-week-meta">{esc(meta)}</p>\n']
     if not items:
-        parts.append('    <p class="section-intro">A quiet week. Nothing new met the bar.</p>\n')
+        parts.append('    <p>A quiet week. Nothing new met the bar.</p>\n')
     for key, label in THEMES.items():
         group = [i for i in items if i["theme"] == key]
         if not group:
             continue
-        parts.append(f'    <div class="news-group">\n'
-                     f'      <h3 class="news-theme">{esc(label)}</h3>\n'
-                     f'      <ul class="news-list">\n')
+        parts.append(f'    <h3 class="news-theme">{esc(label)}</h3>\n    <ul class="news-list">\n')
         for i in group:
             parts.append(
-                '        <li>\n'
-                f'          <a class="news-title" href="{esc(i["url"], quote=True)}" rel="noopener">{esc(i["title"])}</a>\n'
-                f'          <p class="news-meta">{esc(i["source"])} · '
+                '      <li>\n'
+                f'        <a class="news-title" href="{esc(i["url"], quote=True)}" rel="noopener">{esc(i["title"])}</a>\n'
+                f'        <p class="news-meta">{esc(i["source"])} · '
                 f'<time datetime="{esc(i["published"])}">{esc(short_date(i["published"]))}</time></p>\n'
-                f'          <p class="news-summary">{esc(i["summary"])}</p>\n'
-                '        </li>\n')
-        parts.append('      </ul>\n    </div>\n')
-    parts.append('  </div>\n</section>\n')
+                f'        <p class="news-summary">{esc(i["summary"])}</p>\n'
+                '      </li>\n')
+        parts.append('    </ul>\n')
+    parts.append('  </section>\n')
     return "".join(parts)
 
 
@@ -124,22 +121,20 @@ PAGE = """<!DOCTYPE html>
 </header>
 
 <main>
-
-<section class="hero news-hero">
-  <div class="hero-inner">
-    <h1 class="hero-title">News</h1>
-    <p class="hero-def">
-      What we are reading: AI sovereignty, lock-in, open models, agent governance,
-      AI supply chains, data regulation, and small businesses putting their data to work.
-    </p>
-    <p class="hero-plain">
-      An AI scan finds these each week and we check that every link opens. The summaries
-      are machine-written, so read the source before quoting anything. The sources are not.
-    </p>
-  </div>
-</section>
+<article class="prose news">
+  <h1>News</h1>
+  <p class="topic-summary">
+    What we are reading: AI sovereignty, lock-in, open models, agent governance,
+    AI supply chains, data regulation, and small businesses putting their data to work.
+  </p>
+  <p>
+    An AI scan finds these each week and we check that every link opens. The summaries
+    are machine-written, so read the source before quoting anything. The sources are not.
+  </p>
 
 {scans}
+  <a href="../index.html" class="back-link">Back to home</a>
+</article>
 </main>
 
 <footer class="footer">
