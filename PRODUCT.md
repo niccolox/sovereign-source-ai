@@ -22,7 +22,7 @@ Whether small businesses are the primary audience beyond the homepage is still o
 
 sovsrc.ai offers small businesses a done-for-you build on the Sovereign Source AI (SSA) architecture, and publishes the thesis behind it: the manifesto and a set of architecture topic pages. Its job is to make the offer and the argument clear enough that the right readers want to talk.
 
-Success: a reader who is convinced starts a conversation with the founder (design partner, pilot, advisory, or collaboration). The contact route is email: niccolox@devekko.com.
+Success: a reader who is convinced starts a conversation with the founder (design partner, pilot, advisory, or collaboration). The contact route is email: hello@sovsrc.ai on the ad landing pages (`lp/`), niccolox@devekko.com elsewhere on the site.
 
 ## Positioning
 

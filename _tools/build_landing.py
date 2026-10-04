@@ -25,7 +25,7 @@ from excluded_markets import EXCLUDED
 
 SITE = Path(__file__).resolve().parent.parent
 OUT = SITE / "lp"
-EMAIL = "niccolox@devekko.com"
+EMAIL = "hello@sovsrc.ai"
 
 # Shared across pages: what stays the customer's, and how an engagement starts.
 GUARANTEES = [
@@ -263,7 +263,7 @@ def e(text: str) -> str:
 
 
 def mailto(page: dict) -> str:
-    subject = quote(f"One task: {page['slug'].replace('-', ' ')}")
+    subject = quote(f"Book a call: {page['nav']}")
     return f"mailto:{EMAIL}?subject={subject}"
 
 
@@ -285,7 +285,7 @@ def menu(current: dict) -> str:
     items = []
     for q in PAGES:
         cur = ' aria-current="page"' if q is current else ""
-        items.append(f'      <li><a href="../{q["slug"]}/"{cur}>{e(q["nav"])}</a></li>')
+        items.append(f'        <li><a href="../{q["slug"]}/"{cur}>{e(q["nav"])}</a></li>')
     return "\n".join(items)
 
 
@@ -294,7 +294,7 @@ def render(p: dict) -> str:
     guarantees = "\n".join(
         f"      <div>\n        <dt>{e(t)}</dt>\n        <dd>{e(d)}</dd>\n      </div>" for t, d in GUARANTEES
     )
-    book = f'<a class="btn" href="{e(mailto(p))}" data-book data-book-label="Book a call">Email us about one task</a>'
+    book = f'<a class="btn" href="{e(mailto(p))}" data-book>Book a call</a>'
     address = f'<a class="btn-quiet" href="{e(mailto(p))}">or write to {EMAIL}</a>'
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -324,7 +324,7 @@ def render(p: dict) -> str:
       <span class="logo-text">Sovereign Source AI</span>
     </a>
     <nav class="nav" aria-label="Main navigation">
-      <a href="{e(mailto(p))}" class="nav-cta" data-book data-book-label="Book a call">Email us</a>
+      <a href="{e(mailto(p))}" class="nav-cta" data-book>Book a call</a>
     </nav>
   </div>
 </header>
@@ -400,22 +400,24 @@ def render(p: dict) -> str:
 </main>
 
 <footer class="footer">
-  <nav class="lp-menu" aria-labelledby="lp-menu-heading">
-    <h2 class="lp-menu-heading" id="lp-menu-heading">Other jobs we build for</h2>
-    <ul class="lp-menu-list">
-{menu(p)}
-    </ul>
-  </nav>
   <div class="footer-inner">
-    <div class="footer-brand">
-      <span class="footer-logo-text">Sovereign Source AI</span>
-      <p class="footer-tagline">sovsrc.ai</p>
+    <div class="footer-side">
+      <div class="footer-brand">
+        <span class="footer-logo-text">Sovereign Source AI</span>
+        <p class="footer-tagline">sovsrc.ai</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="../../index.html">Home</a>
+        <a href="../../business/">What we build</a>
+        <a href="../../manifesto.html">Manifesto</a>
+        <a href="mailto:{EMAIL}">{EMAIL}</a>
+      </nav>
     </div>
-    <nav class="footer-nav" aria-label="Footer navigation">
-      <a href="../../index.html">Home</a>
-      <a href="../../business/">What we build</a>
-      <a href="../../manifesto.html">Manifesto</a>
-      <a href="mailto:{EMAIL}">{EMAIL}</a>
+    <nav class="lp-menu" aria-labelledby="lp-menu-heading">
+      <h2 class="lp-menu-heading" id="lp-menu-heading">Other jobs we build for</h2>
+      <ul class="lp-menu-list">
+{menu(p)}
+      </ul>
     </nav>
   </div>
 </footer>

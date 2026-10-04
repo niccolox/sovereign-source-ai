@@ -1,7 +1,7 @@
 // Ad landing pages: point every booking button at the booking page.
 // Set BOOKING_URL once (for example a Cal.com or Calendly link). While it is
-// empty, the buttons keep their email fallback and say so ("Email us about one
-// task"); once set, each switches to its data-book-label ("Book a call").
+// empty, the buttons open an email to hello@sovsrc.ai asking for a call; once
+// set, they go to the booking page (and take their data-book-label, if any).
 // UTM and click-id parameters from the ad are passed through to the booking link.
 const BOOKING_URL = "";
 
