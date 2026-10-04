@@ -5,7 +5,8 @@ Reads research/news/data/YYYY-MM-DD.json from the svrnsrc.ai research repo
 (written by tools/news_scan/scan.py there) and renders every scan, newest
 first, grouped by theme. Only public fields are shown: title, source, date,
 summary, and link. The scanner's "why it matters" notes are internal and are
-left out.
+left out. Stories about excluded markets (ecommerce, retail, wine and other
+alcohol; see excluded_markets.py) are dropped.
 
 Usage: python3 _tools/build_news.py [DATA_DIR]
 DATA_DIR defaults to ~/Projects/svrnsrc.ai/research/news/data.
@@ -17,6 +18,8 @@ import json
 import re
 import sys
 from pathlib import Path
+
+from excluded_markets import EXCLUDED
 
 SITE = Path(__file__).resolve().parent.parent
 DATA = Path(sys.argv[1]).expanduser() if len(sys.argv) > 1 else (
@@ -157,12 +160,17 @@ PAGE = """<!DOCTYPE html>
 """
 
 
+def excluded(item: dict) -> bool:
+    """True when a story touches a market the site stays out of."""
+    return bool(EXCLUDED.search(" ".join(str(item.get(k, "")) for k in ("title", "summary", "source", "url"))))
+
+
 def main():
     files = sorted((f for f in DATA.glob("*.json") if re.fullmatch(r"\d{4}-\d{2}-\d{2}\.json", f.name)),
                    reverse=True)
     if not files:
         sys.exit(f"no scan files (YYYY-MM-DD.json) found in {DATA}")
-    scans = []
+    scans, dropped = [], 0
     for f in files:
         scan = json.loads(f.read_text())
         if not isinstance(scan.get("kept"), list) or len(scan.get("window", [])) != 2:
@@ -170,10 +178,14 @@ def main():
         for i in scan["kept"]:
             if i.get("theme") not in THEMES or not str(i.get("url", "")).startswith(("http://", "https://")):
                 sys.exit(f"{f.name}: item with unknown theme or non-web URL: {i.get('title')!r}")
+        kept = [i for i in scan["kept"] if not excluded(i)]
+        dropped += len(scan["kept"]) - len(kept)
+        scan["kept"] = kept
         scans.append(scan)
     OUT.parent.mkdir(exist_ok=True)
     OUT.write_text(PAGE.replace("{scans}", "\n".join(render_scan(s) for s in scans)))
-    print(f"wrote news/index.html from {len(scans)} scan(s), {sum(len(s['kept']) for s in scans)} items")
+    print(f"wrote news/index.html from {len(scans)} scan(s), {sum(len(s['kept']) for s in scans)} items"
+          f" ({dropped} left out as excluded markets)")
 
 
 if __name__ == "__main__":

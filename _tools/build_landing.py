@@ -18,9 +18,10 @@ Usage: python3 _tools/build_landing.py
 Jekyll skips _-prefixed folders, so this script is not published.
 """
 import html
-import re
 from pathlib import Path
 from urllib.parse import quote
+
+from excluded_markets import EXCLUDED
 
 SITE = Path(__file__).resolve().parent.parent
 OUT = SITE / "lp"
@@ -242,16 +243,6 @@ PAGES = [
         ],
     },
 ]
-
-# Out of scope for every page: ecommerce, retail, and wine or other alcohol
-# businesses (see PRODUCT.md). The build fails if any of this language appears.
-EXCLUDED = re.compile(
-    r"\b(wines?|winer(y|ies)|vineyards?|vintners?|alcohol|liquor|spirits|beverages?|brewer(y|ies)"
-    r"|e-?commerce|storefronts?|shopify|online (shop|store)s?|retail(ers?)?|skus?|reorder"
-    r"|dtc|direct.to.consumer|stock levels?|stockouts?|where.?s my order|where is my order)\b",
-    re.I,
-)
-
 
 def e(text: str) -> str:
     return html.escape(text, quote=True)
