@@ -17,7 +17,7 @@ THESIS: The homepage owns one idea: the same Monday morning, twice. It refuses t
 
 OWN-WORLD: Black ground, white display type, gray body, hairline rules, ghost text behind, flag red only as a sparing time marker. Components are rule-lined rows and a shared time axis, never cards.
 
-STORY: The visitor sees the offer, reads the SSA definition as the subheading, then watches a sample shop's morning collapse from three and a half hours of manual work to half an hour of approvals. They believe their data and agents can be theirs, and they email.
+STORY: The visitor sees the offer, reads the SSA definition as the subheading, then watches a sample contractor's morning collapse from three and a half hours of manual work to half an hour of approvals. They believe their data and agents can be theirs, and they email.
 
 FIRST VIEWPORT: Headline top left at display scale, definition as subheading beneath, email button and a quiet link to /business/ under it. The two-column Monday starts at the fold edge so its time axis is visible on first load.
 

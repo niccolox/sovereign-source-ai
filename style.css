@@ -471,6 +471,8 @@ body {
   .layers, .toc { --grid-cols: 1; }
   .ghost-line { white-space: normal; text-align: center; transform: none !important; }
   .ghost { align-items: center; }
+  /* Ad landing pages carry a single nav link, the booking action, so it stays. */
+  .lp .nav { display: flex; }
 }
 
 /* Topic pages: long-form prose */
