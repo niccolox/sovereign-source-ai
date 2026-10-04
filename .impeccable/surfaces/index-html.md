@@ -9,7 +9,7 @@ related_targets: []
 
 Scope: the sovsrc.ai homepage, rebuilt to lead with the small-business offer. Visitor mode: Persuade. The visual world is the existing site (black ground, white and gray type in Instrument Sans, rule lines, ghost background text, US flag mark); this is a new surface inside it, not a new world.
 
-Audience: small-business owners and operators running on several SaaS tools. Job: decide whether a done-for-you build (warehouse, integrations, industry agents) is worth a conversation. Action: email niccolox@devekko.com. Proof: none commercial exists; demonstrate the mechanism with a clearly labeled illustrative sample business. Constraints: no invented customers, results, prices, or timelines; keep the manifesto voice; keep the architecture, questions, topics, and claim reachable below; /business/ remains the detail page.
+Audience: small-business owners and operators running on several SaaS tools. Job: decide whether a done-for-you build (warehouse, integrations, industry agents) is worth a conversation. Action: email hello@sovsrc.ai. Proof: none commercial exists; demonstrate the mechanism with a clearly labeled illustrative sample business. Constraints: no invented customers, results, prices, or timelines; keep the manifesto voice; keep the architecture, questions, topics, and claim reachable below; /business/ remains the detail page.
 
 ## Direction contract
 
