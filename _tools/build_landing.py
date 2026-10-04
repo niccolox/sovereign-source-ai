@@ -34,6 +34,10 @@ GUARANTEES = [
     ("You can see what agents did", "Every action is recorded: what it read, what it proposed, and who approved it."),
     ("You choose the AI", "Nothing is tied to one model provider. You decide which models see what."),
 ]
+# Shown under the hero and closing buttons. Only founder-confirmed policies
+# belong here (PRODUCT.md, Offer); never add a price, duration or result.
+ASSURANCE = "The first call is free, and it's with the founder, who designs and builds every engagement."
+
 STEPS = [
     ("A call about one task", "Tell us the job that eats your week and the tools it touches. We will say plainly whether it is worth building."),
     ("Build it in your accounts", "We set up the data and connections in accounts you own, starting with the tools that task needs."),
@@ -335,6 +339,7 @@ def render(p: dict) -> str:
       {book}
       <a class="btn-quiet" href="#how-it-starts">How it starts</a>
     </div>
+    <p class="lp-assure">{e(ASSURANCE)}</p>
   </div>
 </section>
 
@@ -388,6 +393,7 @@ def render(p: dict) -> str:
       {book}
       {address}
     </div>
+    <p class="lp-assure">{e(ASSURANCE)}</p>
   </div>
 </section>
 

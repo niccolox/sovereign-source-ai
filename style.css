@@ -999,3 +999,12 @@ body {
 }
 
 @media (max-width: 480px) { .lp-menu-list { --grid-cols: 1; } }
+
+/* One line of founder-confirmed reassurance under the hero and closing buttons. */
+.lp-assure {
+  margin-top: 1rem;
+  max-width: 52ch;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}

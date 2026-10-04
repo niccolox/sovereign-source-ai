@@ -44,7 +44,7 @@ SSA is an LLM-neutral, cloud-neutral, vendor-replaceable architecture built on s
 - Work happens on the `dev` branch and is fast-forwarded to `main` to publish; GitHub Pages serves `main`.
 - Folders starting with `_` and files listed in `_config.yml` `exclude` are not published.
 - Terminology: "Sovereign Source AI" (SSA), "SovSrc" / sovsrc.ai, Sovereign Skills, SSIL (Sovereign Source Intent Language), work orders, seven layers, four planes (Intention, Governance, Verification, Evidence).
-- Offer: a done-for-you build service. The founder designs and builds the warehouse, integrations, and agents in the client's own accounts, then hands over code, documentation, and access. There is no self-serve software product.
+- Offer: a done-for-you build service. The founder designs and builds the warehouse, integrations, and agents in the client's own accounts, then hands over code, documentation, and access. There is no self-serve software product. Confirmed by the founder (2026-10-04): the first call is free, and it is with the founder, who designs and builds every engagement. The founder is not named on the site.
 - Excluded markets (since 2026-10-04): ecommerce, retail, and wine or other alcohol businesses. The site, landing pages, and ads do not target or use examples from them; `_tools/build_landing.py` fails the build if that language appears on a landing page.
 - Open decisions: whether small businesses are the primary audience beyond the homepage; open-source license (the footer currently calls SSA "a commercial open-source architecture"); trademark clearance; pricing and engagement terms (not published).
 
