@@ -1,6 +1,7 @@
-// Ad landing pages: point every "Book a call" button at the booking page.
+// Ad landing pages: point every booking button at the booking page.
 // Set BOOKING_URL once (for example a Cal.com or Calendly link). While it is
-// empty, the buttons keep their email fallback, so no page dead-ends.
+// empty, the buttons keep their email fallback and say so ("Email us about one
+// task"); once set, each switches to its data-book-label ("Book a call").
 // UTM and click-id parameters from the ad are passed through to the booking link.
 const BOOKING_URL = "";
 
@@ -13,5 +14,8 @@ const BOOKING_URL = "";
     if (/^utm_|^(gclid|fbclid)$/.test(k)) url.searchParams.set(k, v);
   }
   url.searchParams.set("utm_content", url.searchParams.get("utm_content") || location.pathname.split("/").filter(Boolean).pop());
-  document.querySelectorAll("[data-book]").forEach((a) => { a.href = url.toString(); });
+  document.querySelectorAll("[data-book]").forEach((a) => {
+    a.href = url.toString();
+    if (a.dataset.bookLabel) a.textContent = a.dataset.bookLabel;
+  });
 })();

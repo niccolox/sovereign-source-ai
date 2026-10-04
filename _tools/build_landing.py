@@ -44,7 +44,8 @@ STEPS = [
 PAGES = [
     {
         "slug": "invoices",
-        "title": "Invoices read, matched and checked before approval",
+        "title": "Invoices checked before you approve",
+        "nav": "Invoices, checked",
         "description": "We build an agent that reads incoming invoices, matches them to vendors and purchase orders, flags anything unusual, and queues them for approval.",
         "ghost": ["Read. Match. Check.", "Nothing paid twice.", "Approved by you."],
         "h1": "Invoices in, checked, ready to approve.",
@@ -64,7 +65,8 @@ PAGES = [
     },
     {
         "slug": "morning-brief",
-        "title": "A morning brief of what needs your attention today",
+        "title": "A morning brief of what needs you",
+        "nav": "A morning brief",
         "description": "We build an agent that looks across sales, jobs, cash and customer messages each morning and tells you what changed, why it matters, and what to do.",
         "ghost": ["What changed overnight?", "What matters today?", "What to do about it."],
         "h1": "What needs your attention today, on one page.",
@@ -84,7 +86,8 @@ PAGES = [
     },
     {
         "slug": "own-your-data",
-        "title": "One data warehouse for all your tools, in an account you own",
+        "title": "All your business data, in one place",
+        "nav": "Own your data",
         "description": "We connect the SaaS tools you already pay for into one data warehouse in your own account, so reports stop being spreadsheets someone rebuilds by hand.",
         "ghost": ["One copy of the truth.", "In your account.", "Yours if you leave."],
         "h1": "All your business data, in one place you own.",
@@ -104,7 +107,8 @@ PAGES = [
     },
     {
         "slug": "where-to-start",
-        "title": "AI for your business: find the one job worth automating first",
+        "title": "Find the one job AI should take on",
+        "nav": "Where AI fits",
         "description": "Not sure where AI fits in your business? Start with one conversation about the work that eats your week, and get a plain answer on whether it is worth building.",
         "ghost": ["Where does AI fit?", "Start with one task.", "A plain answer."],
         "h1": "Find the one job AI should take off your plate.",
@@ -124,7 +128,8 @@ PAGES = [
     },
     {
         "slug": "professional-services",
-        "title": "AI for professional services firms: less admin, more billable work",
+        "title": "AI for professional services firms",
+        "nav": "Professional services",
         "description": "We build agents for professional services firms: client intake, first drafts from your templates, and time and billing checks before invoices go out.",
         "ghost": ["Intake. Draft. Bill.", "From your templates.", "Reviewed by you."],
         "h1": "Less admin between you and billable work.",
@@ -144,7 +149,8 @@ PAGES = [
     },
     {
         "slug": "field-services",
-        "title": "AI for contractors and local services: quotes, scheduling, job costing",
+        "title": "AI for contractors and local services",
+        "nav": "Contractors and local services",
         "description": "We build agents for field and local service businesses: quote drafts from job notes, scheduling suggestions, review replies, and job costing tied to invoices.",
         "ghost": ["Walk the job.", "Quote the same day.", "Know what it cost."],
         "h1": "Quotes out the same day you walk the job.",
@@ -164,7 +170,8 @@ PAGES = [
     },
     {
         "slug": "compliance",
-        "title": "Compliance checks recorded, reviewed and ready for an audit",
+        "title": "Compliance checks, recorded and reviewed",
+        "nav": "Compliance checks",
         "description": "We build agents that check documents against your rules, track privacy and data requests, and keep an audit trail of what was checked, by whom, and when.",
         "ghost": ["Checked against your rules.", "Reviewed by a person.", "On file for the audit."],
         "h1": "Every check recorded. Every approval on file.",
@@ -184,7 +191,8 @@ PAGES = [
     },
     {
         "slug": "no-lock-in",
-        "title": "Use AI without handing your business to a vendor",
+        "title": "Use AI without handing over your business",
+        "nav": "AI without lock-in",
         "description": "We build AI agents on your data, in your accounts, written down so you can switch models or vendors without starting over.",
         "ghost": ["Your logic. Your data.", "Any model.", "Free to leave."],
         "h1": "Use AI without handing over your business.",
@@ -204,7 +212,8 @@ PAGES = [
     },
     {
         "slug": "knowledge-search",
-        "title": "Answers from your own documents, with the source attached",
+        "title": "Answers from your own documents",
+        "nav": "Answers from your documents",
         "description": "We build an agent that answers staff questions from your own procedures, contracts and past work, and shows exactly where each answer came from.",
         "ghost": ["Ask once.", "Answered from your files.", "Source attached."],
         "h1": "Answers from your own documents, not the internet.",
@@ -219,12 +228,13 @@ PAGES = [
         "build": [
             ("Your documents, indexed", "Procedures, contracts, price sheets and past work gathered from where they already live, in your account."),
             ("Answers with sources", "Every answer links to the document and passage it came from, so anyone can check it."),
-            ("Access you control", "People only get answers from documents they're allowed to see. Nothing is shared with a vendor's training set."),
+            ("Access you control", "People only get answers from documents they're allowed to see, and providers are set up so your documents aren't used for training."),
         ],
     },
     {
         "slug": "lead-follow-up",
-        "title": "Every inquiry answered while it's still warm",
+        "title": "Every inquiry answered while it's warm",
+        "nav": "Lead follow-up",
         "description": "We build an agent that reads each new inquiry, sorts it, drafts a reply with the right next step, and logs it in your CRM, for a person to send.",
         "ghost": ["Every inquiry.", "Answered the same day.", "Logged where it belongs."],
         "h1": "Every inquiry answered while it's still warm.",
@@ -266,13 +276,22 @@ def rows(items, num=False) -> str:
     return "\n".join(out)
 
 
+def menu(current: dict) -> str:
+    """Footer menu of every landing page; the current one is marked, not linked away from."""
+    items = []
+    for q in PAGES:
+        cur = ' aria-current="page"' if q is current else ""
+        items.append(f'      <li><a href="../{q["slug"]}/"{cur}>{e(q["nav"])}</a></li>')
+    return "\n".join(items)
+
+
 def render(p: dict) -> str:
     ghost = "\n".join(f'  <span class="ghost-line">{e(g)}</span>' for g in ["Sovereign Source AI", *p["ghost"]])
     guarantees = "\n".join(
         f"      <div>\n        <dt>{e(t)}</dt>\n        <dd>{e(d)}</dd>\n      </div>" for t, d in GUARANTEES
     )
-    book = f'<a class="btn" href="{e(mailto(p))}" data-book>Book a call</a>'
-    email = f'<a class="btn-quiet" href="{e(mailto(p))}">Or email us</a>'
+    book = f'<a class="btn" href="{e(mailto(p))}" data-book data-book-label="Book a call">Email us about one task</a>'
+    address = f'<a class="btn-quiet" href="{e(mailto(p))}">or write to {EMAIL}</a>'
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -301,7 +320,7 @@ def render(p: dict) -> str:
       <span class="logo-text">Sovereign Source AI</span>
     </a>
     <nav class="nav" aria-label="Main navigation">
-      <a href="{e(mailto(p))}" class="nav-cta" data-book>Book a call</a>
+      <a href="{e(mailto(p))}" class="nav-cta" data-book data-book-label="Book a call">Email us</a>
     </nav>
   </div>
 </header>
@@ -314,7 +333,7 @@ def render(p: dict) -> str:
     <p class="hero-sub">{e(p['sub'])}</p>
     <div class="cta-row">
       {book}
-      <a class="btn-quiet" href="#what-we-build">See what we build</a>
+      <a class="btn-quiet" href="#how-it-starts">How it starts</a>
     </div>
   </div>
 </section>
@@ -335,15 +354,7 @@ def render(p: dict) -> str:
     <ol class="layers offer">
 {rows(p['build'])}
     </ol>
-  </div>
-</section>
-
-<section class="formulations" aria-labelledby="guarantees-heading">
-  <div class="formulations-inner">
-    <h2 class="section-heading" id="guarantees-heading">Built so you are never stuck</h2>
-    <dl class="guarantees">
-{guarantees}
-    </dl>
+    <p class="lp-inline-cta"><a class="btn-quiet" href="{e(mailto(p))}" data-book data-book-label="Talk through your version of this">Tell us about your version of this</a></p>
   </div>
 </section>
 
@@ -356,17 +367,26 @@ def render(p: dict) -> str:
   </div>
 </section>
 
+<section class="formulations" aria-labelledby="guarantees-heading">
+  <div class="formulations-inner">
+    <h2 class="section-heading" id="guarantees-heading">Built so you are never stuck</h2>
+    <dl class="guarantees">
+{guarantees}
+    </dl>
+  </div>
+</section>
+
 <section class="section claim-section" id="talk">
   <div class="section-inner">
     <h2 class="section-heading">Start with one task</h2>
     <p class="claim-text">
-      Sovereign Source AI is new, so we take on a few businesses at a time. Book a call,
-      tell us the job you'd most like off your plate, and we will tell you plainly
-      whether it is worth building.
+      Sovereign Source AI is a new practice that takes on a few businesses at a time.
+      Tell us the one job you'd most like off your plate, and we will tell you plainly
+      whether it is worth building. If it isn't, we'll say so.
     </p>
     <div class="cta-row">
       {book}
-      {email}
+      {address}
     </div>
   </div>
 </section>
@@ -374,6 +394,12 @@ def render(p: dict) -> str:
 </main>
 
 <footer class="footer">
+  <nav class="lp-menu" aria-labelledby="lp-menu-heading">
+    <h2 class="lp-menu-heading" id="lp-menu-heading">Other jobs we build for</h2>
+    <ul class="lp-menu-list">
+{menu(p)}
+    </ul>
+  </nav>
   <div class="footer-inner">
     <div class="footer-brand">
       <span class="footer-logo-text">Sovereign Source AI</span>
