@@ -44,6 +44,37 @@ typography:
     fontSize: "clamp(1rem, 1.6vw, 1.1rem)"
     fontWeight: 400
     lineHeight: 1.75
+  intro:
+    fontFamily: "Instrument Sans, Helvetica Neue, Arial, sans-serif"
+    fontSize: "clamp(1.1rem, 1.8vw, 1.3rem)"
+    fontWeight: 400
+    lineHeight: 1.6
+  lead:
+    fontFamily: "Instrument Sans, Helvetica Neue, Arial, sans-serif"
+    fontSize: "1.15rem"
+    fontWeight: 400
+    lineHeight: 1.6
+  prose-h1:
+    fontFamily: "Instrument Sans, Helvetica Neue, Arial, sans-serif"
+    fontSize: "clamp(2.2rem, 4vw, 3.6rem)"
+    fontWeight: 400
+    lineHeight: 1.1
+    letterSpacing: "-0.025em"
+  prose-h2:
+    fontFamily: "Instrument Sans, Helvetica Neue, Arial, sans-serif"
+    fontSize: "clamp(1.3rem, 2.2vw, 1.7rem)"
+    fontWeight: 500
+    letterSpacing: "-0.02em"
+  ui:
+    fontFamily: "Instrument Sans, Helvetica Neue, Arial, sans-serif"
+    fontSize: "0.95rem"
+    fontWeight: 400
+    lineHeight: 1.6
+  small:
+    fontFamily: "Instrument Sans, Helvetica Neue, Arial, sans-serif"
+    fontSize: "0.85rem"
+    fontWeight: 450
+    lineHeight: 1.6
   label:
     fontFamily: "Instrument Sans, Helvetica Neue, Arial, sans-serif"
     fontSize: "0.75rem"
@@ -149,6 +180,9 @@ A near-monochrome palette: black ground, white and two grays for type, two dark 
 - **Title** (500, 1.2rem, 1.3, -0.02em): row and grid titles, column heads, guarantee terms.
 - **Body** (400, 0.95 to 1.1rem, 1.6 to 1.7): descriptions and intros in Body Gray, measure 56 to 60ch. Long-form prose runs at 1.75 line height in a 720px column.
 - **Label** (500, 0.75rem, 0.05 to 0.1em tracking, tabular numerals): two-digit index numbers, clock times, pager labels. Uppercase only for the pager's "Previous/Next" and inline lead-ins.
+
+### Type Tokens
+`style.css` carries the ramp as custom properties on `:root`: `--fs-label`, `--fs-small`, `--fs-ui`, `--fs-body`, `--fs-lead`, `--fs-title`, `--fs-prose`, `--fs-intro`, `--fs-statement`, `--fs-prose-h2`, `--fs-headline`, `--fs-prose-h1`, `--fs-display`. Every font size outside the ghost layer uses one of them; the ghost lines keep their own oversized clamps because they are atmosphere, not text. Inline code in topic prose uses `ui-monospace, SFMono-Regular, Menlo, monospace`.
 
 ### Named Rules
 **The Light Weight Rule.** Nothing on the site is set heavier than 500. Hierarchy comes from size and white-versus-gray, not weight.

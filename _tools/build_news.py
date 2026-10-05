@@ -59,6 +59,14 @@ def count(n: int, one: str, many: str) -> str:
     return f"{n} {one if n == 1 else many}"
 
 
+def display_title(title: str) -> str:
+    """Source headlines set in all capitals read as shouting; show them in sentence case."""
+    letters = [c for c in title if c.isalpha()]
+    if len(letters) > 12 and all(c.isupper() for c in letters):
+        return title[:1] + title[1:].lower()
+    return title
+
+
 def render_scan(scan: dict) -> str:
     start, end = scan["window"]
     items = scan["kept"]
@@ -79,7 +87,7 @@ def render_scan(scan: dict) -> str:
         for i in group:
             parts.append(
                 '      <li>\n'
-                f'        <a class="news-title" href="{esc(i["url"], quote=True)}" rel="noopener">{esc(i["title"])}</a>\n'
+                f'        <a class="news-title" href="{esc(i["url"], quote=True)}" rel="noopener">{esc(display_title(i["title"]))}</a>\n'
                 f'        <p class="news-meta">{esc(i["source"])} · '
                 f'<time datetime="{esc(i["published"])}">{esc(short_date(i["published"]))}</time></p>\n'
                 f'        <p class="news-summary">{esc(i["summary"])}</p>\n'

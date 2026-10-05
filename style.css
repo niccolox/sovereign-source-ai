@@ -15,6 +15,20 @@
   --font: 'Instrument Sans', 'Helvetica Neue', Arial, sans-serif;
   --maxw: 1200px;
   --gutter: clamp(1.5rem, 5vw, 4rem);
+  /* Type ramp (DESIGN.md typography). Every non-ghost size uses one of these. */
+  --fs-label: 0.75rem;
+  --fs-small: 0.85rem;
+  --fs-ui: 0.95rem;
+  --fs-body: 1rem;
+  --fs-lead: 1.15rem;
+  --fs-title: 1.2rem;
+  --fs-prose: clamp(1rem, 1.6vw, 1.1rem);
+  --fs-intro: clamp(1.1rem, 1.8vw, 1.3rem);
+  --fs-statement: clamp(1.2rem, 2.5vw, 1.8rem);
+  --fs-prose-h2: clamp(1.3rem, 2.2vw, 1.7rem);
+  --fs-headline: clamp(1.6rem, 3vw, 2.6rem);
+  --fs-prose-h1: clamp(2.2rem, 4vw, 3.6rem);
+  --fs-display: clamp(2.4rem, 5.5vw, 4.8rem);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -97,7 +111,7 @@ body {
   align-items: center;
   gap: 0.75rem;
   color: var(--text);
-  font-size: 0.95rem;
+  font-size: var(--fs-ui);
   font-weight: 500;
   letter-spacing: -0.01em;
   text-decoration: none;
@@ -136,7 +150,7 @@ body {
 
 .nav a {
   color: var(--text-dim);
-  font-size: 0.9rem;
+  font-size: var(--fs-ui);
   font-weight: 450;
   letter-spacing: -0.01em;
   text-decoration: none;
@@ -172,7 +186,7 @@ body {
 
 
 .hero-title {
-  font-size: clamp(2.4rem, 5.5vw, 4.8rem);
+  font-size: var(--fs-display);
   font-weight: 400;
   line-height: 1.08;
   letter-spacing: -0.025em;
@@ -182,7 +196,7 @@ body {
 }
 
 .hero-sub {
-  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-size: var(--fs-intro);
   color: var(--text-dim);
   line-height: 1.7;
   max-width: 10ch;
@@ -203,7 +217,7 @@ body {
 }
 
 .section-heading {
-  font-size: clamp(1.6rem, 3vw, 2.6rem);
+  font-size: var(--fs-headline);
   font-weight: 450;
   line-height: 1.15;
   letter-spacing: -0.02em;
@@ -215,13 +229,13 @@ body {
 /* Lead paragraph that opens a manifesto section */
 .lede {
   max-width: 65ch;
-  font-size: clamp(1.1rem, 1.6vw, 1.25rem);
+  font-size: var(--fs-intro);
   line-height: 1.7;
   color: var(--text-dim);
 }
 
 .section-intro {
-  font-size: 1.1rem;
+  font-size: var(--fs-lead);
   color: var(--text-dim);
   line-height: 1.7;
   max-width: 60ch;
@@ -244,7 +258,7 @@ body {
   counter-increment: q;
   position: relative;
   padding: 1rem 0 1rem 3rem;
-  font-size: 1.05rem;
+  font-size: var(--fs-body);
   color: var(--text-dim);
   line-height: 1.6;
   border-top: 1px solid var(--rule);
@@ -255,7 +269,7 @@ body {
   position: absolute;
   left: 0;
   top: 1rem;
-  font-size: 0.8rem;
+  font-size: var(--fs-label);
   font-weight: 500;
   color: var(--text-muted);
   letter-spacing: 0.05em;
@@ -274,7 +288,7 @@ body {
 }
 
 .principle {
-  font-size: 1.15rem;
+  font-size: var(--fs-lead);
   color: var(--text);
   line-height: 1.6;
   padding: 0.35rem 0;
@@ -307,7 +321,7 @@ body {
 
 .layer-num,
 .toc-num {
-  font-size: 0.75rem;
+  font-size: var(--fs-label);
   font-weight: 500;
   line-height: 1.6;
   letter-spacing: 0.1em;
@@ -317,7 +331,7 @@ body {
 
 .layer-title,
 .toc-title {
-  font-size: 1.2rem;
+  font-size: var(--fs-title);
   font-weight: 500;
   line-height: 1.3;
   letter-spacing: -0.02em;
@@ -327,7 +341,7 @@ body {
 
 .layer-desc,
 .toc-desc {
-  font-size: 0.95rem;
+  font-size: var(--fs-ui);
   line-height: 1.6;
   color: var(--text-dim);
 }
@@ -373,7 +387,7 @@ body {
 }
 
 .formulation p {
-  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  font-size: var(--fs-statement);
   font-weight: 400;
   letter-spacing: -0.02em;
   color: var(--text-dim);
@@ -385,7 +399,7 @@ body {
 .claim-section { border-top: none; }
 
 .claim-text {
-  font-size: clamp(1.3rem, 2.5vw, 1.9rem);
+  font-size: var(--fs-statement);
   font-weight: 400;
   letter-spacing: -0.02em;
   color: var(--text);
@@ -395,7 +409,7 @@ body {
 }
 
 .claim-close {
-  font-size: 1.05rem;
+  font-size: var(--fs-body);
   color: var(--text-dim);
   line-height: 1.6;
   max-width: 60ch;
@@ -426,14 +440,14 @@ body {
 }
 
 .footer-logo-text {
-  font-size: 0.9rem;
+  font-size: var(--fs-ui);
   font-weight: 500;
   color: var(--text);
   letter-spacing: -0.01em;
 }
 
 .footer-tagline {
-  font-size: 0.8rem;
+  font-size: var(--fs-small);
   color: var(--text-muted);
 }
 
@@ -445,7 +459,7 @@ body {
 
 .footer-nav a {
   color: var(--text-muted);
-  font-size: 0.85rem;
+  font-size: var(--fs-small);
   font-weight: 450;
   text-decoration: none;
   transition: color 0.2s;
@@ -453,8 +467,25 @@ body {
 
 .footer-nav a:hover { color: var(--text); }
 
+/* Small links keep their look but get a 44px tap area, on every page. */
+.nav a,
+.logo,
+.btn-quiet,
+.back-link,
+.footer-nav a,
+.lp-menu a { position: relative; }
+.nav a::after,
+.logo::after,
+.btn-quiet::after,
+.back-link::after,
+.footer-nav a::after {
+  content: "";
+  position: absolute;
+  inset: -12px -6px;
+}
+
 .footer-note {
-  font-size: 0.8rem;
+  font-size: var(--fs-small);
   color: var(--text-muted);
   line-height: 1.6;
   max-width: 70ch;
@@ -484,11 +515,11 @@ body {
   z-index: 1;
 }
 
-.prose h1 { font-size: clamp(2.2rem, 4vw, 3.6rem); font-weight: 400; letter-spacing: -0.025em; color: var(--text); line-height: 1.1; margin-bottom: 1.5rem; text-wrap: balance; }
-.prose h2 { font-size: clamp(1.3rem, 2.2vw, 1.7rem); font-weight: 500; letter-spacing: -0.02em; color: var(--text); margin: 3rem 0 0.75rem; padding-top: 1.25rem; border-top: 1px solid var(--rule); text-wrap: balance; }
-.prose p, .prose li { font-size: clamp(1rem, 1.6vw, 1.1rem); line-height: 1.75; color: var(--text-dim); }
+.prose h1 { font-size: var(--fs-prose-h1); font-weight: 400; letter-spacing: -0.025em; color: var(--text); line-height: 1.1; margin-bottom: 1.5rem; text-wrap: balance; }
+.prose h2 { font-size: var(--fs-prose-h2); font-weight: 500; letter-spacing: -0.02em; color: var(--text); margin: 3rem 0 0.75rem; padding-top: 1.25rem; border-top: 1px solid var(--rule); text-wrap: balance; }
+.prose p, .prose li { font-size: var(--fs-prose); line-height: 1.75; color: var(--text-dim); }
 .prose p { margin-bottom: 1.25rem; }
-.prose .topic-summary { font-size: clamp(1.15rem, 2vw, 1.35rem); color: var(--text); line-height: 1.6; }
+.prose .topic-summary { font-size: var(--fs-intro); color: var(--text); line-height: 1.6; }
 .prose ul, .prose ol { margin: 0 0 1.25rem 1.5rem; }
 .prose li { margin-bottom: 0.5rem; }
 .prose strong { color: var(--text); font-weight: 500; }
@@ -500,7 +531,7 @@ body {
 .prose a:hover { text-decoration-color: var(--text); }
 
 .table-wrap { overflow-x: auto; margin: 0 0 1.5rem; }
-.prose table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+.prose table { width: 100%; border-collapse: collapse; font-size: var(--fs-ui); }
 .prose th, .prose td { text-align: left; vertical-align: top; padding: 0.75rem 1rem 0.75rem 0; border-top: 1px solid var(--rule); color: var(--text-dim); line-height: 1.6; }
 .prose th { color: var(--text); font-weight: 500; border-top: none; }
 .prose td:first-child { color: var(--text); white-space: nowrap; }
@@ -517,9 +548,9 @@ body {
 .prose .pager a { display: flex; flex-direction: column; gap: 0.25rem; text-decoration: none; color: var(--text); }
 .prose .pager a:hover { opacity: 0.7; }
 .pager-next { text-align: right; align-items: flex-end; }
-.pager-label { font-size: 0.75rem; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase; }
+.pager-label { font-size: var(--fs-label); color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase; }
 
-.prose .back-link { display: inline-block; margin-top: 2rem; color: var(--text-dim); font-size: 0.9rem; text-decoration: none; border-bottom: 1px solid var(--text-muted); }
+.prose .back-link { display: inline-block; margin-top: 2rem; color: var(--text-dim); font-size: var(--fs-ui); text-decoration: none; border-bottom: 1px solid var(--text-muted); }
 .prose .back-link:hover { color: var(--text); }
 
 @media (max-width: 768px) {
@@ -552,7 +583,7 @@ body {
   padding: 0.85rem 1.4rem;
   background: var(--text);
   color: var(--bg);
-  font-size: 1rem;
+  font-size: var(--fs-body);
   font-weight: 500;
   text-decoration: none;
   border-radius: 2px;
@@ -563,7 +594,7 @@ body {
 
 .btn-quiet {
   color: var(--text);
-  font-size: 1rem;
+  font-size: var(--fs-body);
   text-decoration: none;
   border-bottom: 1px solid var(--text-muted);
   padding-bottom: 0.1em;
@@ -603,7 +634,7 @@ body {
 }
 
 .flow-label {
-  font-size: 1.2rem;
+  font-size: var(--fs-title);
   font-weight: 500;
   line-height: 1.3;
   letter-spacing: -0.02em;
@@ -611,7 +642,7 @@ body {
 }
 
 .flow-desc {
-  font-size: 0.95rem;
+  font-size: var(--fs-ui);
   line-height: 1.6;
   color: var(--text-dim);
 }
@@ -626,7 +657,7 @@ body {
 .agent-list li {
   padding: 0.6rem 0;
   border-top: 1px solid var(--rule);
-  font-size: 0.95rem;
+  font-size: var(--fs-ui);
   line-height: 1.55;
   color: var(--text-dim);
 }
@@ -651,7 +682,7 @@ body {
 .guarantees > div:last-child { border-bottom: 1px solid var(--rule); }
 
 .guarantees dt {
-  font-size: 1.2rem;
+  font-size: var(--fs-title);
   font-weight: 500;
   letter-spacing: -0.02em;
   color: var(--text);
@@ -659,7 +690,7 @@ body {
 
 .guarantees dd {
   max-width: 60ch;
-  font-size: 1rem;
+  font-size: var(--fs-body);
   line-height: 1.6;
   color: var(--text-dim);
 }
@@ -691,7 +722,7 @@ body {
   padding: clamp(2rem, 4vh, 4rem) 0 0.5rem;
 }
 
-.hero-home .hero-title { font-size: clamp(2.4rem, 4.8vw, 4.6rem); }
+.hero-home .hero-title { font-size: var(--fs-display); }
 .hero-home .cta-row { margin-top: 1.75rem; }
 
 .monday-section .section-inner { padding-top: 0.5rem; }
@@ -704,7 +735,7 @@ body {
 
 .hero-def {
   max-width: 46ch;
-  font-size: clamp(1.1rem, 1.7vw, 1.4rem);
+  font-size: var(--fs-intro);
   line-height: 1.5;
   letter-spacing: -0.01em;
   color: var(--text);
@@ -713,7 +744,7 @@ body {
 .hero-plain {
   max-width: 56ch;
   margin-top: 1rem;
-  font-size: 1.05rem;
+  font-size: var(--fs-body);
   line-height: 1.65;
   color: var(--text-dim);
 }
@@ -757,7 +788,7 @@ body {
 
 .monday-axis li {
   grid-row: calc(var(--at) + 1);
-  font-size: 0.75rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.05em;
   color: var(--text-muted);
   font-variant-numeric: tabular-nums;
@@ -767,7 +798,7 @@ body {
 
 .monday-head {
   height: var(--head);
-  font-size: 1.2rem;
+  font-size: var(--fs-title);
   font-weight: 500;
   letter-spacing: -0.02em;
   color: var(--text);
@@ -776,7 +807,7 @@ body {
 .monday-track > li { grid-row: calc(var(--at) + 1) / span var(--span); }
 
 .monday time {
-  font-size: 0.75rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.05em;
   color: var(--text-muted);
   font-variant-numeric: tabular-nums;
@@ -788,7 +819,7 @@ body {
   background: var(--bg);
   border-top: 1px solid var(--text-muted);
   border-left: 1px solid #333;
-  font-size: 0.95rem;
+  font-size: var(--fs-ui);
   line-height: 1.5;
   color: var(--text-dim);
 }
@@ -806,7 +837,7 @@ body {
   display: grid;
   grid-template-columns: 2.75rem minmax(0, 1fr);
   padding: 0.1rem 0;
-  font-size: 0.9rem;
+  font-size: var(--fs-ui);
   line-height: 1.4;
   color: var(--text);
 }
@@ -826,7 +857,7 @@ body {
 .monday-free time { color: var(--text); }
 
 .monday-free-note {
-  font-size: 0.95rem;
+  font-size: var(--fs-ui);
   color: var(--text-dim);
 }
 
@@ -835,7 +866,7 @@ body {
   margin-top: 0.75rem;
   padding: 0.15em 0;
   background: var(--bg);
-  font-size: clamp(1.5rem, 2.8vw, 2.4rem);
+  font-size: var(--fs-statement);
   line-height: 1.15;
   letter-spacing: -0.025em;
   color: var(--text);
@@ -866,6 +897,7 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
   .monday-yours.is-in .monday-burst li,
   .monday-yours.is-in .monday-free { animation: none; }
 }
@@ -877,7 +909,7 @@ body {
    ============================================================ */
 .prose .news-week-meta {
   margin: -0.25rem 0 0;
-  font-size: 0.85rem;
+  font-size: var(--fs-small);
   color: var(--text-muted);
   font-variant-numeric: tabular-nums;
 }
@@ -886,7 +918,7 @@ body {
   margin: 2.25rem 0 0;
   padding-top: 0.75rem;
   border-top: 1px solid var(--rule);
-  font-size: 0.95rem;
+  font-size: var(--fs-ui);
   font-weight: 500;
   letter-spacing: -0.01em;
   color: var(--text-muted);
@@ -902,7 +934,7 @@ body {
 
 .prose .news-title {
   display: inline;
-  font-size: 1.15rem;
+  font-size: var(--fs-lead);
   font-weight: 500;
   line-height: 1.4;
   letter-spacing: -0.01em;
@@ -919,7 +951,7 @@ body {
 
 .prose .news-meta {
   margin: 0.35rem 0 0;
-  font-size: 0.85rem;
+  font-size: var(--fs-small);
   line-height: 1.5;
   color: var(--text-muted);
 }
@@ -928,26 +960,12 @@ body {
 
 .prose .news-summary {
   margin: 0.5rem 0 0;
-  font-size: 1rem;
+  font-size: var(--fs-body);
   line-height: 1.7;
 }
 
 /* Ad landing pages (lp/, generated by _tools/build_landing.py) */
 
-/* Small links keep their look but get a 44px tap area. */
-.lp .nav-cta,
-.lp .logo,
-.lp .btn-quiet,
-.lp .footer-nav a,
-.lp .lp-menu a { position: relative; }
-.lp .nav-cta::after,
-.lp .logo::after,
-.lp .btn-quiet::after,
-.lp .footer-nav a::after {
-  content: "";
-  position: absolute;
-  inset: -12px -6px;
-}
 
 .lp .lp-inline-cta { margin-top: 0.5rem; }
 
@@ -955,7 +973,7 @@ body {
 .lp .formulations { padding: clamp(2.5rem, 6vw, 5rem) 0; }
 
 /* The ending is the promise, not the disclaimer: body size in Body Gray. */
-.lp .claim-text { font-size: clamp(1.1rem, 1.6vw, 1.25rem); color: var(--text-dim); max-width: 60ch; }
+.lp .claim-text { font-size: var(--fs-intro); color: var(--text-dim); max-width: 60ch; }
 
 /* Landing footer: brand and site links on the left, the landing menu on the right. */
 .lp .footer-inner {
@@ -968,7 +986,7 @@ body {
 .lp .footer-nav { flex-direction: column; gap: 0.75rem; }
 
 .lp-menu-heading {
-  font-size: 1.2rem;
+  font-size: var(--fs-title);
   font-weight: 500;
   letter-spacing: -0.02em;
   color: var(--text);
@@ -990,7 +1008,7 @@ body {
   padding: 0.6rem 0;
   border-top: 1px solid var(--rule);
   color: var(--text-dim);
-  font-size: 0.95rem;
+  font-size: var(--fs-ui);
   text-decoration: none;
   transition: color 0.2s;
 }
@@ -1016,7 +1034,7 @@ body {
 .lp-assure {
   margin-top: 1rem;
   max-width: 52ch;
-  font-size: 0.9rem;
+  font-size: var(--fs-ui);
   line-height: 1.5;
   color: var(--text-muted);
 }

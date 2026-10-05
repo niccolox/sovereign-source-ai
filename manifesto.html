@@ -15,20 +15,20 @@ layout: null
 <link rel="stylesheet" href="style.css">
 <style>
   .manifesto { max-width: 720px; margin: 0 auto; padding: clamp(4rem, 8vw, 7rem) var(--gutter); position: relative; z-index: 1; }
-  .manifesto p { font-size: clamp(1.05rem, 1.8vw, 1.2rem); line-height: 1.75; color: var(--text-dim); margin-bottom: 1.25rem; }
-  .manifesto h1 { font-size: clamp(2.2rem, 4vw, 3.6rem); font-weight: 400; letter-spacing: -0.025em; color: var(--text); line-height: 1.1; margin-bottom: 1rem; }
-  .manifesto h2 { font-size: clamp(1.3rem, 2.2vw, 1.7rem); font-weight: 500; letter-spacing: -0.02em; color: var(--text); margin: 2.5rem 0 0.75rem; padding-top: 1rem; border-top: 1px solid var(--rule); }
+  .manifesto p { font-size: var(--fs-prose); line-height: 1.75; color: var(--text-dim); margin-bottom: 1.25rem; }
+  .manifesto h1 { font-size: var(--fs-prose-h1); font-weight: 400; letter-spacing: -0.025em; color: var(--text); line-height: 1.1; margin-bottom: 1rem; text-wrap: balance; }
+  .manifesto h2 { font-size: var(--fs-prose-h2); font-weight: 500; letter-spacing: -0.02em; color: var(--text); margin: 2.5rem 0 0.75rem; padding-top: 1rem; border-top: 1px solid var(--rule); }
   .manifesto h2:first-child { border-top: none; margin-top: 0; padding-top: 0; }
   .manifesto em { color: var(--text); font-style: italic; }
   .manifesto strong { color: var(--text); font-weight: 500; }
   .manifesto blockquote { border-left: 2px solid var(--text-muted); padding: 0.5rem 0 0.5rem 1.5rem; margin: 1.5rem 0; color: var(--text); font-style: normal; }
   .manifesto blockquote p { color: var(--text); margin-bottom: 0.5rem; }
-  .manifesto blockquote p:last-child { margin-bottom: 0; font-size: 0.95rem; color: var(--text-dim); }
-  .manifesto .byline { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 2.5rem; letter-spacing: 0.05em; text-transform: uppercase; }
-  .manifesto .rule { border: none; border-top: 1px solid var(--rule); margin: 2rem 0; }
+  .manifesto blockquote p:last-child { margin-bottom: 0; font-size: var(--fs-ui); color: var(--text-dim); }
+  .manifesto .rule { border: none; border-top: 1px solid var(--rule); margin: 2.5rem 0 1rem; }
+  .manifesto .rule + h2 { border-top: none; margin-top: 0; padding-top: 0; }
   .manifesto ol, .manifesto ul { margin: 0 0 1.25rem 1.5rem; color: var(--text-dim); line-height: 1.75; }
   .manifesto li { margin-bottom: 0.4rem; }
-  .back-link { display: inline-block; margin-top: 2rem; color: var(--text-dim); font-size: 0.9rem; text-decoration: none; border-bottom: 1px solid var(--text-muted); transition: color 0.2s; }
+  .back-link { display: inline-block; margin-top: 2rem; color: var(--text-dim); font-size: var(--fs-ui); text-decoration: none; border-bottom: 1px solid var(--text-muted); transition: color 0.2s; }
   .back-link:hover { color: var(--text); }
 </style>
 </head>
@@ -50,9 +50,8 @@ layout: null
   </div>
 </header>
 
+<main>
 <article class="manifesto">
-  <p class="byline">Sovereign Source AI · Manifesto</p>
-
   <h1>Control of AI matters<br>more than model size.</h1>
 
   <p>The organizations that get value from AI can defend their numbers to an auditor. They can replace a vendor without a rebuild, and move a runtime without a rewrite. They can trace each artifact to an intent that they own.</p>
@@ -149,6 +148,32 @@ layout: null
 
   <a href="index.html" class="back-link">← Back to home</a>
 </article>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="footer-logo-text">Sovereign Source AI</span>
+      <p class="footer-tagline">sovsrc.ai</p>
+    </div>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="index.html#monday">The same Monday, twice</a>
+      <a href="index.html#what-we-build">What we build</a>
+      <a href="index.html#talk">Talk to us</a>
+      <a href="business/">For small business</a>
+      <a href="index.html#what-sovereign-means">What sovereign means</a>
+      <a href="index.html#the-architecture">The architecture</a>
+      <a href="index.html#topics">Topics</a>
+      <a href="news/">News</a>
+      <a href="index.html#what-it-is-not">What it is not</a>
+      <a href="index.html#the-claim">The claim</a>
+      <a href="manifesto.html" aria-current="page">The manifesto</a>
+    </nav>
+    <p class="footer-note">
+      Sovereign Source AI is a proposed commercial open-source architecture for AI systems and the infrastructure that runs them.
+    </p>
+  </div>
+</footer>
 
 </body>
 </html>
