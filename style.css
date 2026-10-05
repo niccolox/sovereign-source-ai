@@ -466,6 +466,11 @@ body {
 }
 
 .footer-nav a:hover { color: var(--text); }
+.footer-nav a[aria-current="page"] { color: var(--text); }
+
+/* Skip link: hidden until keyboard focus. */
+.skip-link { position: absolute; left: var(--gutter); top: 0.75rem; z-index: 100; background: var(--text); color: var(--bg); padding: 0.5rem 0.85rem; border-radius: 2px; font-size: var(--fs-ui); text-decoration: none; }
+.skip-link:not(:focus) { clip-path: inset(50%); width: 1px; height: 1px; padding: 0; overflow: hidden; white-space: nowrap; }
 
 /* Small links keep their look but get a 44px tap area, on every page. */
 .nav a,

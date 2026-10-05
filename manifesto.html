@@ -21,9 +21,6 @@ layout: null
   .manifesto h2:first-child { border-top: none; margin-top: 0; padding-top: 0; }
   .manifesto em { color: var(--text); font-style: italic; }
   .manifesto strong { color: var(--text); font-weight: 500; }
-  .manifesto blockquote { border-left: 2px solid var(--text-muted); padding: 0.5rem 0 0.5rem 1.5rem; margin: 1.5rem 0; color: var(--text); font-style: normal; }
-  .manifesto blockquote p { color: var(--text); margin-bottom: 0.5rem; }
-  .manifesto blockquote p:last-child { margin-bottom: 0; font-size: var(--fs-ui); color: var(--text-dim); }
   .manifesto .rule { border: none; border-top: 1px solid var(--rule); margin: 2.5rem 0 1rem; }
   .manifesto .rule + h2 { border-top: none; margin-top: 0; padding-top: 0; }
   .manifesto ol, .manifesto ul { margin: 0 0 1.25rem 1.5rem; color: var(--text-dim); line-height: 1.75; }
@@ -35,10 +32,18 @@ layout: null
   .manifesto .questions li:first-child { border-top: 1px solid var(--rule); padding-top: 1rem; }
   .manifesto .manifesto-layers li:last-child { border-bottom: 1px solid var(--rule); padding-bottom: 1rem; }
   .manifesto-layers strong { display: block; margin-bottom: 0.15rem; }
-  .manifesto .formulation-quote { margin: 1.25rem 0; }
-  .manifesto .formulation-quote p, .manifesto .formulation-quote p:last-child { font-size: var(--fs-statement); line-height: 1.45; letter-spacing: -0.02em; color: var(--text); }
-  .back-link { display: inline-block; margin-top: 2rem; color: var(--text-dim); font-size: var(--fs-ui); text-decoration: none; border-bottom: 1px solid var(--text-muted); transition: color 0.2s; }
-  .back-link:hover { color: var(--text); }
+  .manifesto-layers strong a { color: var(--text); text-decoration: none; border-bottom: 1px solid var(--text-muted); transition: border-color 0.2s; }
+  .manifesto-layers strong a:hover { border-color: var(--text); }
+  .manifesto p a { color: var(--text); text-decoration: underline; text-decoration-color: var(--text-muted); text-underline-offset: 3px; }
+  .manifesto p a:hover { text-decoration-color: var(--text); }
+  .manifesto .chain { list-style: none; counter-reset: c; margin: 1rem 0 1.5rem; border-top: 1px solid var(--rule); }
+  .manifesto .chain li { counter-increment: c; display: flex; gap: 1.25rem; align-items: baseline; margin: 0; padding: 0.55rem 0; border-bottom: 1px solid var(--rule); color: var(--text); font-size: var(--fs-prose); }
+  .manifesto .chain li::before { content: counter(c, decimal-leading-zero); min-width: 1.75rem; font-size: var(--fs-label); font-weight: 500; letter-spacing: 0.05em; color: var(--text-muted); font-variant-numeric: tabular-nums; }
+  .manifesto-after { padding-top: clamp(3rem, 6vw, 5rem); }
+  .manifesto-band .formulations-inner { max-width: 720px; }
+  .manifesto-band .section-heading { font-size: var(--fs-prose-h2); font-weight: 500; }
+  .manifesto .cta-row { margin-top: 2rem; }
+  .manifesto h2[id] { scroll-margin-top: 5rem; }
 </style>
 </head>
 <body>
@@ -49,17 +54,26 @@ layout: null
   <span class="ghost-line">A manifesto</span>
 </div>
 
-<!-- Thin header -->
+<a class="skip-link" href="#main">Skip to the manifesto</a>
+
 <header class="header">
   <div class="header-inner">
     <a href="index.html" class="logo" aria-label="Sovereign Source AI home">
       <img class="logo-mark" src="logo.svg" alt="Sovereign Source AI" height="20" width="38">
       <span class="logo-text">Sovereign Source AI</span>
     </a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html#monday" class="nav-mid">The same Monday, twice</a>
+      <a href="#the-architecture" class="nav-minor">The architecture</a>
+      <a href="index.html#topics" class="nav-minor">Topics</a>
+      <a href="news/" class="nav-minor">News</a>
+      <a href="business/">For small business</a>
+      <a href="#talk" class="nav-cta">Talk to us</a>
+    </nav>
   </div>
 </header>
 
-<main>
+<main id="main">
 <article class="manifesto">
   <h1>Control of AI matters<br>more than model size.</h1>
 
@@ -67,7 +81,7 @@ layout: null
 
   <hr class="rule">
 
-  <h2>The problem</h2>
+  <h2 id="the-problem">The problem</h2>
 
   <p>Many organizations use AI. Few of them control it.</p>
 
@@ -75,7 +89,7 @@ layout: null
 
   <p><strong>Sovereignty is a property of the full system.</strong></p>
 
-  <h2>What sovereign means</h2>
+  <h2 id="what-sovereign-means">What sovereign means</h2>
 
   <p>A system is sovereign when you can <em>own, inspect, govern, deploy, change, move, and run all of it without any single external provider.</em></p>
 
@@ -97,46 +111,59 @@ layout: null
 
   <hr class="rule">
 
-  <h2>The architecture</h2>
+  <h2 id="the-architecture">The architecture</h2>
 
   <p>Sovereign Source AI has seven layers that support each other:</p>
 
   <ol class="questions manifesto-layers">
-    <li><strong>Intent</strong> What a person or institution wants to do. It is a typed object that links to requirements, constraints, authority, and outcomes that you can measure.</li>
-    <li><strong>Governance</strong> Authority, policy, data classification, jurisdiction, model and tool permissions, network access, and approvals. Authorization is <em>outside the model</em>. A model can propose an action. It cannot give itself permission.</li>
-    <li><strong>Decision</strong> Deterministic rules, bounded models, statistical inference, LLMs that reason, and human judgment.</li>
-    <li><strong>Capability</strong> You declare each operation and its permissions. The system makes them available as Sovereign Skills and MCP-style interfaces.</li>
-    <li><strong>Execution</strong> Isolated agents, workers, workflows, services, and infrastructure.</li>
-    <li><strong>Verification</strong> Tests, evaluations, policy checks, security analysis, simulation, approvals, and measurement of outcomes. These checks change claims into evidence.</li>
-    <li><strong>Evidence</strong> Durable provenance records that link intent to decisions, actions, artifacts, releases, and outcomes.</li>
+    <li><strong><a href="topics/intent-and-ssil.html">Intent</a></strong> <span>What a person or institution wants to do. It is a typed object that links to requirements, constraints, authority, and outcomes that you can measure.</span></li>
+    <li><strong><a href="topics/governance-and-policy.html">Governance</a></strong> <span>Authority, policy, data classification, jurisdiction, model and tool permissions, network access, and approvals. Authorization is <em>outside the model</em>. A model can propose an action. It cannot give itself permission.</span></li>
+    <li><strong><a href="topics/decision-plane.html">Decision</a></strong> <span>Deterministic rules, bounded models, statistical inference, LLMs that reason, and human judgment.</span></li>
+    <li><strong><a href="topics/capabilities-skills-mcp.html">Capability</a></strong> <span>You declare each operation and its permissions. The system makes them available as Sovereign Skills and MCP-style interfaces.</span></li>
+    <li><strong><a href="topics/execution-and-runtime.html">Execution</a></strong> <span>Isolated agents, workers, workflows, services, and infrastructure.</span></li>
+    <li><strong><a href="topics/verification-and-evaluation.html">Verification</a></strong> <span>Tests, evaluations, policy checks, security analysis, simulation, approvals, and measurement of outcomes. These checks change claims into evidence.</span></li>
+    <li><strong><a href="topics/evidence-provenance-supply-chain.html">Evidence</a></strong> <span>Durable provenance records that link intent to decisions, actions, artifacts, releases, and outcomes.</span></li>
   </ol>
 
-  <p>The evidence chain is:</p>
+  <p>Each layer has a topic page. Start with the <a href="topics/architecture-overview.html">architecture overview</a>, or read how you can <a href="topics/reference-stack-and-exit.html">replace each part and leave</a>.</p>
 
-  <blockquote>
-    <p>source → observation → interpretation → intent → requirement → decision → work order → execution → artifact → verification → approval → deployment → outcome</p>
-    <p>This chain shows the full history of each artifact.</p>
-  </blockquote>
+  <p>The evidence chain shows the full history of each artifact. It has 13 steps:</p>
 
-  <hr class="rule">
+  <ol class="chain">
+    <li>source</li>
+    <li>observation</li>
+    <li>interpretation</li>
+    <li>intent</li>
+    <li>requirement</li>
+    <li>decision</li>
+    <li>work order</li>
+    <li>execution</li>
+    <li>artifact</li>
+    <li>verification</li>
+    <li>approval</li>
+    <li>deployment</li>
+    <li>outcome</li>
+  </ol>
 
-  <h2>Three formulations</h2>
+</article>
 
-  <blockquote class="formulation-quote">
-    <p>Intent → Decide → Constrain → Execute → Verify → Prove</p>
-  </blockquote>
+<section class="formulations manifesto-band" aria-labelledby="three-formulations">
+  <div class="formulations-inner">
+    <h2 class="section-heading" id="three-formulations">Three formulations</h2>
+    <blockquote class="formulation">
+      <p>Intent → Decide → Constrain → Execute → Verify → Prove</p>
+    </blockquote>
+    <blockquote class="formulation">
+      <p>Models reason. Policies authorize. Capabilities constrain. Execution acts. Audit proves.</p>
+    </blockquote>
+    <blockquote class="formulation">
+      <p>No artifact without intent. No agent without policy. No execution without isolation. No dependency without provenance. No release without evidence.</p>
+    </blockquote>
+  </div>
+</section>
 
-  <blockquote class="formulation-quote">
-    <p>Models reason. Policies authorize. Capabilities constrain. Execution acts. Audit proves.</p>
-  </blockquote>
-
-  <blockquote class="formulation-quote">
-    <p>No artifact without intent. No agent without policy. No execution without isolation. No dependency without provenance. No release without evidence.</p>
-  </blockquote>
-
-  <hr class="rule">
-
-  <h2>What it is not</h2>
+<article class="manifesto manifesto-after">
+  <h2 id="what-it-is-not">What it is not</h2>
 
   <p><strong>Sovereign Source AI is not a model.</strong> It works with any LLM, any cloud, and any vendor, and you can replace each vendor. Palantir, Payload, PostHog, MCP servers, open models, proprietary frontier models, and other products can be parts of the system. None of them owns the core model of your institution.</p>
 
@@ -144,13 +171,18 @@ layout: null
 
   <hr class="rule">
 
-  <h2>The claim</h2>
+  <h2 id="the-claim">The claim</h2>
 
-  <p>The size of a model does not decide which organizations get value from AI. The organizations that get value can defend their numbers to an auditor. They can replace a vendor without a rebuild, and move a runtime without a rewrite. They can trace each artifact to an intent that they own.</p>
+  <p>The organizations that get value from AI keep control of their data, their models, and their evidence.</p>
 
-  <p>Sovereign Source AI is the architecture for these organizations. It is open, you can move it, and you can audit it.</p>
+  <p>Sovereign Source AI is a proposed architecture for these organizations. We design it to be open, portable, and auditable.</p>
 
-  <a href="index.html" class="back-link">← Back to home</a>
+  <p>For a small business, the same rules apply at a smaller size: one warehouse that you own, and agents that you control. <a href="index.html#monday">The same Monday, twice</a> shows an example.</p>
+
+  <div class="cta-row" id="talk">
+    <a class="btn" href="mailto:hello@sovsrc.ai?subject=The%20manifesto">Email hello@sovsrc.ai</a>
+    <a class="btn-quiet" href="topics/architecture-overview.html">Read the architecture</a>
+  </div>
 </article>
 </main>
 
@@ -165,13 +197,14 @@ layout: null
       <a href="index.html#what-we-build">What we build</a>
       <a href="index.html#talk">Talk to us</a>
       <a href="business/">For small business</a>
-      <a href="index.html#what-sovereign-means">What sovereign means</a>
-      <a href="index.html#the-architecture">The architecture</a>
+      <a href="#what-sovereign-means">What sovereign means</a>
+      <a href="#the-architecture">The architecture</a>
       <a href="index.html#topics">Topics</a>
       <a href="news/">News</a>
-      <a href="index.html#what-it-is-not">What it is not</a>
-      <a href="index.html#the-claim">The claim</a>
+      <a href="#what-it-is-not">What it is not</a>
+      <a href="#the-claim">The claim</a>
       <a href="manifesto.html" aria-current="page">The manifesto</a>
+      <a href="mailto:hello@sovsrc.ai">hello@sovsrc.ai</a>
     </nav>
     <p class="footer-note">
       Sovereign Source AI is a proposed commercial open-source architecture for AI systems and the infrastructure that runs them.

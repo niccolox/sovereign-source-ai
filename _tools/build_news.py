@@ -160,6 +160,7 @@ PAGE = """<!DOCTYPE html>
       <a href="../business/">For small business</a>
       <a href="../index.html#topics">Topics</a>
       <a href="../manifesto.html">The manifesto</a>
+      <a href="mailto:hello@sovsrc.ai">hello@sovsrc.ai</a>
     </nav>
   </div>
 </footer>

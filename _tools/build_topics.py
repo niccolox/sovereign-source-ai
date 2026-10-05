@@ -173,6 +173,12 @@ PAGE = """<!DOCTYPE html>
       <span class="footer-logo-text">Sovereign Source AI</span>
       <p class="footer-tagline">sovsrc.ai</p>
     </div>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="../index.html">Home</a>
+      <a href="../manifesto.html">The manifesto</a>
+      <a href="../news/">News</a>
+      <a href="mailto:hello@sovsrc.ai">hello@sovsrc.ai</a>
+    </nav>
   </div>
 </footer>
 
