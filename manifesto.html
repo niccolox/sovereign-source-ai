@@ -14,36 +14,81 @@ layout: null
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-  .manifesto { max-width: 720px; margin: 0 auto; padding: clamp(4rem, 8vw, 7rem) var(--gutter); position: relative; z-index: 1; }
+  /* Layout: a quiet section index in the logo's column beside one reading column.
+     Parts of the argument separate by space; sections by a hairline. */
+  :root { --m-rail: 12.5rem; --m-col: 35rem; --m-gap: clamp(3rem, 6vw, 6rem); --m-part: clamp(4.5rem, 9vw, 7rem); --m-section: 3.5rem; }
+
+  .m-shell { position: relative; z-index: 1; max-width: var(--maxw); margin: 0 auto; padding: clamp(4rem, 8vw, 6.5rem) var(--gutter) clamp(4rem, 8vw, 7rem); display: grid; grid-template-columns: var(--m-rail) minmax(0, var(--m-col)); column-gap: var(--m-gap); }
+  .m-shell-after { padding-top: clamp(3.5rem, 7vw, 5.5rem); }
+  .manifesto { min-width: 0; }
+  .manifesto [id], .manifesto-band [id] { scroll-margin-top: 6rem; }
+
+  /* Section index (desktop) */
+  .m-index { position: sticky; top: 6rem; align-self: start; max-height: calc(100vh - 8rem); overflow-y: auto; font-size: var(--fs-small); }
+  .m-index ol { list-style: none; }
+  .m-index > ol > li + li { margin-top: 0.9rem; padding-top: 0.9rem; border-top: 1px solid var(--rule); }
+  .m-index-part { display: block; color: var(--text-dim); font-weight: 500; margin-bottom: 0.2rem; }
+  .m-index a { display: block; padding: 0.28rem 0; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+  .m-index a:hover, .m-index a[aria-current] { color: var(--text); }
+  .m-index .m-index-talk { display: inline-block; margin-top: 1.4rem; padding: 0 0 0.1em; color: var(--text); border-bottom: 1px solid var(--text); }
+
+  /* Contents list (below 1100px, after the lead) */
+  .m-contents { display: none; margin: 2.5rem 0 0; padding: 1.1rem 0 0; border-top: 1px solid var(--rule); font-size: var(--fs-small); }
+  .m-contents-label { display: block; color: var(--text-muted); margin-bottom: 0.5rem; }
+  .m-contents ol { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr)); column-gap: 1.5rem; }
+  .m-contents a { display: block; padding: 0.75rem 0; color: var(--text-dim); text-decoration: none; }
+  .m-contents a:hover { color: var(--text); }
+
+  /* Reading column */
+  .manifesto h1 { font-size: var(--fs-prose-h1); font-weight: 400; letter-spacing: -0.025em; color: var(--text); line-height: 1.1; margin-bottom: 1.5rem; text-wrap: balance; }
+  .manifesto .manifesto-lead { font-size: var(--fs-intro); color: var(--text); line-height: 1.6; margin-bottom: 0; }
   .manifesto p { font-size: var(--fs-prose); line-height: 1.75; color: var(--text-dim); margin-bottom: 1.25rem; }
-  .manifesto h1 { font-size: var(--fs-prose-h1); font-weight: 400; letter-spacing: -0.025em; color: var(--text); line-height: 1.1; margin-bottom: 1rem; text-wrap: balance; }
-  .manifesto h2 { font-size: var(--fs-prose-h2); font-weight: 500; letter-spacing: -0.02em; color: var(--text); margin: 2.5rem 0 0.75rem; padding-top: 1rem; border-top: 1px solid var(--rule); }
-  .manifesto h2:first-child { border-top: none; margin-top: 0; padding-top: 0; }
+  .manifesto h2 { font-size: var(--fs-prose-h2); font-weight: 500; letter-spacing: -0.02em; color: var(--text); margin: var(--m-section) 0 0.9rem; padding-top: 1.25rem; border-top: 1px solid var(--rule); text-wrap: balance; }
+  .manifesto h2.part-open { font-size: var(--fs-headline); font-weight: 450; margin-top: var(--m-part); padding-top: 1.5rem; }
+  .manifesto .manifesto-lead + h2.part-open, .m-contents + h2.part-open { margin-top: clamp(3.5rem, 7vw, 5rem); }
+  .manifesto-after h2:first-child { margin-top: 0; }
   .manifesto em { color: var(--text); font-style: italic; }
   .manifesto strong { color: var(--text); font-weight: 500; }
-  .manifesto .rule { border: none; border-top: 1px solid var(--rule); margin: 2.5rem 0 1rem; }
-  .manifesto .rule + h2 { border-top: none; margin-top: 0; padding-top: 0; }
-  .manifesto ol, .manifesto ul { margin: 0 0 1.25rem 1.5rem; color: var(--text-dim); line-height: 1.75; }
-  .manifesto li { margin-bottom: 0.4rem; }
-  .manifesto .manifesto-lead { font-size: var(--fs-intro); color: var(--text); line-height: 1.6; }
-  .manifesto .questions { margin: 1.5rem 0 1.5rem; }
-  .manifesto .questions li { margin: 0; font-size: var(--fs-prose); line-height: 1.7; }
-  .manifesto .questions li::before { top: 1.15rem; }
-  .manifesto .questions li:first-child { border-top: 1px solid var(--rule); padding-top: 1rem; }
-  .manifesto .manifesto-layers li:last-child { border-bottom: 1px solid var(--rule); padding-bottom: 1rem; }
-  .manifesto-layers strong { display: block; margin-bottom: 0.15rem; }
-  .manifesto-layers strong a { color: var(--text); text-decoration: none; border-bottom: 1px solid var(--text-muted); transition: border-color 0.2s; }
-  .manifesto-layers strong a:hover { border-color: var(--text); }
   .manifesto p a { color: var(--text); text-decoration: underline; text-decoration-color: var(--text-muted); text-underline-offset: 3px; }
   .manifesto p a:hover { text-decoration-color: var(--text); }
-  .manifesto .chain { list-style: none; counter-reset: c; margin: 1rem 0 1.5rem; border-top: 1px solid var(--rule); }
-  .manifesto .chain li { counter-increment: c; display: flex; gap: 1.25rem; align-items: baseline; margin: 0; padding: 0.55rem 0; border-bottom: 1px solid var(--rule); color: var(--text); font-size: var(--fs-prose); }
-  .manifesto .chain li::before { content: counter(c, decimal-leading-zero); min-width: 1.75rem; font-size: var(--fs-label); font-weight: 500; letter-spacing: 0.05em; color: var(--text-muted); font-variant-numeric: tabular-nums; }
-  .manifesto-after { padding-top: clamp(3rem, 6vw, 5rem); }
-  .manifesto-band .formulations-inner { max-width: 720px; }
-  .manifesto-band .section-heading { font-size: var(--fs-prose-h2); font-weight: 500; }
-  .manifesto .cta-row { margin-top: 2rem; }
-  .manifesto h2[id] { scroll-margin-top: 5rem; }
+
+  /* Seven questions and seven layers: hairline rows, numbers hung in the gutter on desktop */
+  .manifesto .questions { margin: 1.5rem 0 1.75rem; border-top: 1px solid var(--rule); }
+  .manifesto .manifesto-layers { border-bottom: 1px solid var(--rule); }
+  .manifesto .questions li { margin: 0; padding: 1rem 0 1rem 2.5rem; font-size: var(--fs-prose); line-height: 1.7; }
+  .manifesto .questions li:first-child { border-top: none; padding-top: 1rem; }
+  .manifesto .questions li:last-child { padding-bottom: 1rem; }
+  .manifesto .questions li::before { top: 1.2rem; font-variant-numeric: tabular-nums; }
+  .manifesto-layers strong { display: block; margin-bottom: 0.2rem; }
+  .manifesto-layers strong a { color: var(--text); text-decoration: none; border-bottom: 1px solid var(--text-muted); transition: border-color 0.2s; }
+  .manifesto-layers strong a:hover { border-color: var(--text); }
+
+  /* Evidence chain: one flow, read left to right */
+  .manifesto .chain { list-style: none; display: flex; flex-wrap: wrap; gap: 0.45rem 0.65rem; margin: 1rem 0 0; padding: 1.25rem 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .manifesto .chain li { color: var(--text); font-size: var(--fs-prose); line-height: 1.6; white-space: nowrap; }
+  .manifesto .chain li:not(:last-child)::after { content: "→" / ""; margin-left: 0.65rem; color: var(--text-muted); }
+
+  /* Statement band, aligned to the reading column */
+  .manifesto-band .formulations-inner { display: grid; grid-template-columns: var(--m-rail) minmax(0, var(--m-col)); column-gap: var(--m-gap); row-gap: 2.5rem; }
+  .manifesto-band .formulations-inner > * { grid-column: 2; }
+  .manifesto-band .section-heading { font-size: var(--fs-headline); font-weight: 450; }
+
+  .manifesto .cta-row { margin-top: 2.25rem; }
+
+  @media (min-width: 1100px) {
+    .manifesto .questions li { padding-left: 0; }
+    .manifesto .questions li::before { left: calc(-1 * min(var(--m-gap), 3rem)); }
+  }
+  @media (min-width: 700px) {
+    .manifesto-layers li { display: grid; grid-template-columns: 8.5rem minmax(0, 1fr); column-gap: 1.5rem; align-items: baseline; }
+    .manifesto-layers strong { margin-bottom: 0; }
+  }
+  @media (max-width: 1099px) {
+    .m-shell, .manifesto-band .formulations-inner { grid-template-columns: minmax(0, var(--m-col)); justify-content: center; }
+    .manifesto-band .formulations-inner > * { grid-column: 1; }
+    .m-index, .m-rail-space { display: none; }
+    .m-contents { display: block; }
+  }
 </style>
 </head>
 <body>
@@ -74,78 +119,118 @@ layout: null
 </header>
 
 <main id="main">
-<article class="manifesto">
-  <h1>Control of AI matters<br>more than model size.</h1>
+<div class="m-shell">
+  <nav class="m-index" aria-label="Manifesto sections">
+      <ol>
+        <li>
+          <span class="m-index-part">The case</span>
+          <ol>
+            <li><a href="#the-problem">The problem</a></li>
+            <li><a href="#what-sovereign-means">What sovereign means</a></li>
+            <li><a href="#seven-questions">Seven questions</a></li>
+          </ol>
+        </li>
+        <li>
+          <span class="m-index-part">The architecture</span>
+          <ol>
+            <li><a href="#the-architecture">Seven layers</a></li>
+            <li><a href="#evidence-chain">The evidence chain</a></li>
+          </ol>
+        </li>
+        <li>
+          <span class="m-index-part">The position</span>
+          <ol>
+            <li><a href="#three-formulations">Three formulations</a></li>
+            <li><a href="#what-it-is-not">What it is not</a></li>
+            <li><a href="#the-claim">The claim</a></li>
+          </ol>
+        </li>
+      </ol>
+      <a class="m-index-talk" href="#talk">Talk to us</a>
+    </nav>
+  <article class="manifesto">
+    <h1>Control of AI matters<br>more than model size.</h1>
 
-  <p class="manifesto-lead">The organizations that get value from AI can defend their numbers to an auditor. They can replace a vendor without a rebuild, and move a runtime without a rewrite. They can trace each artifact to an intent that they own.</p>
+    <p class="manifesto-lead">The organizations that get value from AI can defend their numbers to an auditor. They can replace a vendor without a rebuild, and move a runtime without a rewrite. They can trace each artifact to an intent that they own.</p>
 
-  <hr class="rule">
+    <nav class="m-contents" aria-label="Manifesto contents">
+      <span class="m-contents-label">Contents</span>
+      <ol>
+        <li><a href="#the-problem">The problem</a></li>
+        <li><a href="#what-sovereign-means">What sovereign means</a></li>
+        <li><a href="#seven-questions">Seven questions</a></li>
+        <li><a href="#the-architecture">Seven layers</a></li>
+        <li><a href="#evidence-chain">The evidence chain</a></li>
+        <li><a href="#three-formulations">Three formulations</a></li>
+        <li><a href="#what-it-is-not">What it is not</a></li>
+        <li><a href="#the-claim">The claim</a></li>
+        <li><a href="#talk">Talk to us</a></li>
+      </ol>
+    </nav>
 
-  <h2 id="the-problem">The problem</h2>
+    <h2 id="the-problem" class="part-open">The problem</h2>
 
-  <p>Many organizations use AI. Few of them control it.</p>
+    <p>Many organizations use AI. Few of them control it.</p>
 
-  <p>A model on your own server can still lock you in. The lock can come from APIs, identity, proprietary data, or prompts that nobody documented. It can also come from agent runtimes, workflow engines, cloud infrastructure, or one provider that you cannot replace. An open-weight model on your server does not make you sovereign. A self-hosted application does not make you sovereign.</p>
+    <p>A model on your own server can still lock you in. The lock can come from APIs, identity, proprietary data, or prompts that nobody documented. It can also come from agent runtimes, workflow engines, cloud infrastructure, or one provider that you cannot replace. An open-weight model on your server does not make you sovereign. A self-hosted application does not make you sovereign.</p>
 
-  <p><strong>Sovereignty is a property of the full system.</strong></p>
+    <p><strong>Sovereignty is a property of the full system.</strong></p>
 
-  <h2 id="what-sovereign-means">What sovereign means</h2>
+    <h2 id="what-sovereign-means">What sovereign means</h2>
 
-  <p>A system is sovereign when you can <em>own, inspect, govern, deploy, change, move, and run all of it without any single external provider.</em></p>
+    <p>A system is sovereign when you can <em>own, inspect, govern, deploy, change, move, and run all of it without any single external provider.</em></p>
 
-  <p>This covers source code, application state, data, documents, ontologies, prompts, models, embeddings, agents, skills, and tools. It covers APIs, MCP servers, workflows, dependencies, datasets, weights, infrastructure, secrets, and identity. It covers authorization, audit, provenance, evidence, deployment definitions, builds, jurisdictions, and approvals. It also covers your right to export or replace each of them.</p>
+    <p>This covers source code, application state, data, documents, ontologies, prompts, models, embeddings, agents, skills, and tools. It covers APIs, MCP servers, workflows, dependencies, datasets, weights, infrastructure, secrets, and identity. It covers authorization, audit, provenance, evidence, deployment definitions, builds, jurisdictions, and approvals. It also covers your right to export or replace each of them.</p>
 
-  <p>You can use commercial services. You must keep <strong>control and a credible way to leave.</strong></p>
+    <p>You can use commercial services. You must keep <strong>control and a credible way to leave.</strong></p>
 
-  <p>A sovereign system can answer yes to these seven questions:</p>
+    <p id="seven-questions">A sovereign system can answer yes to these seven questions:</p>
 
-  <ol class="questions">
-    <li>Can you replace the main vendor without a rebuild of the institution?</li>
-    <li>Can you move the runtime to another environment?</li>
-    <li>Can the organization keep its data and knowledge, and build them again?</li>
-    <li>Can you inspect the permissions and actions of each agent?</li>
-    <li>Can you change models and keep the same business logic?</li>
-    <li>Can critical functions run privately or in restricted networks when the rules require it?</li>
-    <li>Does the organization keep control of identity, keys, policy, authorization, provenance, and audit?</li>
-  </ol>
+    <ol class="questions">
+      <li>Can you replace the main vendor without a rebuild of the institution?</li>
+      <li>Can you move the runtime to another environment?</li>
+      <li>Can the organization keep its data and knowledge, and build them again?</li>
+      <li>Can you inspect the permissions and actions of each agent?</li>
+      <li>Can you change models and keep the same business logic?</li>
+      <li>Can critical functions run privately or in restricted networks when the rules require it?</li>
+      <li>Does the organization keep control of identity, keys, policy, authorization, provenance, and audit?</li>
+    </ol>
 
-  <hr class="rule">
+    <h2 id="the-architecture" class="part-open">The architecture</h2>
 
-  <h2 id="the-architecture">The architecture</h2>
+    <p>Sovereign Source AI has seven layers that support each other:</p>
 
-  <p>Sovereign Source AI has seven layers that support each other:</p>
+    <ol class="questions manifesto-layers">
+      <li><strong><a href="topics/intent-and-ssil.html">Intent</a></strong> <span>What a person or institution wants to do. It is a typed object that links to requirements, constraints, authority, and outcomes that you can measure.</span></li>
+      <li><strong><a href="topics/governance-and-policy.html">Governance</a></strong> <span>Authority, policy, data classification, jurisdiction, model and tool permissions, network access, and approvals. Authorization is <em>outside the model</em>. A model can propose an action. It cannot give itself permission.</span></li>
+      <li><strong><a href="topics/decision-plane.html">Decision</a></strong> <span>Deterministic rules, bounded models, statistical inference, LLMs that reason, and human judgment.</span></li>
+      <li><strong><a href="topics/capabilities-skills-mcp.html">Capability</a></strong> <span>You declare each operation and its permissions. The system makes them available as Sovereign Skills and MCP-style interfaces.</span></li>
+      <li><strong><a href="topics/execution-and-runtime.html">Execution</a></strong> <span>Isolated agents, workers, workflows, services, and infrastructure.</span></li>
+      <li><strong><a href="topics/verification-and-evaluation.html">Verification</a></strong> <span>Tests, evaluations, policy checks, security analysis, simulation, approvals, and measurement of outcomes. These checks change claims into evidence.</span></li>
+      <li><strong><a href="topics/evidence-provenance-supply-chain.html">Evidence</a></strong> <span>Durable provenance records that link intent to decisions, actions, artifacts, releases, and outcomes.</span></li>
+    </ol>
 
-  <ol class="questions manifesto-layers">
-    <li><strong><a href="topics/intent-and-ssil.html">Intent</a></strong> <span>What a person or institution wants to do. It is a typed object that links to requirements, constraints, authority, and outcomes that you can measure.</span></li>
-    <li><strong><a href="topics/governance-and-policy.html">Governance</a></strong> <span>Authority, policy, data classification, jurisdiction, model and tool permissions, network access, and approvals. Authorization is <em>outside the model</em>. A model can propose an action. It cannot give itself permission.</span></li>
-    <li><strong><a href="topics/decision-plane.html">Decision</a></strong> <span>Deterministic rules, bounded models, statistical inference, LLMs that reason, and human judgment.</span></li>
-    <li><strong><a href="topics/capabilities-skills-mcp.html">Capability</a></strong> <span>You declare each operation and its permissions. The system makes them available as Sovereign Skills and MCP-style interfaces.</span></li>
-    <li><strong><a href="topics/execution-and-runtime.html">Execution</a></strong> <span>Isolated agents, workers, workflows, services, and infrastructure.</span></li>
-    <li><strong><a href="topics/verification-and-evaluation.html">Verification</a></strong> <span>Tests, evaluations, policy checks, security analysis, simulation, approvals, and measurement of outcomes. These checks change claims into evidence.</span></li>
-    <li><strong><a href="topics/evidence-provenance-supply-chain.html">Evidence</a></strong> <span>Durable provenance records that link intent to decisions, actions, artifacts, releases, and outcomes.</span></li>
-  </ol>
+    <p>Each layer has a topic page. Start with the <a href="topics/architecture-overview.html">architecture overview</a>, or read how you can <a href="topics/reference-stack-and-exit.html">replace each part and leave</a>.</p>
 
-  <p>Each layer has a topic page. Start with the <a href="topics/architecture-overview.html">architecture overview</a>, or read how you can <a href="topics/reference-stack-and-exit.html">replace each part and leave</a>.</p>
+    <p id="evidence-chain">The evidence chain shows the full history of each artifact. It has 13 steps:</p>
 
-  <p>The evidence chain shows the full history of each artifact. It has 13 steps:</p>
-
-  <ol class="chain">
-    <li>source</li>
-    <li>observation</li>
-    <li>interpretation</li>
-    <li>intent</li>
-    <li>requirement</li>
-    <li>decision</li>
-    <li>work order</li>
-    <li>execution</li>
-    <li>artifact</li>
-    <li>verification</li>
-    <li>approval</li>
-    <li>deployment</li>
-    <li>outcome</li>
-  </ol>
-
-</article>
+    <ol class="chain">
+      <li>source</li>
+      <li>observation</li>
+      <li>interpretation</li>
+      <li>intent</li>
+      <li>requirement</li>
+      <li>decision</li>
+      <li>work order</li>
+      <li>execution</li>
+      <li>artifact</li>
+      <li>verification</li>
+      <li>approval</li>
+      <li>deployment</li>
+      <li>outcome</li>
+    </ol>
+  </article>
+</div>
 
 <section class="formulations manifesto-band" aria-labelledby="three-formulations">
   <div class="formulations-inner">
@@ -162,28 +247,29 @@ layout: null
   </div>
 </section>
 
-<article class="manifesto manifesto-after">
-  <h2 id="what-it-is-not">What it is not</h2>
+<div class="m-shell m-shell-after">
+  <div class="m-rail-space" aria-hidden="true"></div>
+  <article class="manifesto manifesto-after">
+    <h2 id="what-it-is-not">What it is not</h2>
 
-  <p><strong>Sovereign Source AI is not a model.</strong> It works with any LLM, any cloud, and any vendor, and you can replace each vendor. Palantir, Payload, PostHog, MCP servers, open models, proprietary frontier models, and other products can be parts of the system. None of them owns the core model of your institution.</p>
+    <p><strong>Sovereign Source AI is not a model.</strong> It works with any LLM, any cloud, and any vendor, and you can replace each vendor. Palantir, Payload, PostHog, MCP servers, open models, proprietary frontier models, and other products can be parts of the system. None of them owns the core model of your institution.</p>
 
-  <p><strong>Sovereign Source AI is not a compliance checkbox.</strong> It is an operating layer for your institution. It turns your knowledge, policies, requirements, authority, capabilities, markets, software, evidence, and outcomes into typed objects. You can run and audit these objects.</p>
+    <p><strong>Sovereign Source AI is not a compliance checkbox.</strong> It is an operating layer for your institution. It turns your knowledge, policies, requirements, authority, capabilities, markets, software, evidence, and outcomes into typed objects. You can run and audit these objects.</p>
 
-  <hr class="rule">
+    <h2 id="the-claim">The claim</h2>
 
-  <h2 id="the-claim">The claim</h2>
+    <p>The organizations that get value from AI keep control of their data, their models, and their evidence.</p>
 
-  <p>The organizations that get value from AI keep control of their data, their models, and their evidence.</p>
+    <p>Sovereign Source AI is a proposed architecture for these organizations. We design it to be open, portable, and auditable.</p>
 
-  <p>Sovereign Source AI is a proposed architecture for these organizations. We design it to be open, portable, and auditable.</p>
+    <p>For a small business, the same rules apply at a smaller size: one warehouse that you own, and agents that you control. <a href="index.html#monday">The same Monday, twice</a> shows an example.</p>
 
-  <p>For a small business, the same rules apply at a smaller size: one warehouse that you own, and agents that you control. <a href="index.html#monday">The same Monday, twice</a> shows an example.</p>
-
-  <div class="cta-row" id="talk">
-    <a class="btn" href="mailto:hello@sovsrc.ai?subject=The%20manifesto">Email hello@sovsrc.ai</a>
-    <a class="btn-quiet" href="topics/architecture-overview.html">Read the architecture</a>
-  </div>
-</article>
+    <div class="cta-row" id="talk">
+      <a class="btn" href="mailto:hello@sovsrc.ai?subject=The%20manifesto">Email hello@sovsrc.ai</a>
+      <a class="btn-quiet" href="topics/architecture-overview.html">Read the architecture</a>
+    </div>
+  </article>
+</div>
 </main>
 
 <footer class="footer">
@@ -211,6 +297,25 @@ layout: null
     </p>
   </div>
 </footer>
+
+<script>
+  // Mark the section in view in the index. Links work without this.
+  (function () {
+    var links = document.querySelectorAll('.m-index a[href^="#"]');
+    if (!('IntersectionObserver' in window) || !links.length) return;
+    var byId = {}, current = null;
+    links.forEach(function (a) { byId[a.getAttribute('href').slice(1)] = a; });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        if (current) current.removeAttribute('aria-current');
+        current = byId[e.target.id];
+        if (current) current.setAttribute('aria-current', 'true');
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+    Object.keys(byId).forEach(function (id) { var t = document.getElementById(id); if (t) io.observe(t); });
+  })();
+</script>
 
 </body>
 </html>
