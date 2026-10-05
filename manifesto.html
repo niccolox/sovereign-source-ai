@@ -28,6 +28,15 @@ layout: null
   .manifesto .rule + h2 { border-top: none; margin-top: 0; padding-top: 0; }
   .manifesto ol, .manifesto ul { margin: 0 0 1.25rem 1.5rem; color: var(--text-dim); line-height: 1.75; }
   .manifesto li { margin-bottom: 0.4rem; }
+  .manifesto .manifesto-lead { font-size: var(--fs-intro); color: var(--text); line-height: 1.6; }
+  .manifesto .questions { margin: 1.5rem 0 1.5rem; }
+  .manifesto .questions li { margin: 0; font-size: var(--fs-prose); line-height: 1.7; }
+  .manifesto .questions li::before { top: 1.15rem; }
+  .manifesto .questions li:first-child { border-top: 1px solid var(--rule); padding-top: 1rem; }
+  .manifesto .manifesto-layers li:last-child { border-bottom: 1px solid var(--rule); padding-bottom: 1rem; }
+  .manifesto-layers strong { display: block; margin-bottom: 0.15rem; }
+  .manifesto .formulation-quote { margin: 1.25rem 0; }
+  .manifesto .formulation-quote p, .manifesto .formulation-quote p:last-child { font-size: var(--fs-statement); line-height: 1.45; letter-spacing: -0.02em; color: var(--text); }
   .back-link { display: inline-block; margin-top: 2rem; color: var(--text-dim); font-size: var(--fs-ui); text-decoration: none; border-bottom: 1px solid var(--text-muted); transition: color 0.2s; }
   .back-link:hover { color: var(--text); }
 </style>
@@ -54,7 +63,7 @@ layout: null
 <article class="manifesto">
   <h1>Control of AI matters<br>more than model size.</h1>
 
-  <p>The organizations that get value from AI can defend their numbers to an auditor. They can replace a vendor without a rebuild, and move a runtime without a rewrite. They can trace each artifact to an intent that they own.</p>
+  <p class="manifesto-lead">The organizations that get value from AI can defend their numbers to an auditor. They can replace a vendor without a rebuild, and move a runtime without a rewrite. They can trace each artifact to an intent that they own.</p>
 
   <hr class="rule">
 
@@ -76,7 +85,7 @@ layout: null
 
   <p>A sovereign system can answer yes to these seven questions:</p>
 
-  <ol>
+  <ol class="questions">
     <li>Can you replace the main vendor without a rebuild of the institution?</li>
     <li>Can you move the runtime to another environment?</li>
     <li>Can the organization keep its data and knowledge, and build them again?</li>
@@ -92,19 +101,17 @@ layout: null
 
   <p>Sovereign Source AI has seven layers that support each other:</p>
 
-  <p><strong>1. Intent:</strong> what a person or institution wants to do. It is a typed object that links to requirements, constraints, authority, and outcomes that you can measure.</p>
+  <ol class="questions manifesto-layers">
+    <li><strong>Intent</strong> What a person or institution wants to do. It is a typed object that links to requirements, constraints, authority, and outcomes that you can measure.</li>
+    <li><strong>Governance</strong> Authority, policy, data classification, jurisdiction, model and tool permissions, network access, and approvals. Authorization is <em>outside the model</em>. A model can propose an action. It cannot give itself permission.</li>
+    <li><strong>Decision</strong> Deterministic rules, bounded models, statistical inference, LLMs that reason, and human judgment.</li>
+    <li><strong>Capability</strong> You declare each operation and its permissions. The system makes them available as Sovereign Skills and MCP-style interfaces.</li>
+    <li><strong>Execution</strong> Isolated agents, workers, workflows, services, and infrastructure.</li>
+    <li><strong>Verification</strong> Tests, evaluations, policy checks, security analysis, simulation, approvals, and measurement of outcomes. These checks change claims into evidence.</li>
+    <li><strong>Evidence</strong> Durable provenance records that link intent to decisions, actions, artifacts, releases, and outcomes.</li>
+  </ol>
 
-  <p><strong>2. Governance:</strong> authority, policy, data classification, jurisdiction, model and tool permissions, network access, and approvals. Authorization is <em>outside the model</em>. A model can propose an action. It cannot give itself permission.</p>
-
-  <p><strong>3. Decision:</strong> deterministic rules, bounded models, statistical inference, LLMs that reason, and human judgment.</p>
-
-  <p><strong>4. Capability:</strong> you declare each operation and its permissions. The system makes them available as Sovereign Skills and MCP-style interfaces.</p>
-
-  <p><strong>5. Execution:</strong> isolated agents, workers, workflows, services, and infrastructure.</p>
-
-  <p><strong>6. Verification:</strong> tests, evaluations, policy checks, security analysis, simulation, approvals, and measurement of outcomes. These checks change claims into evidence.</p>
-
-  <p><strong>7. Evidence:</strong> durable provenance records that link intent to decisions, actions, artifacts, releases, and outcomes. The chain is:</p>
+  <p>The evidence chain is:</p>
 
   <blockquote>
     <p>source → observation → interpretation → intent → requirement → decision → work order → execution → artifact → verification → approval → deployment → outcome</p>
@@ -115,19 +122,16 @@ layout: null
 
   <h2>Three formulations</h2>
 
-  <blockquote>
+  <blockquote class="formulation-quote">
     <p>Intent → Decide → Constrain → Execute → Verify → Prove</p>
-    <p></p>
   </blockquote>
 
-  <blockquote>
+  <blockquote class="formulation-quote">
     <p>Models reason. Policies authorize. Capabilities constrain. Execution acts. Audit proves.</p>
-    <p></p>
   </blockquote>
 
-  <blockquote>
+  <blockquote class="formulation-quote">
     <p>No artifact without intent. No agent without policy. No execution without isolation. No dependency without provenance. No release without evidence.</p>
-    <p></p>
   </blockquote>
 
   <hr class="rule">
