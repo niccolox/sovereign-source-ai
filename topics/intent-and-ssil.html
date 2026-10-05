@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Intent and SSIL · Sovereign Source AI</title>
-<meta name="description" content="Intent records what an institution wants to accomplish and why the work deserves to exist.">
+<meta name="description" content="Intent records what an institution wants to do and why.">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,31 +35,44 @@
 <main>
 <article class="prose topic">
   <h1>Intent and SSIL</h1>
-<p class="topic-summary">Intent records what an institution wants to accomplish and why the work deserves to exist. Sovereign Source AI represents intent as a typed object connected to evidence, requirements, constraints, authority, and measurable outcomes. Sovereign Source Intent Language, or SSIL, is the proposed declarative language for expressing those relationships. It gives downstream planning and execution a portable institutional contract that remains meaningful when models, applications, and infrastructure change.</p>
+<p class="topic-summary">Intent records what an institution wants to do and why. Sovereign Source AI stores intent as a typed object. The object links to evidence, requirements, constraints, authority, and measurable outcomes. Sovereign Source Intent Language (SSIL) is the proposed declarative language that describes these links. Later plans and execution steps use the intent as a portable contract. The contract stays valid when models, applications, or infrastructure change.</p>
 <h2 id="intent-as-a-typed-object">Intent as a typed object</h2>
-<p>An intent contains an objective, an accountable owner, an origin, supporting evidence, desired outcomes, guardrails, and a lifecycle status. Its relationships connect it to the requirements and authorizations needed to pursue that objective.</p>
-<p>For example, an organization might seek to improve fulfillment efficiency while maintaining accuracy and employee safety. Those outcomes and guardrails belong in the intent. A particular programming language, model, or execution environment belongs in later implementation choices.</p>
-<p>Typing makes these distinctions explicit. A proposed objective differs from an approved objective. A desired outcome differs from an observed result. A constraint differs from a suggestion. The system can preserve those meanings across interfaces, workflows, and organizational boundaries.</p>
-<p>A typed intent still requires interpretation and judgment. Its structure makes that interpretation inspectable and gives reviewers a defined object to accept, revise, or reject.</p>
+<p>An intent has these parts:</p>
+<ul><li>an objective</li><li>an accountable owner</li><li>an origin</li><li>the evidence that supports it</li><li>desired outcomes</li><li>guardrails</li><li>a lifecycle status</li></ul>
+<p>Its relationships connect it to the requirements and authorizations that the objective needs.</p>
+<p>For example, an organization wants more efficient fulfillment. It must also keep accuracy and employee safety. Those outcomes and guardrails go in the intent. A specific programming language, model, or execution environment is a later implementation choice.</p>
+<p>The type system keeps these differences clear:</p>
+<ul><li>a proposed objective and an approved objective</li><li>a desired outcome and an observed result</li><li>a constraint and a suggestion</li></ul>
+<p>The system keeps these differences across interfaces, workflows, and organizational boundaries.</p>
+<p>People must still interpret a typed intent and use judgment. Its structure lets reviewers examine that interpretation. It also gives them a defined object to accept, revise, or reject.</p>
 <h2 id="intent-provenance">Intent provenance</h2>
-<p>Intent can originate in documents, contracts, operational problems, analytics, regulations, events, or ordinary language. These inputs may support a candidate intent without automatically authorizing it.</p>
-<p>Provenance preserves the path from source material through observation and interpretation to the proposed objective. Human edits and approvals remain part of that path. A later reviewer can determine which evidence supported the decision and who accepted the resulting intent.</p>
-<p>This history matters when assumptions change. An institution can distinguish an objective grounded in an observed operational problem from one based on an inference that was later revised. It can also explain why a system exists without relying on a model to reconstruct missing institutional memory.</p>
+<p>Intent can come from these sources:</p>
+<ul><li>documents</li><li>contracts</li><li>operational problems</li><li>analytics</li><li>regulations</li><li>events</li><li>ordinary language</li></ul>
+<p>These sources can support a candidate intent. They do not approve it.</p>
+<p>The provenance record shows each step from the source material to the proposed objective. It includes each observation and interpretation. It also includes each human edit and approval. A later reviewer can find the evidence that supported the decision and the person who accepted the intent.</p>
+<p>If an assumption changes, reviewers use this record. They can tell an objective based on an observed operational problem from one based on an inference that someone revised later. The institution can also explain why a system exists. A model does not have to rebuild lost institutional knowledge.</p>
 <h2 id="from-intent-to-governed-work">From intent to governed work</h2>
-<p>An approved intent develops into requirements that express what must hold for the objective to be satisfied. Architecture and planning connect those requirements to capabilities and execution choices.</p>
-<p>A Sovereign Work Order is the typed, authorized unit of work that carries this context into execution. It can include outputs, policy, permitted models and tools, network limits, execution conditions, dependencies, acceptance tests, evidence requirements, approvals, and budgets.</p>
-<p>Large objectives can produce nested work orders. Each descendant retains its connection to the parent intent and receives authority that is inherited or narrowed. Decomposition does not silently create additional permission.</p>
-<p>Requirements and work orders also preserve the return path. Verification results link to requirements, and outcome evidence links to the intent. This allows an institution to assess both delivery and purpose.</p>
+<p>An approved intent becomes requirements. The requirements state the conditions that must be true for the objective to be met. Architecture and plans connect those requirements to capabilities and execution choices.</p>
+<p>A Sovereign Work Order is the typed, authorized unit of work that carries this context into execution. It can include these items:</p>
+<ul><li>outputs</li><li>policy</li><li>permitted models and tools</li><li>network limits</li><li>execution conditions</li><li>dependencies</li><li>acceptance tests</li><li>evidence requirements</li><li>approvals</li><li>budgets</li></ul>
+<p>A large objective can split into nested work orders. Each child work order stays linked to the parent intent. A child work order gets the same authority as its parent, or less. The split itself does not add any permission.</p>
+<p>Requirements and work orders also keep the return path. Verification results link to requirements, and outcome evidence links to the intent. Thus the institution can check that the work was delivered and that it met its purpose.</p>
 <h2 id="ssil-as-the-intent-language">SSIL as the intent language</h2>
-<p>SSIL describes desired outcomes together with requirements, constraints, authority, capabilities, evidence, obligations, and approvals. Its proposed execution form is:</p>
+<p>SSIL describes desired outcomes together with these items:</p>
+<ul><li>requirements</li><li>constraints</li><li>authority</li><li>capabilities</li><li>evidence</li><li>obligations</li><li>approvals</li></ul>
+<p>Its proposed execution form is:</p>
 <p><code>Intent → Requirements → Constraints → Capabilities → Authority → Plan → Actions → Evidence → Outcome</code></p>
-<p>The proposed language has four areas. SSIL-Core covers foundational objects and authority. SSIL-Flow represents dependencies and workflow state. SSIL-Market addresses offers, contracts, funding, and settlement. SSIL-Guild covers domain ontologies, credentials, reputation, and obligations.</p>
-<p>These are proposed language boundaries rather than claims of a completed standard. Their common purpose is to preserve institutional meaning as intent becomes executable work.</p>
-<h2 id="reference-implementation">Reference implementation</h2>
-<p>A reference build includes an intent registry, source and evidence links, requirement objects, authority checks, a planner, and work-order contracts.</p>
-<p>An intent compiler translates the declarative representation into policy checks, capability requirements, approval tasks, and execution obligations. Runtime adapters consume those outputs. The organization retains the original intent and its genealogy when an adapter is replaced.</p>
+<p>The proposed language has four areas:</p>
+<ul><li>SSIL-Core covers foundational objects and authority.</li><li>SSIL-Flow describes dependencies and workflow state.</li><li>SSIL-Market covers offers, contracts, funding, and settlement.</li><li>SSIL-Guild covers domain ontologies, credentials, reputation, and obligations.</li></ul>
+<p>These language areas are a proposal. They are not a completed standard. Their common purpose is to keep what the institution means as intent becomes executable work.</p>
+<h2 id="reference-build">Reference build</h2>
+<p>A reference build has these parts:</p>
+<ul><li>an intent registry</li><li>source and evidence links</li><li>requirement objects</li><li>authority checks</li><li>a planner</li><li>work-order contracts</li></ul>
+<p>An intent compiler translates the declarative form into these outputs:</p>
+<ul><li>policy checks</li><li>capability requirements</li><li>approval tasks</li><li>execution obligations</li></ul>
+<p>Runtime adapters use those outputs. If you replace an adapter, the organization keeps the original intent and its full lineage.</p>
 <h2 id="from-the-research">From the research</h2>
-<ul><li>“Intent should survive implementation changes.” Its objective remains independent of the chosen implementation. <cite>Four-plane architecture notes</cite></li><li>“Compile organizational intent into governed, portable execution.” This is the unifying proposition for SSIL. <cite>Master summary</cite></li></ul>
+<ul><li>“Intent should survive implementation changes.” Its objective stays the same when the implementation changes. <cite>Four-plane architecture notes</cite></li><li>“Compile organizational intent into governed, portable execution.” This is the central proposal of SSIL. <cite>Master summary</cite></li></ul>
 <h2 id="related">Related</h2>
 <ul><li><a href="architecture-overview.html">Architecture Overview</a></li><li><a href="governance-and-policy.html">Governance and Policy</a></li><li><a href="decision-plane.html">Decision Plane</a></li><li><a href="verification-and-evaluation.html">Verification and Evaluation</a></li><li><a href="evidence-provenance-supply-chain.html">Evidence, Provenance, and Supply Chain</a></li></ul>
   <nav class="pager" aria-label="Topic navigation">

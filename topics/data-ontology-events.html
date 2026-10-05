@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Data, Ontology, and Events · Sovereign Source AI</title>
-<meta name="description" content="The sovereign ontology gives institutional knowledge a durable structure across applications, models, and workflows.">
+<meta name="description" content="The sovereign ontology gives your institution one structure for its knowledge, and applications, models, and workflows all use it.">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,30 +35,34 @@
 <main>
 <article class="prose topic">
   <h1>Data, Ontology, and Events</h1>
-<p class="topic-summary">The sovereign ontology gives institutional knowledge a durable structure across applications, models, and workflows. It represents objects, relationships, and authorized actions while the data architecture separates current operational state from historical evidence. Governed events connect these views across time and organizational boundaries. Privacy policy determines which collection, derivation, movement, and use are permitted throughout that lifecycle.</p>
+<p class="topic-summary">The sovereign ontology gives your institution one structure for its knowledge, and applications, models, and workflows all use it. The ontology shows objects, relationships, and approved actions. The data design keeps current operational state apart from historical evidence. Governed events connect these two views across time and across the boundaries of organizations. Privacy policy states how you can collect, derive, move, and use data at each stage.</p>
 <h2 id="ontology-as-institutional-source-of-truth">Ontology as institutional source of truth</h2>
-<p>The ontology describes the institution in terms it owns. Its objects include actors, authority, intents, requirements, resources, capabilities, decisions, work orders, evidence, and outcomes. Relationships explain how those objects connect, while authorized actions define what may be done with them.</p>
-<p>This structure bridges human understanding and executable systems. An interface can display a work order, an agent can reason about it, and a workflow can act on it without making any one application the sole owner of its meaning.</p>
-<p>The ontology must survive implementation changes. Its definitions and institutional relationships remain portable when an application, model, storage system, or enterprise integration changes.</p>
+<p>The ontology describes the institution in terms that the institution owns. Relationships show how the objects connect. Approved actions state what an actor can do with the objects. The ontology objects include:</p>
+<ul><li>actors</li><li>authority</li><li>intents</li><li>requirements</li><li>resources</li><li>capabilities</li><li>decisions</li><li>work orders</li><li>evidence</li><li>outcomes</li></ul>
+<p>People and software use the same structure. An interface can show a work order, an agent can reason about it, and a workflow can act on it. No single application owns the definition of the work order.</p>
+<p>The ontology must stay the same when you change an application, model, or store. Its definitions and relationships stay portable when you change a storage system or an enterprise connector.</p>
 <h2 id="operational-state-and-historical-evidence">Operational state and historical evidence</h2>
-<p>The architecture assigns different responsibilities to different data components:</p>
-<div class="table-wrap"><table><thead><tr><th>Component</th><th>Architectural role</th></tr></thead><tbody><tr><td>Operational store</td><td>Current entities, permissions, relationships, and active state</td></tr><tr><td>Open table format</td><td>Historical analytical datasets, snapshots, and reproducible views</td></tr><tr><td>Object storage</td><td>Raw documents, datasets, artifacts, and evidence</td></tr><tr><td>Product analytics</td><td>Experience events, experiments, and outcome measurements</td></tr><tr><td>Lineage relationships</td><td>Connections among sources, derivations, decisions, and actions</td></tr></tbody></table></div>
-<p>A transactional database such as Postgres, an open table format such as Iceberg, and product analytics such as PostHog are replaceable reference choices for these roles.</p>
-<p>Historical data supports reconstruction of a decision against the data and feature state available at the time. Current operational state supports what the institution is permitted and prepared to do now. Neither should silently substitute for the other.</p>
+<p>The architecture gives each data component a different role:</p>
+<div class="table-wrap"><table><thead><tr><th>Component</th><th>Architectural role</th></tr></thead><tbody><tr><td>Operational store</td><td>Current entities, permissions, relationships, and active state</td></tr><tr><td>Open table format</td><td>Historical analytical datasets, snapshots, and reproducible views</td></tr><tr><td>Object storage</td><td>Raw documents, datasets, artifacts, and evidence</td></tr><tr><td>Product analytics</td><td>Experience events, experiments, and outcome measurements</td></tr><tr><td>Lineage relationships</td><td>Links among sources, derivations, decisions, and actions</td></tr></tbody></table></div>
+<p>We use Postgres as an example of a transactional database, Iceberg as an example of an open table format, and PostHog as an example of product analytics. You can replace each of them.</p>
+<p>Historical data lets you rebuild a decision with the data and features that existed at that time. Current operational state shows what the institution has permission and is ready to do now. Do not use historical data in place of current state, or current state in place of history.</p>
 <h2 id="observations-features-inferences-and-declarations">Observations, features, inferences, and declarations</h2>
-<p>Four classes remain distinct: raw observations, computed features, inferred attributes, and user-declared facts.</p>
-<p>An observation records something captured from a source. A feature records a derivation. An inference expresses an interpretation with uncertainty. A declaration records what a subject explicitly stated. Converting these into a single undifferentiated profile would erase distinctions needed for explanation and governance.</p>
-<p>Lineage connects source, observation, feature, inference, decision, and action. Inferences remain explainable and revocable, with their supporting observations preserved as distinct records.</p>
+<p>Keep four classes separate: raw observations, computed features, inferred attributes, and facts that a user declared.</p>
+<p>An observation records a thing that a source captured. A feature records a derivation. An inference states an interpretation with uncertainty. A declaration records what a subject stated explicitly. Do not merge these four classes into one profile. If you merge them, you cannot explain or govern the result.</p>
+<p>Lineage links the source, observation, feature, inference, decision, and action. Each inference must stay explainable, and you must be able to revoke it. The system keeps the observations behind each inference as separate records.</p>
 <h2 id="sovereign-event-architecture">Sovereign event architecture</h2>
-<p>Regional cells retain local operational authority and exchange governed events across boundaries. The architectural rule is local synchronous coordination and global asynchronous exchange.</p>
-<p>An event gateway enforces identity, message integrity, schemas, classification, access policy, provenance, and audit. Idempotency and controlled replay make repeated delivery an explicit operational concern. Crossing a regional boundary does not itself transfer authority over the receiving institution’s actions.</p>
+<p>Each regional cell keeps local operational authority and sends governed events across boundaries. The rule is synchronous coordination inside a region and asynchronous exchange between regions.</p>
+<p>An event gateway applies controls for identity, message integrity, schemas, data class, access policy, provenance, and audit. The gateway makes sure that repeated events have no extra effect (idempotency), and it controls replay. When an event goes to another region, it does not give the sender authority over the actions of the receiver.</p>
 <h2 id="privacy-as-runtime-policy">Privacy as runtime policy</h2>
-<p>Data availability does not establish permission to use it. Policy governs collection, purpose, retention, joins, inference, model access, jurisdictional movement, capability access, deletion propagation, and human review.</p>
-<p>A datum envelope can carry its source, subject, timestamp, confidence, authorization, purpose, sensitivity, permitted uses, and derivation lineage. This context allows privacy constraints to accompany data into later decisions.</p>
-<h2 id="reference-implementation">Reference implementation</h2>
-<p>A reference build combines an institutional ontology, transactional state, historical tables, raw-evidence storage, an event gateway, analytics, and externally enforced policy. Derived features and inferences retain links to their sources. Permitted capabilities consume governed views, and outcomes return through the evidence loop.</p>
+<p>If data is available, that does not mean you have permission to use it. Policy controls how you collect, keep, join, and delete data, and how you move it across jurisdictions. Policy also controls these items:</p>
+<ul><li>the purpose of the data</li><li>which inferences you can make from it</li><li>which models and capabilities can use it</li><li>how far a deletion must spread to copies and derived data</li><li>when a human must review</li></ul>
+<p>Each data item can carry a label, which is called a datum envelope. The label states the source, subject, time, confidence, authorization, purpose, sensitivity, allowed uses, and lineage of the item. Thus, privacy limits go with the data into later decisions.</p>
+<h2 id="reference-build">Reference build</h2>
+<p>A reference build has these parts:</p>
+<ul><li>an ontology for the institution</li><li>a transactional store for current state</li><li>historical tables</li><li>storage for raw evidence</li><li>an event gateway</li><li>analytics</li><li>a policy service outside the application</li></ul>
+<p>Derived features and inferences keep links to their sources. Approved capabilities use governed views. Outcomes go back into the evidence loop.</p>
 <h2 id="from-the-research">From the research</h2>
-<ul><li>“Data does not equal permission.” <cite>Master summary</cite></li><li>“Do not overwrite observations with inferences.” <cite>Master summary</cite></li><li>“Evidence changes future intention.” <cite>Four-plane architecture notes</cite></li></ul>
+<ul><li>“Data does not equal permission.” <cite>Master summary</cite></li><li>“Do not overwrite observations with inferences.” <cite>Master summary</cite></li></ul>
 <h2 id="related">Related</h2>
 <ul><li><a href="intent-and-ssil.html">Intent and SSIL</a></li><li><a href="governance-and-policy.html">Governance and Policy</a></li><li><a href="decision-plane.html">Decision Plane</a></li><li><a href="verification-and-evaluation.html">Verification and Evaluation</a></li><li><a href="evidence-provenance-supply-chain.html">Evidence, Provenance, and Supply Chain</a></li><li><a href="reference-stack-and-exit.html">Reference Stack and Exit</a></li></ul>
   <nav class="pager" aria-label="Topic navigation">

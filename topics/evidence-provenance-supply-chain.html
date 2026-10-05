@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Evidence, Provenance, and Supply Chain · Sovereign Source AI</title>
-<meta name="description" content="Evidence preserves the institution’s ability to explain why work occurred, how it was authorized, what produced an artifact, and what followed its deployment.">
+<meta name="description" content="Evidence lets an institution explain why work started, who approved it, what made each artifact, and what happened after deployment.">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,28 +35,33 @@
 <main>
 <article class="prose topic">
   <h1>Evidence, Provenance, and Supply Chain</h1>
-<p class="topic-summary">Evidence preserves the institution’s ability to explain why work occurred, how it was authorized, what produced an artifact, and what followed its deployment. Sovereign Source AI connects these records into a durable provenance chain. Software dependencies, model choices, approvals, and measured outcomes belong in that chain because each can affect trust, portability, and the ability to operate independently.</p>
+<p class="topic-summary">Evidence lets an institution explain why work started, who approved it, what made each artifact, and what happened after deployment. Sovereign Source AI links these records into one provenance chain that lasts. Software dependencies, model choices, approvals, and measured outcomes are part of that chain. Each of them can change trust, portability, and the ability of the institution to operate alone.</p>
 <h2 id="the-provenance-chain">The provenance chain</h2>
-<p>The architectural chain runs from source material through observation, interpretation, intent, requirement, decision, work order, execution, artifact, verification, approval, deployment, and outcome.</p>
-<p>Each relationship answers a different question. Intent provenance explains why the work existed. Execution provenance identifies the actors, models, capabilities, environments, and dependencies involved. Release provenance connects the approved artifact to its verification and deployment. Outcome provenance records what happened after the change reached use.</p>
-<p>These objects should remain distinct. An observation is not automatically evidence for every claim. An interpretation is not an observation, and a hypothesis is not a decision. Keeping those distinctions allows later reviewers to examine how conclusions were reached instead of accepting a single retrospective narrative.</p>
+<p>The chain has 13 steps, from the source to the outcome:</p>
+<ol><li>source material</li><li>observation</li><li>interpretation</li><li>intent</li><li>requirement</li><li>decision</li><li>work order</li><li>execution</li><li>artifact</li><li>verification</li><li>approval</li><li>deployment</li><li>outcome</li></ol>
+<p>Each link answers a different question. Intent provenance explains why the work existed. Execution provenance identifies the actors, models, capabilities, environments, and dependencies that took part. Release provenance links the approved artifact to its verification and deployment. Outcome provenance records what happened after the change went into use.</p>
+<p>Keep observations, interpretations, hypotheses, and decisions as separate records. An observation is not automatically evidence for each claim. With separate records, later reviewers can examine how the team got to each conclusion. They do not have to accept one story that someone wrote after the event.</p>
 <h2 id="ai-bom-and-inspector">AI-BOM and Inspector</h2>
-<p>An AI Bill of Materials extends component visibility across the AI application. Its scope can include models, providers, datasets, weights, licenses, libraries, prompts, agents, tools, APIs, infrastructure, jurisdictions, operators, policies, vulnerabilities, and attestations.</p>
-<p>The proposed Sovereign Source Inspector discovers and relates these components. Its outputs include an AI-BOM, dependency and tool relationships, policy findings, provenance records, and portability risks.</p>
-<p>This inventory supports procurement, governance, security review, and replacement planning. It establishes what the application depends on and where further evidence is needed. It does not by itself prove that every dependency is acceptable or that every observed action was authorized.</p>
+<p>An AI Bill of Materials (AI-BOM) shows the components of an AI application. An AI-BOM can list the models, data, code, tools, and infrastructure that the application uses. The full scope can include:</p>
+<ul><li>models</li><li>providers</li><li>datasets</li><li>weights</li><li>licenses</li><li>libraries</li><li>prompts</li><li>agents</li><li>tools</li><li>APIs</li><li>infrastructure</li><li>jurisdictions</li><li>operators</li><li>policies</li><li>vulnerabilities</li><li>attestations</li></ul>
+<p>The proposed Sovereign Source Inspector finds these components and shows how they relate. Its outputs include an AI-BOM, the relationships between dependencies and tools, policy findings, provenance records, and portability risks.</p>
+<p>This inventory helps with procurement, governance, security review, and plans to replace components. It shows what the application depends on and where you need more evidence. The inventory does not prove that each dependency is acceptable or that each observed action had approval.</p>
 <h2 id="software-supply-chain-evidence">Software supply-chain evidence</h2>
-<p>The target software chain links intent and source to dependency resolution, reproducible builds, component inventories, tests, policy checks, provenance attestations, signatures, artifacts, and deployment evidence.</p>
-<p>Each component serves a specific purpose. Dependency records expose inputs. Build provenance describes production. Verification records support acceptance claims. Signatures connect an artifact to a signing authority. Deployment evidence identifies what actually entered operation.</p>
-<p>A signed artifact still needs meaningful supporting evidence. Signing and release authority remain separate from disposable workers so that an execution environment cannot independently approve its own output.</p>
-<p>Licensing is another part of this record. Code licenses, source-available commercial modules, hosted services, support offerings, and trademarks are separate concerns. The proposed Sovereign Source License remains a concept in the research; its name does not establish recognized open-source status. Clear licensing boundaries help institutions understand what they may inspect, modify, distribute, and independently operate.</p>
+<p>The target software chain links intent and source to the build, the tests, the signatures, and the deployment. The full chain has these parts:</p>
+<ul><li>dependency resolution</li><li>reproducible builds</li><li>component inventories</li><li>tests</li><li>policy checks</li><li>provenance attestations</li><li>signatures</li><li>artifacts</li><li>deployment evidence</li></ul>
+<p>Each component has one purpose. Dependency records show the inputs. Build provenance describes how the build made the artifact. Verification records support claims that the artifact is acceptable. Signatures link an artifact to the authority that signed it. Deployment evidence shows what went into operation.</p>
+<p>A signed artifact also needs evidence. The authorities that sign and release artifacts stay separate from disposable workers. Thus, an execution environment cannot approve its own output.</p>
+<p>Licenses are also part of this record. Code licenses, source-available commercial modules, hosted services, support, and trademarks are different things. Each needs its own record. The proposed Sovereign Source License is only a concept in the research. Its name does not make it a recognized open-source license. Clear license boundaries help institutions know what they can inspect, change, distribute, and operate alone.</p>
 <h2 id="outcome-provenance">Outcome provenance</h2>
-<p>Software genealogy explains where an artifact came from. Outcome provenance extends that account through release, experience, and institutional results.</p>
-<p>A release can connect to feature exposure, experiments, observed behavior, and measured outcomes. Those relationships make it possible to examine what followed deployment and what evidence supports a claimed benefit. They also preserve the distinction between an observed change and an interpretation of its cause.</p>
-<h2 id="reference-implementation">Reference implementation</h2>
-<p>A reference build combines a provenance graph, artifact and raw-evidence storage, component inventories, verification records, approval records, and a trusted signing process. Current operational views provide convenient access while historical records preserve the context of past decisions.</p>
-<p>Evidence feeds subsequent planning. New intent can cite prior outcomes, failed acceptance conditions, or discovered dependencies, allowing institutional learning to retain its sources.</p>
+<p>Software genealogy explains where an artifact came from. Outcome provenance follows the artifact further, through release, user experience, and results for the institution.</p>
+<p>A release can link to feature exposure, experiments, observed behavior, and measured outcomes. With these links, you can see what happened after deployment and check the evidence for each claimed benefit. These links also keep an observed change separate from an interpretation of its cause.</p>
+<h2 id="reference-build">Reference build</h2>
+<p>A reference build has these parts:</p>
+<ul><li>a provenance graph</li><li>storage for artifacts and raw evidence</li><li>component inventories</li><li>verification records</li><li>approval records</li><li>a trusted process that signs artifacts</li></ul>
+<p>Current operational views give quick access. Historical records keep the context of past decisions.</p>
+<p>Evidence goes into the next plan. A new intent can cite past outcomes, failed acceptance conditions, or dependencies that the team found. Thus, the institution keeps the source of each thing that it learned.</p>
 <h2 id="from-the-research">From the research</h2>
-<ul><li>“No dependency without provenance. No release without evidence.” <cite>Manifesto</cite></li><li>Outcome provenance asks, “What happened because we deployed it?” <cite>Four-plane architecture notes</cite></li><li>Inspector is proposed as an initial product that generates an AI-BOM and exposes sovereignty and portability findings. <cite>Master summary</cite></li></ul>
+<ul><li>“No dependency without provenance. No release without evidence.” <cite>Manifesto</cite></li><li>Outcome provenance asks, “What happened because we deployed it?” <cite>Four-plane architecture notes</cite></li><li>The research proposes Inspector as an initial product. Inspector makes an AI-BOM and shows sovereignty and portability findings. <cite>Master summary</cite></li></ul>
 <h2 id="related">Related</h2>
 <ul><li><a href="intent-and-ssil.html">Intent and SSIL</a></li><li><a href="capabilities-skills-mcp.html">Capabilities and Sovereign Skills</a></li><li><a href="execution-and-runtime.html">Execution and Runtime</a></li><li><a href="verification-and-evaluation.html">Verification and Evaluation</a></li><li><a href="data-ontology-events.html">Data, Ontology, and Events</a></li><li><a href="reference-stack-and-exit.html">Reference Stack and Exit</a></li></ul>
   <nav class="pager" aria-label="Topic navigation">

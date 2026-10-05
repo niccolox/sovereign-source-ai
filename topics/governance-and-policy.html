@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Governance and Policy · Sovereign Source AI</title>
-<meta name="description" content="Governance establishes who may act, what they may do, and which conditions must hold.">
+<meta name="description" content="Governance sets who can act, what they can do, and which conditions must be true.">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,30 +35,39 @@
 <main>
 <article class="prose topic">
   <h1>Governance and Policy</h1>
-<p class="topic-summary">Governance establishes who may act, what they may do, and which conditions must hold. Sovereign Source AI places authorization outside the model and represents authority, policy, classification, jurisdiction, and approvals as explicit institutional objects. These controls govern humans, agents, capabilities, execution environments, and releases. Their purpose is to retain organizational authority while allowing replaceable reasoning systems and workers to perform useful, bounded work.</p>
+<p class="topic-summary">Governance sets who can act, what they can do, and which conditions must be true. A policy system outside the model decides what is authorized. In Sovereign Source AI, authority, policy, classification, jurisdiction, and approvals are explicit institutional records. These records control people, agents, capabilities, and releases. They keep authority with the organization. Models and workers can change, and they do only the limited work that policy permits.</p>
 <h2 id="authority-outside-the-model">Authority outside the model</h2>
-<p>A model may interpret information, propose a plan, or recommend an action. Its output does not grant permission to perform that action. Authorization belongs to an external policy boundary that evaluates the actor, requested operation, affected resources, applicable constraints, and required approvals.</p>
-<p>This separation makes authority structural. A persuasive response, an injected instruction, or a confident prediction cannot substitute for an authorization decision. Tool access must be explicitly granted, and execution must remain within the granted capability.</p>
-<p>Policy also applies before reasoning begins. It determines which information may enter a model context and which providers may process it. A later action gate cannot undo an earlier unauthorized disclosure.</p>
+<p>A model can examine information, propose a plan, or recommend an action. Its output does not give permission to do that action. A policy system outside the model decides what is authorized. This policy system examines these items:</p>
+<ul><li>the actor</li><li>the requested operation</li><li>the affected resources</li><li>the applicable constraints</li><li>the required approvals</li></ul>
+<p>The model cannot change who has authority. A persuasive response, an injected instruction, or a confident prediction cannot authorize an action. The platform must grant each tool access explicitly. Execution must stay inside the granted capability.</p>
+<p>Policy also applies before the model starts to reason. It decides which information can go into a model context and which providers can process that information. If the system sends data to a model without permission, a later action gate cannot take that data back.</p>
 <h2 id="classification-purpose-and-jurisdiction">Classification, purpose, and jurisdiction</h2>
-<p>Classification describes the sensitivity and permitted handling of information. Jurisdiction influences where data may be processed, where execution may occur, and which organizational rules apply.</p>
-<p>The source architecture proposes routing public information to approved external providers where appropriate, internal information to private or approved providers, and restricted information to local processing. These are representative policy choices. Each institution must express its applicable rules explicitly.</p>
-<p>Possessing data does not establish permission to use it. Policy can govern collection, purpose, retention, joins, inference, model access, permitted capabilities, deletion propagation, and review. Derived information carries lineage and handling obligations rather than becoming unrestricted because it was computed.</p>
+<p>Classification tells how sensitive information is and how the system can use it. Jurisdiction affects where the system can process data, where execution can occur, and which organizational rules apply.</p>
+<p>The source architecture proposes one example policy:</p>
+<ul><li>Public information goes to approved external providers, where appropriate.</li><li>Internal information goes to private or approved providers.</li><li>The system processes restricted information locally.</li></ul>
+<p>These are example policy choices. Each institution must write its own rules explicitly.</p>
+<p>If you have data, you do not automatically have permission to use it. Policy can control these areas:</p>
+<ul><li>collection</li><li>purpose</li><li>retention</li><li>joins</li><li>inference</li><li>model access</li><li>permitted capabilities</li><li>deletion propagation</li><li>review</li></ul>
+<p>Derived information keeps the lineage and the rules of its source data. A calculation does not remove those rules.</p>
 <h2 id="human-and-ai-governance">Human and AI governance</h2>
-<p>Human governance defines roles and separates responsibilities. Intent approval, architecture review, security exceptions, and production release need not belong to the same actor. Approval records identify the decision and its scope so that authority remains inspectable.</p>
-<p>AI governance attaches operating limits to the work. A work order can declare permitted models, tools, data, network access, runtime budgets, execution conditions, and approval requirements. Child work orders inherit or narrow those permissions.</p>
-<p>Agents may have distinct roles in proposing intent, checking policy, verifying outputs, and recording evidence. Assigning a governance role to an agent does not make its model the source of authority. The external policy system remains responsible for enforcing permissions.</p>
-<p>Consequential actions can require human approval and a second policy gate. Release authority remains separate from disposable workers that produce candidate artifacts and evidence.</p>
+<p>Human governance defines roles and separates responsibilities. Different people can approve intent, review architecture, approve security exceptions, and approve production releases. Each approval record shows the decision and its scope. Thus anyone with access can examine the authority later.</p>
+<p>AI governance attaches limits to the work. A work order can declare these items:</p>
+<ul><li>permitted models</li><li>tools</li><li>data</li><li>network access</li><li>runtime budgets</li><li>execution conditions</li><li>approval requirements</li></ul>
+<p>A child work order gets the same authority as its parent, or less.</p>
+<p>Agents can have different roles. They can propose intent, check policy, verify outputs, and record evidence. An agent can have a governance role. The authority still comes from the external policy system, and that system enforces the permissions.</p>
+<p>Consequential actions can require human approval and a second policy gate. Workers make candidate artifacts and evidence. A separate, trusted release process approves and signs them.</p>
 <h2 id="model-sovereignty">Model sovereignty</h2>
-<p>Model sovereignty means that institutional requirements determine which approved reasoning provider may participate. The work expresses the needed capability and handling constraints, while routing selects an eligible provider.</p>
-<p>This allows models to change without rewriting institutional policy or business logic. An organization can retain local options, approved hosted options, and human decision paths according to task, classification, jurisdiction, cost, latency, confidence, and risk.</p>
-<p>Replacement still requires evaluation. A compatible interface does not establish equivalent reliability, permitted data handling, or fitness for a particular decision.</p>
-<h2 id="reference-implementation">Reference implementation</h2>
-<p>A reference governance layer contains identity and authority records, versioned policies, classification and jurisdiction metadata, approval objects, and enforcement points around model access, capabilities, execution, and release.</p>
-<p>Deny-by-default permissions, constrained arguments, short-lived credentials, and isolated workers limit the consequences of a compromised component. Evidence records which policy applied, who authorized the work, what exceptions existed, and what action occurred.</p>
-<p>The institution retains these records and controls independently of its model or runtime provider.</p>
+<p>Model sovereignty means that institutional requirements decide which approved decision provider can take part. The work states the capability and the data rules that it needs. The router then selects an eligible decision provider.</p>
+<p>Thus models can change, and the institution does not have to rewrite its policy or business logic. An organization can keep local models, approved hosted models, and human decision paths. It selects among them according to these factors:</p>
+<ul><li>task</li><li>classification</li><li>jurisdiction</li><li>cost</li><li>latency</li><li>confidence</li><li>risk</li></ul>
+<p>A model with a compatible interface can still be less reliable than the old model. Its permitted data use can also be different, and it can be unfit for a specific decision. Test each replacement model before it handles real data or decisions.</p>
+<h2 id="reference-build">Reference build</h2>
+<p>A reference build has these parts:</p>
+<ul><li>identity and authority records</li><li>versioned policies</li><li>classification and jurisdiction metadata</li><li>approval objects</li><li>enforcement points for model access, capabilities, execution, and release</li></ul>
+<p>Deny-by-default permissions, constrained arguments, short-lived credentials, and isolated workers limit the damage from a compromised component. Evidence records which policy applied, who authorized the work, what exceptions existed, and what action occurred.</p>
+<p>The institution keeps these records and controls. It does not depend on its model provider or runtime provider for them.</p>
 <h2 id="from-the-research">From the research</h2>
-<ul><li>“A model may propose; it does not grant itself permission.” Authorization remains external to reasoning. <cite>Manifesto</cite></li><li>“Data does not equal permission.” Processing requires authorization, purpose limitation, and accountability. <cite>Master summary</cite></li><li>Human governance separates intent approval, security exceptions, and release authority. <cite>Four-plane architecture notes</cite></li></ul>
+<ul><li>“A model may propose; it does not grant itself permission.” A policy system outside the model decides what is authorized. <cite>Manifesto</cite></li><li>“Data does not equal permission.” To process data, the system needs authorization, a limited purpose, and accountability. <cite>Master summary</cite></li><li>Human governance gives intent approval, security exceptions, and release approval to separate roles. <cite>Four-plane architecture notes</cite></li></ul>
 <h2 id="related">Related</h2>
 <ul><li><a href="intent-and-ssil.html">Intent and SSIL</a></li><li><a href="decision-plane.html">Decision Plane</a></li><li><a href="capabilities-skills-mcp.html">Capabilities and Sovereign Skills</a></li><li><a href="execution-and-runtime.html">Execution and Runtime</a></li><li><a href="data-ontology-events.html">Data, Ontology, and Events</a></li></ul>
   <nav class="pager" aria-label="Topic navigation">

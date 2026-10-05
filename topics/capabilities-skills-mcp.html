@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Capabilities and Sovereign Skills · Sovereign Source AI</title>
-<meta name="description" content="The capability layer defines the operations an actor may perform and the conditions under which those operations are available.">
+<meta name="description" content="The capability layer lists the operations that an actor can do and the conditions for each operation.">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,31 +35,35 @@
 <main>
 <article class="prose topic">
   <h1>Capabilities and Sovereign Skills</h1>
-<p class="topic-summary">The capability layer defines the operations an actor may perform and the conditions under which those operations are available. Sovereign Skills package these operations with contracts, knowledge, policies, evaluations, and provenance. Interfaces remain neutral to the reasoning model. A replaceable interoperability choice such as MCP can connect planners to capabilities, while institutional policy retains control over authorization, execution, and evidence.</p>
+<p class="topic-summary">The capability layer lists the operations that an actor can do and the conditions for each operation. A Sovereign Skill Package puts these operations together with contracts, knowledge, policies, evaluations, and provenance. The interfaces work with any model that reasons. MCP is one example of a connector between planners and capabilities, and you can replace it. Your policy controls approval, execution, and evidence.</p>
 <h2 id="declared-permissioned-operations">Declared, permissioned operations</h2>
-<p>A capability describes an operation through its purpose, accepted inputs, expected outputs, affected resources, and applicable limits. Declaring these properties makes the operation inspectable before it is exposed to an agent or workflow.</p>
-<p>Permission applies to a specific operation in context. Access to a tool does not imply permission to use every function, argument, dataset, or destination available behind it. The system exposes only the capabilities required for the authorized work and constrains their use.</p>
-<p>Proposal, simulation, and execution have different effects and should remain distinguishable. A capability that previews a change does not automatically authorize the change itself. Consequential execution can require another policy check and human approval.</p>
+<p>A capability states the purpose, inputs, outputs, affected resources, and limits of an operation. When a capability declares these properties, you can inspect the operation before an agent or workflow gets access to it.</p>
+<p>Permission applies to one specific operation in one context. Access to a tool does not give permission for every function, argument, dataset, or destination behind it. The system gives access only to the capabilities that the approved task needs, and it limits their use.</p>
+<p>To propose, to preview, and to execute are different actions with different effects. Keep them separate. A preview of a change does not approve the change. An important execution can need one more policy check and a human approval.</p>
 <h2 id="sovereign-skill-packages">Sovereign Skill Packages</h2>
-<p>The proposed Sovereign Skill Package is a signed, portable capability package. Its contents can include a manifest, descriptive instructions, intent definitions, schemas, tools, workflows, knowledge, policies, evaluations, tests, a software bill of materials, and provenance.</p>
-<p>The package declares what it does, which inputs and outputs it accepts, which models and tools it can use, which data classifications are permitted, how it is evaluated, and which approvals it requires.</p>
-<p>These declarations make a skill more than instructional text. They provide a contract that a registry, policy authority, runtime, and evaluator can inspect. A signature and provenance record establish information about origin and integrity; evaluation and policy still determine whether the package is suitable for a particular use.</p>
-<p>Domain skill packs can combine reusable primitives with domain-specific objects and rules. Institutional meaning remains in portable contracts and ontology references.</p>
+<p>The proposed Sovereign Skill Package is a signed, portable capability package. A skill package can contain:</p>
+<ul><li>a manifest</li><li>descriptive instructions</li><li>intent definitions</li><li>schemas</li><li>tools</li><li>workflows</li><li>knowledge</li><li>policies</li><li>evaluations</li><li>tests</li><li>a software bill of materials</li><li>provenance</li></ul>
+<p>The skill package states what it does. It lists its inputs, outputs, models, tools, and allowed data classes. It also states how to evaluate it and who must approve it.</p>
+<p>These statements give the skill package a contract. A registry, a policy authority, a runtime, and an evaluator can inspect this contract. A signature and a provenance record show where the skill package came from and that nobody changed it. Evaluation and policy decide if you can use it for a specific task.</p>
+<p>A domain skill package can combine reusable primitives with the objects and rules of one domain. The definitions for the institution stay in portable contracts and ontology references.</p>
 <h2 id="interfaces-independent-of-models">Interfaces independent of models</h2>
-<p>A planner should invoke capabilities through stable contracts rather than provider-specific assumptions. This separates the institution’s permitted operations from the model selected to reason about them.</p>
-<p>A replacement model must understand the relevant contract and satisfy evaluation requirements. It does not receive broader permissions because it supports more tools or has a larger context window.</p>
-<p>The same separation applies to workflow engines and user interfaces. A human-facing action and an agent-invoked action can refer to the same governed capability. Presenting an action in an interface does not create authority to execute it.</p>
+<p>A planner calls capabilities through stable contracts. It does not depend on assumptions about one provider. Thus, the operations that the institution permits stay separate from the model that reasons about them.</p>
+<p>A replacement model must understand the contract and pass the same evaluations. A model that supports more tools or a larger context window does not get more permissions.</p>
+<p>The same rule applies to workflow engines and user interfaces. An action that a human starts and an action that an agent calls can use the same governed capability. If an interface shows an action, that does not give anyone permission to do it.</p>
 <h2 id="replaceable-interoperability-under-sovereign-control">Replaceable interoperability under sovereign control</h2>
-<p>MCP is one replaceable reference choice for exposing capabilities across compatible components. Its interoperability role does not establish publisher trust, least privilege, supply-chain integrity, or institutional authorization.</p>
-<p>A sovereign gateway around such an interface can enforce authentication, routing, classification, jurisdiction, secrets handling, provenance, and audit. External policy checks determine which operations become available for a particular intent and actor.</p>
-<p>The proposed controls include deny-by-default access, constrained arguments, short-lived capability tokens, and a second gate for consequential actions. Capability sets can derive from SSIL intent and authorized work orders, keeping available operations connected to approved purpose.</p>
-<p>Replacing the interoperability adapter should preserve the capability contracts, policy relationships, and evidence history.</p>
-<h2 id="reference-implementation">Reference implementation</h2>
-<p>A generic build contains a capability registry, package records, a policy authority, an authenticated gateway, constrained execution workers, evaluators, and an evidence store.</p>
-<p>The registry describes known publishers, schemas, and attestations. Supply-chain records connect packages to source, dependencies, licenses, build provenance, vulnerability findings, and approved environments. A lock manifest can identify the effective capability versions used for a particular run.</p>
-<p>Workers receive only the necessary capabilities and credentials. Verification examines their outputs and declared behavior, while evidence records which package, authority, inputs, and execution context produced the result.</p>
+<p>MCP is one example of a way to expose capabilities to compatible components. You can replace it. MCP connects components. It does not prove that the publisher is safe or that access is least privilege. It also does not prove that the supply chain is secure or that an actor has permission.</p>
+<p>A sovereign gateway around this interface controls authentication and routing. It also applies rules for data class, jurisdiction, secrets, provenance, and audit. External policy checks decide which operations are available for one intent and one actor.</p>
+<p>The proposed controls are:</p>
+<ul><li>deny by default</li><li>limits on arguments</li><li>short-lived capability tokens</li><li>a second gate for important actions</li></ul>
+<p>The system can make capability sets from the SSIL intent and from approved work orders. Then each available operation stays linked to an approved purpose.</p>
+<p>If you replace the interoperability adapter, the capability contracts, policy links, and evidence history must stay the same.</p>
+<h2 id="reference-build">Reference build</h2>
+<p>A reference build has these parts:</p>
+<ul><li>a capability registry</li><li>skill package records</li><li>a policy authority</li><li>an authenticated gateway</li><li>execution workers with limits</li><li>evaluators</li><li>an evidence store</li></ul>
+<p>The registry describes known publishers, schemas, and attestations. Supply-chain records link each skill package to its source, dependencies, licenses, build provenance, vulnerability findings, and approved environments. A lock manifest can show the capability versions that one run used.</p>
+<p>Workers get only the capabilities and credentials that they need. Verification examines their outputs and declared behavior. Evidence records which skill package, authority, inputs, and execution context made the result.</p>
 <h2 id="from-the-research">From the research</h2>
-<ul><li>A Sovereign Skill declares its function, contracts, model and tool needs, permitted classifications, evaluations, and approvals. <cite>Master summary</cite></li><li>Interoperability alone does not resolve trust, authority, provenance, supply-chain security, or least privilege. <cite>Master summary</cite></li><li>“The AI therefore receives capabilities, rather than unlimited machine access.” <cite>Four-plane architecture notes</cite></li></ul>
+<ul><li>A Sovereign Skill declares its function, contracts, model and tool needs, allowed data classes, evaluations, and approvals. <cite>Master summary</cite></li><li>Interoperability alone does not solve trust, authority, provenance, supply-chain security, or least privilege. <cite>Master summary</cite></li><li>“The AI therefore receives capabilities, rather than unlimited machine access.” <cite>Four-plane architecture notes</cite></li></ul>
 <h2 id="related">Related</h2>
 <ul><li><a href="intent-and-ssil.html">Intent and SSIL</a></li><li><a href="governance-and-policy.html">Governance and Policy</a></li><li><a href="decision-plane.html">Decision Plane</a></li><li><a href="execution-and-runtime.html">Execution and Runtime</a></li><li><a href="evidence-provenance-supply-chain.html">Evidence, Provenance, and Supply Chain</a></li><li><a href="reference-stack-and-exit.html">Reference Stack and Exit</a></li></ul>
   <nav class="pager" aria-label="Topic navigation">

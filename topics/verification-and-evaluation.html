@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Verification and Evaluation · Sovereign Source AI</title>
-<meta name="description" content="Verification turns assertions about a system into evidence that can support institutional decisions.">
+<meta name="description" content="Verification turns claims about a system into evidence that the institution can use for decisions.">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,23 +35,31 @@
 <main>
 <article class="prose topic">
   <h1>Verification and Evaluation</h1>
-<p class="topic-summary">Verification turns assertions about a system into evidence that can support institutional decisions. Sovereign Source AI examines whether work satisfies its specification, respects authority, and produces the intended result. This requires technical checks, agent review, requirement traceability, and experience measurement. A plausible answer, successful build, or passing test suite establishes only part of that case.</p>
+<p class="topic-summary">Verification turns claims about a system into evidence that the institution can use for decisions. Sovereign Source AI examines whether work meets its specification, stays within its authority, and gets the intended result. The platform runs technical checks, reviews agent work, links each requirement to evidence, and measures how users experience the result. A plausible answer, a clean build, or a test suite that passes is only part of the proof.</p>
 <h2 id="verification-and-validation">Verification and validation</h2>
-<p>Verification asks whether the result conforms to its specification. Validation asks whether the resulting product or action solves the intended problem. Both connect to the original intent, but they answer different questions.</p>
-<p>A feature can satisfy every implementation requirement while failing to improve the experience it was meant to address. It can also improve a headline metric while violating a safety or accuracy constraint. The evidence model therefore retains objectives and guardrails together.</p>
-<p>An experience contract makes those expectations explicit. It links a requirement or feature to measurable outcomes and conditions that must remain satisfied. Measurements after deployment can support continued operation, revision, rollback, or a new intent.</p>
+<p>Verification asks whether the result agrees with its specification. Validation asks whether the product or action solves the intended problem. Both link to the original intent. They answer different questions.</p>
+<p>A feature can meet every implementation requirement and still not improve the experience that it was for. It can also improve a main metric and break a safety or accuracy constraint. So the evidence model keeps objectives and guardrails together.</p>
+<p>An experience contract makes those expectations explicit. It links a requirement or feature to measurable outcomes and to conditions that must stay true. After deployment, measurements help the institution decide to continue, revise, or roll back the feature. They can also start a new intent.</p>
 <h2 id="four-areas-of-verification">Four areas of verification</h2>
-<p>Technical verification examines the artifact and its production process. Relevant evidence includes compilation results, tests, security analysis, dependency and license findings, policy checks, and build records. Each check supports a defined claim about a particular version.</p>
-<p>Agent verification examines the relationship between assigned work and agent behavior. It considers requirement coverage, architecture compliance, changes made, tools used, and the evidence returned. Independent review reduces dependence on an agent’s own account of its performance. Human authority remains necessary wherever policy requires it.</p>
-<p>Requirement verification connects each assertion to explicit evidence. A requirement should identify an acceptance condition and the tests, observations, or reviews that establish whether it was met. That connection must identify the artifact or deployment evaluated.</p>
-<p>Experience verification examines use after release. Exposure, task completion, errors, abandonment, latency, and user-visible outcomes help establish whether the feature works in practice. Institutional outcomes may also require authoritative operational signals beyond interface analytics.</p>
+<p>Technical verification examines the artifact and the process that made it. The evidence includes these items:</p>
+<ul><li>compilation results</li><li>tests</li><li>security analysis</li><li>dependency and license results</li><li>policy checks</li><li>build records</li></ul>
+<p>Each check supports a defined claim about a specific version.</p>
+<p>Agent verification compares the assigned work with what the agent did. It examines these items:</p>
+<ul><li>requirement coverage</li><li>architecture compliance</li><li>changes made</li><li>tools used</li><li>evidence returned</li></ul>
+<p>An independent reviewer checks the agent’s work, so you do not have to trust the agent’s own report. Human authority is still necessary where policy requires it.</p>
+<p>Requirement verification links each claim to explicit evidence. Each requirement has an acceptance condition. It also names the tests, observations, or reviews that show whether the work met that condition. The link must identify the artifact or deployment under evaluation.</p>
+<p>Experience verification examines use after release. These measures help show whether the feature works in practice:</p>
+<ul><li>exposure</li><li>task completion</li><li>errors</li><li>abandonment</li><li>latency</li><li>user-visible outcomes</li></ul>
+<p>To measure institutional outcomes, you can also need authoritative data from operations, not only interface analytics.</p>
 <h2 id="the-evaluation-model">The evaluation model</h2>
-<p>Evaluation spans several levels because success at one level does not establish success at another:</p>
-<div class="table-wrap"><table><thead><tr><th>Level</th><th>Question</th></tr></thead><tbody><tr><td>Schema</td><td>Did the output satisfy its contract?</td></tr><tr><td>Capability</td><td>Did the operation remain within its declared function?</td></tr><tr><td>Model</td><td>Was the result sufficiently reliable?</td></tr><tr><td>Policy</td><td>Was the action authorized?</td></tr><tr><td>Security</td><td>Were isolation, network, dependency, and secret rules respected?</td></tr><tr><td>Experience</td><td>Did the feature work for users?</td></tr><tr><td>Outcome</td><td>Did it achieve the institutional objective?</td></tr><tr><td>Provenance</td><td>Can the result be reconstructed and explained?</td></tr></tbody></table></div>
-<p>Findings should preserve uncertainty. The proposed privacy assessment model uses PASS, FAIL, UNKNOWN, and NOT APPLICABLE so that missing evidence does not become an implied success. An automated assessment remains distinct from independent certification.</p>
-<h2 id="reference-implementation">Reference implementation</h2>
-<p>A reference build combines a requirement registry, test and evaluation services, independent review, release gates, experience measurement, and an evidence store. Results link to the relevant work order, artifact, policy, and evaluation context.</p>
-<p>Release gates consume those results under defined authority. Models can explain findings or propose further checks, but explanatory fluency does not determine whether a control passed. Subsequent outcome measurements extend the evidence record and inform future intent.</p>
+<p>Evaluation has eight levels. A pass at one level does not prove a pass at another:</p>
+<div class="table-wrap"><table><thead><tr><th>Level</th><th>Question</th></tr></thead><tbody><tr><td>Schema</td><td>Did the output satisfy its contract?</td></tr><tr><td>Capability</td><td>Did the operation stay inside its declared function?</td></tr><tr><td>Model</td><td>Was the result reliable enough?</td></tr><tr><td>Policy</td><td>Was the action authorized?</td></tr><tr><td>Security</td><td>Did the work obey the isolation, network, dependency, and secret rules?</td></tr><tr><td>Experience</td><td>Did the feature work for users?</td></tr><tr><td>Outcome</td><td>Did it meet the institutional objective?</td></tr><tr><td>Provenance</td><td>Can you reconstruct and explain the result?</td></tr></tbody></table></div>
+<p>Each result shows what is not known. The proposed privacy assessment model uses PASS, FAIL, UNKNOWN, and NOT APPLICABLE. If there is no evidence for a check, the result is UNKNOWN, not PASS. An automated assessment is not the same as an independent certification.</p>
+<h2 id="reference-build">Reference build</h2>
+<p>A reference build has these parts:</p>
+<ul><li>a requirement registry</li><li>test and evaluation services</li><li>independent review</li><li>release gates</li><li>experience measurement</li><li>an evidence store</li></ul>
+<p>Each result links to its work order, artifact, policy, and evaluation context.</p>
+<p>Release gates use those results under defined authority. A model can explain a result or propose more checks. A clear explanation from a model does not make a control pass. Later outcome measurements add to the evidence record and inform future intent.</p>
 <h2 id="from-the-research">From the research</h2>
 <ul><li>Verification asks, “Did we build according to specification?” Validation asks whether the product solved the intended problem. <cite>Four-plane architecture notes</cite></li><li>“Claims become evidence.” <cite>Manifesto</cite></li><li>“LLMs explain; deterministic code and evidence decide the control result.” <cite>Master summary</cite></li></ul>
 <h2 id="related">Related</h2>

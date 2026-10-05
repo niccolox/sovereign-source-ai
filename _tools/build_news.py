@@ -70,7 +70,7 @@ def render_scan(scan: dict) -> str:
              f'    <h2>{esc(span(start, end))}</h2>\n'
              f'    <p class="news-week-meta">{esc(meta)}</p>\n']
     if not items:
-        parts.append('    <p>A quiet week. Nothing new met the bar.</p>\n')
+        parts.append('    <p>No new story met our standard in this period.</p>\n')
     for key, label in THEMES.items():
         group = [i for i in items if i["theme"] == key]
         if not group:
@@ -95,7 +95,7 @@ PAGE = """<!DOCTYPE html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>News · Sovereign Source AI</title>
-<meta name="description" content="News on AI sovereignty, vendor lock-in, open models, agent governance, AI supply chains, data regulation, and small-business data and agents.">
+<meta name="description" content="News about AI sovereignty, vendor lock-in, open models, agent governance, AI supply chains, data regulation, and small businesses that use their own data.">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -127,12 +127,13 @@ PAGE = """<!DOCTYPE html>
 <article class="prose news">
   <h1>News</h1>
   <p class="topic-summary">
-    What we are reading: AI sovereignty, lock-in, open models, agent governance,
-    AI supply chains, data regulation, and small businesses putting their data to work.
+    We read about these subjects: AI sovereignty, lock-in, open models, agent governance,
+    AI supply chains, data regulation, and small businesses that use their own data.
   </p>
   <p>
-    An AI scan finds these each week and we check that every link opens. The summaries
-    are machine-written, so read the source before quoting anything. The sources are not.
+    An AI scan runs every 4 hours and finds these stories. We check that each link opens.
+    A machine writes the summaries, so read the source before you quote a summary.
+    People wrote the source articles.
   </p>
 
 {scans}

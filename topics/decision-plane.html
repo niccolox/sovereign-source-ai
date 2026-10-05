@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Decision Plane · Sovereign Source AI</title>
-<meta name="description" content="The decision plane converts typed institutional context into a proposed choice, assessment, or plan.">
+<meta name="description" content="The decision plane uses typed context from the institution to propose a choice, an assessment, or a plan.">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,32 +35,37 @@
 <main>
 <article class="prose topic">
   <h1>Decision Plane</h1>
-<p class="topic-summary">The decision plane converts typed institutional context into a proposed choice, assessment, or plan. Sovereign Source AI supports deterministic rules, bounded models, statistical inference, language-model reasoning, and human judgment within this responsibility. The appropriate decider depends on the question, available evidence, permitted data handling, and consequences. Every decision remains subject to external authorization before it becomes an executable action.</p>
+<p class="topic-summary">The decision plane uses typed context from the institution to propose a choice, an assessment, or a plan. In Sovereign Source AI, this plane can use deterministic rules, bounded models, statistical inference, language models, or human judgment. The right decision provider depends on the question, the evidence, the permitted data use, and the consequences. Each decision needs approval from outside the plane before it becomes an executable action.</p>
 <h2 id="different-forms-of-decision">Different forms of decision</h2>
-<p>Deterministic rules are appropriate when the applicable conditions and result are explicit. They provide a direct relationship between recorded inputs, policy, and output. Their usefulness depends on whether the encoded rule accurately represents the intended requirement.</p>
-<p>Bounded models answer narrow questions within a defined decision space. They can select among options, score alternatives, or assess a proposition using typed inputs and outputs. The boundary makes their role easier to evaluate and keeps a narrow judgment from expanding into general authority.</p>
-<p>Statistical inference estimates relationships, probabilities, or uncertain attributes from observations. Its output remains an inference with supporting evidence and uncertainty. It should remain distinguishable from directly observed or user-declared facts.</p>
-<p>Language models can interpret documents, synthesize context, propose plans, and reason about ambiguous situations. Their flexibility does not remove the need for typed outputs, evaluation, or constrained access.</p>
-<p>Human judgment addresses ambiguity, institutional tradeoffs, exceptions, and consequential choices. Humans also operate within defined authority. A person making a recommendation and a person approving an action may hold different roles.</p>
-<h2 id="choosing-the-right-decider">Choosing the right decider</h2>
-<p>Selection begins with the question being asked. An explicit control test may be suitable for deterministic evaluation. A narrow scoring task may fit a bounded model. An uncertain estimate may require statistical analysis. A complex interpretation may benefit from language-model reasoning and human review.</p>
-<p>Routing also considers classification, jurisdiction, task, cost, latency, confidence, and risk. A provider must be permitted to receive the relevant information before its reasoning quality becomes useful.</p>
-<p>The architecture supports combinations of deciders. Rules can establish eligibility before a model ranks options. A model can explain a deterministic finding. A human can review conflicting assessments. Each contribution should retain its identity and evidence so that the final decision can be reconstructed.</p>
+<p>Deterministic rules are the right choice when the conditions and the result are explicit. They give a direct link between the recorded inputs, the policy, and the output. A rule is only as useful as its match to the intended requirement.</p>
+<p>Bounded models answer narrow questions inside a defined decision space. They can select among options, score alternatives, or assess a proposition with typed inputs and outputs. The boundary makes their role easier to evaluate. It also makes sure that a narrow judgment does not become general authority.</p>
+<p>Statistical inference estimates relationships, probabilities, or uncertain attributes from observations. Its output stays an inference, with its evidence and its uncertainty. Keep it separate from observed facts and from facts that a user declared.</p>
+<p>Language models can interpret documents, combine context, propose plans, and reason about unclear cases. Language models still need typed outputs, evaluation, and limited access.</p>
+<p>Human judgment handles unclear cases, tradeoffs for the institution, exceptions, and important choices. Humans also act inside defined authority. The person who makes a recommendation and the person who approves an action can have different roles.</p>
+<h2 id="which-decision-provider-to-use">Which decision provider to use</h2>
+<p>First, look at the question. Then select the decision provider that fits it:</p>
+<ul><li>An explicit control test can use a deterministic evaluation.</li><li>A narrow task that gives a score can use a bounded model.</li><li>An uncertain estimate can need statistical analysis.</li><li>A complex interpretation can need a language model and a human review.</li></ul>
+<p>The router also checks data class, jurisdiction, task, cost, latency, confidence, and risk. First make sure that the decision provider has permission to get the data. Then its ability to reason can help.</p>
+<p>You can combine decision providers. Rules can set eligibility before a model ranks the options. A model can explain a deterministic result. A human can review assessments that do not agree. Each contribution keeps its identity and evidence, so you can rebuild the final decision.</p>
 <h2 id="the-decision-contract">The decision contract</h2>
-<p>A typed decision records the selected choice or assessment, its provider, the model where applicable, the relevant policy version, and supporting evidence. Probability or confidence can be recorded when meaningful.</p>
-<p>These fields make decisions comparable and auditable. They also preserve a distinction between a result and the grounds for accepting it. Reported confidence is one input to evaluation and escalation; it is not authorization.</p>
+<p>A typed decision records these fields:</p>
+<ul><li>the selected choice or assessment</li><li>the decision provider</li><li>the model, if the decision used one</li><li>the applicable policy version</li><li>the evidence</li></ul>
+<p>The decision can also record a probability or a confidence value, when that value is useful.</p>
+<p>With these fields, you can compare and audit decisions. You can also see the result apart from the reasons to accept it. Confidence is one input to evaluation and escalation. Confidence does not give permission to act.</p>
 <p>The reusable path is:</p>
 <p><code>Intent → Typed State → Decision Provider → Policy Gate → Capability → Execute → Verify → Evidence</code></p>
-<p>The provider receives governed state and returns a bounded result. The policy gate determines whether the proposed action is permitted. The capability layer limits what execution can actually do.</p>
+<p>The decision provider gets governed state and returns a bounded result. The policy gate decides if the proposed action has permission. The capability layer limits what execution can do.</p>
 <h2 id="escalation-and-unresolved-decisions">Escalation and unresolved decisions</h2>
-<p>Low confidence can route a question to additional reasoning or human review. High consequence can require human approval even when a provider reports strong confidence.</p>
-<p>Escalation should preserve the original question, evidence, uncertainty, and prior assessments. Otherwise, the next reviewer receives a conclusion without the context needed to judge it.</p>
-<p>When evidence is insufficient, the system should preserve that limitation. The source research uses explicit unknown results in control assessment, illustrating how an unresolved question can remain visible without becoming an unsupported positive finding.</p>
-<h2 id="reference-implementation">Reference implementation</h2>
-<p>A reference build contains typed decision requests, provider adapters, policy-aware routing, evaluation records, and a human review surface. Shared contracts allow rules, models, and humans to participate without embedding one provider into institutional business logic.</p>
-<p>Verification checks the quality of the result separately from the authorization of the action. Evidence links both judgments to the eventual outcome.</p>
+<p>If confidence is low, the system can send the question back for more analysis or to a human review. If the consequence is high, the action can need human approval, even when a decision provider reports high confidence.</p>
+<p>An escalation must keep the original question, the evidence, the uncertainty, and the earlier assessments. If it does not, the next reviewer gets a conclusion without the context to judge it.</p>
+<p>If the evidence is not sufficient, the system records that limit. The research uses an explicit “unknown” result for control checks. The open question stays visible and does not become a false “pass”.</p>
+<h2 id="reference-build">Reference build</h2>
+<p>A reference build has these parts:</p>
+<ul><li>typed decision requests</li><li>adapters for decision providers</li><li>a router that obeys policy</li><li>evaluation records</li><li>a screen for human review</li></ul>
+<p>Shared contracts let rules, models, and humans take part. No single decision provider becomes part of the business logic of the institution.</p>
+<p>Verification checks the quality of the result separately from the approval of the action. Evidence links both judgments to the final outcome.</p>
 <h2 id="from-the-research">From the research</h2>
-<ul><li>The proposed decision interface includes choosing among options, scoring against criteria, and verifying propositions. <cite>Master summary</cite></li><li>Low confidence can trigger further reasoning or human escalation; high consequence can require human approval. <cite>Master summary</cite></li><li>“Models reason. Policies authorize. Capabilities constrain.” These responsibilities remain separate. <cite>Manifesto</cite></li></ul>
+<ul><li>The proposed decision interface includes three operations: select among options, score against criteria, and verify propositions. <cite>Master summary</cite></li><li>Low confidence can start more analysis or a human escalation. High consequence can need human approval. <cite>Master summary</cite></li><li>“Models reason. Policies authorize. Capabilities constrain.” These responsibilities stay separate. <cite>Manifesto</cite></li></ul>
 <h2 id="related">Related</h2>
 <ul><li><a href="intent-and-ssil.html">Intent and SSIL</a></li><li><a href="governance-and-policy.html">Governance and Policy</a></li><li><a href="capabilities-skills-mcp.html">Capabilities and Sovereign Skills</a></li><li><a href="verification-and-evaluation.html">Verification and Evaluation</a></li><li><a href="data-ontology-events.html">Data, Ontology, and Events</a></li></ul>
   <nav class="pager" aria-label="Topic navigation">
