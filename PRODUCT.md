@@ -40,7 +40,7 @@ SSA is an LLM-neutral, cloud-neutral, vendor-replaceable architecture built on s
 ## Capabilities and Constraints
 
 - Static HTML/CSS served by GitHub Pages (Jekyll, legacy build) at sovsrc.ai (`CNAME`). No framework or build step beyond the topic generator.
-- Pages: `index.html` (homepage: small-business offer, the SSA definition as its subheading, then the manifesto sections), `business/index.html` (small-business detail page), `news/index.html` (news digest), `manifesto.html`, `topics/*.html` (10 generated topic pages), `logo-concepts.html` (internal logo review page).
+- Pages: `index.html` (homepage: small-business offer with a plain-language subheading, a task grid that links to the ad landing pages under `lp/`, then the manifesto sections), `business/index.html` (small-business detail page), `news/index.html` (news digest), `manifesto.html`, `topics/*.html` (10 generated topic pages), `logo-concepts.html` (internal logo review page).
 - Work happens on the `dev` branch and is fast-forwarded to `main` to publish; GitHub Pages serves `main`.
 - Folders starting with `_` and files listed in `_config.yml` `exclude` are not published.
 - Terminology: "Sovereign Source AI" (SSA), "SovSrc" / sovsrc.ai, Sovereign Skills, SSIL (Sovereign Source Intent Language), work orders, seven layers, four planes (Intention, Governance, Verification, Evidence).

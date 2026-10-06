@@ -308,6 +308,7 @@ body {
 }
 
 .toc { --grid-cols: 5; }
+.tasks { --grid-cols: 4; }
 
 .layers > li,
 .toc-item {
@@ -746,13 +747,15 @@ body {
   color: var(--text);
 }
 
-.hero-plain {
-  max-width: 56ch;
+/* One quiet line under a CTA row: what the first step costs and who you meet. */
+.cta-note {
   margin-top: 1rem;
-  font-size: var(--fs-body);
-  line-height: 1.65;
+  font-size: var(--fs-ui);
+  line-height: 1.6;
   color: var(--text-dim);
 }
+
+.monday-cta { margin-top: 2.5rem; }
 
 .inline-link {
   color: var(--text);
