@@ -3,20 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>sovsrc.llm updates · Sovereign Source AI</title>
-<meta name="description" content="Each change to the sovsrc.llm specification: an LLM project that uses source material with permission, gives credit, and plans rewards for creators.">
+<title>sovsrc.llm: an LLM that respects intellectual property and ideas · Sovereign Source AI</title>
+<meta name="description" content="sovsrc.llm is a specification for an LLM that uses source material with permission, gives credit, and proposes rewards for creators. It is at specification stage.">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="alternate" type="application/atom+xml" title="sovsrc.llm updates" href="feed.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../style.css?v=20261005">
+<link rel="stylesheet" href="../style.css?v=20261010">
 </head>
-<body>
+<body class="biz llm">
 
 <div class="ghost" aria-hidden="true">
   <span class="ghost-line">Sovereign Source AI</span>
   <span class="ghost-line">sovsrc.llm</span>
+  <span class="ghost-line">Permission before use.</span>
+  <span class="ghost-line">Honest attribution.</span>
+  <span class="ghost-line">Payment by agreement.</span>
 </div>
 
 <header class="header">
@@ -26,62 +29,232 @@
       <span class="logo-text">Sovereign Source AI</span>
     </a>
     <nav class="nav" aria-label="Main navigation">
-      <a href="../news/" class="nav-mid">News</a>
-      <a href="./">sovsrc.llm updates</a>
-      <a href="../index.html#talk" class="nav-cta">Talk to us</a>
+      <a href="#how-it-works" class="nav-mid">How it works</a>
+      <a href="#rewards" class="nav-mid">Rewards</a>
+      <a href="#documents" class="nav-minor">Documents</a>
+      <a href="updates.html">Updates</a>
+      <a href="#talk" class="nav-cta">Talk to us</a>
     </nav>
   </div>
 </header>
 
 <main>
-<article class="prose news">
-  <h1>sovsrc.llm updates</h1>
-  <p class="topic-summary">
-    sovsrc.llm is a specification for an LLM that uses source material with permission,
-    gives credit to the people who made it, and plans rewards for creators.
-  </p>
-  <p>
-    The project is at specification stage. No application, trained model, or payment system
-    exists. This page gets a new entry each time the
-    <a href="https://github.com/niccolox/sovsrc.llm-ip-ideas" rel="noopener">repository</a> changes.
-    A machine writes the summaries from the change, so read the source before you quote a summary.
-  </p>
+<section class="hero">
+  <div class="hero-inner">
+    <h1 class="hero-title">An LLM that respects intellectual property and ideas.</h1>
+    <p class="hero-sub">
+      sovsrc.llm is a specification for a large language model that uses source material with
+      permission, gives credit to the people who made it, and pays creators for agreed use.
+      The project is at specification stage. No application, trained model, or payment system exists.
+    </p>
+    <div class="cta-row">
+      <a class="btn" href="mailto:hello@sovsrc.ai?subject=sovsrc.llm">Email us about sovsrc.llm</a>
+      <a class="btn-quiet" href="https://github.com/niccolox/sovsrc.llm-ip-ideas" rel="noopener">Read the specification on GitHub</a>
+    </div>
+  </div>
+</section>
 
-  <section class="news-scan" id="day-2026-10-10">
-    <h2>10 Oct 2026</h2>
-    <p class="news-week-meta">5 updates</p>
-    <ul class="news-list">
+<section class="section" id="how-it-works">
+  <div class="section-inner">
+    <h2 class="section-heading">Permission first. Credit each time. Payment by agreement.</h2>
+    <p class="section-intro">The first planned product is a research assistant that answers from an approved set of documents. The specification puts the permission checks and the payment decisions outside the model.</p>
+    <ol class="flow" aria-label="From permission to answer">
       <li>
-        <a class="news-title" href="2026-10-10-f1a9478.html">New draft audit compares model provider terms and proposes creator reward controls</a>
-        <p class="news-meta"><a href="https://github.com/niccolox/sovsrc.llm-ip-ideas/commit/f1a947810c4042824d411f369871d496743e85a7" rel="noopener">commit <code>f1a9478</code></a> · 1 file</p>
-        <p class="news-summary">A new draft audit compares provider terms on ownership, training permission, attribution and compensation. It proposes separate rights records and creator reward controls.</p>
+        <span class="flow-label">A creator gives permission</span>
+        <span class="flow-desc">Each work has a record of the allowed purpose, recipients, territory, and duration.</span>
       </li>
       <li>
-        <a class="news-title" href="2026-10-10-f6aa195.html">Specifications add proposed creator rewards, licensing and marketplace terms</a>
-        <p class="news-meta"><a href="https://github.com/niccolox/sovsrc.llm-ip-ideas/commit/f6aa195f2ff846e98e9cba5324f0ee2f9638f88a" rel="noopener">commit <code>f6aa195</code></a> · 8 files</p>
-        <p class="news-summary">The documents introduce SIP Creator Rewards and draft licensing and marketplace terms for agreed contribution use. The project remains at specification stage.</p>
+        <span class="flow-label">The system checks the record</span>
+        <span class="flow-desc">The check is made before a work is used, and again before an answer goes out.</span>
       </li>
       <li>
-        <a class="news-title" href="2026-10-10-e4ca3ac.html">Specification adds proposed Super Intellectual Property framework and voluntary syndicates</a>
-        <p class="news-meta"><a href="https://github.com/niccolox/sovsrc.llm-ip-ideas/commit/e4ca3ac1e4ca956e2a0b99984a175fc436fe1f18" rel="noopener">commit <code>e4ca3ac</code></a> · 2 files</p>
-        <p class="news-summary">The revised specification proposes Super Intellectual Property to recognize works, ideas, contributions and influences through evidence and agreements. The project remains at specification stage, with no application, trained model or production payment system.</p>
+        <span class="flow-label">The use is recorded</span>
+        <span class="flow-desc">The credit receipt and the usage record are saved before the answer goes out. Agreed rewards are calculated from them.</span>
       </li>
       <li>
-        <a class="news-title" href="2026-10-10-168ffe3.html">Documents propose a research assistant pilot and contributor royalty terms</a>
-        <p class="news-meta"><a href="https://github.com/niccolox/sovsrc.llm-ip-ideas/commit/168ffe32fc9721ca5e9b6f31e5d33e128c518cf4" rel="noopener">commit <code>168ffe3</code></a> · 2 files</p>
-        <p class="news-summary">New documents propose a research assistant that checks source permissions, provides attribution receipts and records eligible contributor use. The project remains at specification stage; no application, trained model or production payment system exists.</p>
+        <span class="flow-label">The answer shows its sources</span>
+        <span class="flow-desc">Each answer comes with the evidence that supports it.</span>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" id="sip">
+  <div class="section-inner">
+    <h2 class="section-heading">What the project recognizes</h2>
+    <p class="section-intro">The specification calls its framework Super Intellectual Property (SIP). It recognizes more than formal rights, through evidence and agreements. It is a proposed framework. It does not claim that a new legal right exists.</p>
+    <ul class="layers subjects">
+      <li>
+        <span class="layer-title">IP and source works</span>
+        <span class="layer-desc">Reviewed rights, scoped licenses, and evidence of use.</span>
       </li>
       <li>
-        <a class="news-title" href="2026-10-10-8452a53.html">Project specification document added</a>
-        <p class="news-meta"><a href="https://github.com/niccolox/sovsrc.llm-ip-ideas/commit/8452a533a827300df2653dc5b9fdca4dce43ce96" rel="noopener">commit <code>8452a53</code></a> · 1 file</p>
-        <p class="news-summary">The repository adds a project specification document. The diff contains no text to describe its proposals.</p>
+        <span class="layer-title">Ideas and research</span>
+        <span class="layer-desc">Concrete proposals, records of adoption, and agreed rewards.</span>
+      </li>
+      <li>
+        <span class="layer-title">Contributions</span>
+        <span class="layer-desc">Code, improvements, prompts, workflows, curation, and evaluation.</span>
+      </li>
+      <li>
+        <span class="layer-title">Influences</span>
+        <span class="layer-desc">Documented acknowledgments and lineage. Credit only, unless payment is expressly agreed.</span>
+      </li>
+      <li>
+        <span class="layer-title">Combined work</span>
+        <span class="layer-desc">Upstream obligations stay in place. New contributions are recorded separately.</span>
       </li>
     </ul>
-  </section>
+    <div class="principle-callout">
+      <p class="principle">Ownership, permission, credit, governance, and payment are <strong>five separate records.</strong></p>
+      <p class="principle">A similarity score cannot establish ownership, permission, or payment eligibility.</p>
+    </div>
+  </div>
+</section>
 
-  <a href="../index.html" class="back-link">Back to home</a>
-</article>
+<section class="section" id="rewards">
+  <div class="section-inner">
+    <h2 class="section-heading">The proposed rewards pool, drawn to scale</h2>
+    <p class="section-intro">The draft puts 20% of eligible collected revenue into a creator rewards pool. Eligible revenue is revenue after refunds, chargebacks, sales taxes, and payment fees. Three tracks divide the pool.</p>
+    <div class="pool">
+      <ul class="pool-labels pool-top" style="--cols: 20fr 80fr">
+        <li style="--share: 20"><span class="pool-num">20%</span><span class="layer-title">Creator rewards pool</span><span class="layer-desc">The proposed share for creators.</span></li>
+        <li style="--share: 80"><span class="pool-num">80%</span><span class="layer-title">The rest of eligible revenue</span><span class="layer-desc">Outside the pool.</span></li>
+      </ul>
+      <div class="pool-bar" aria-hidden="true"><span style="--share: 20"></span><span class="pool-rest" style="--share: 80"></span></div>
+      <svg class="pool-zoom" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><line x1="0" y1="0" x2="0" y2="100"/><line x1="20" y1="0" x2="100" y2="100"/></svg>
+      <div class="pool-bar pool-tracks-bar" aria-hidden="true"><span style="--share: 60"></span><span style="--share: 20"></span><span style="--share: 20"></span></div>
+      <ul class="pool-labels" style="--cols: 60fr 20fr 20fr">
+        <li style="--share: 60"><span class="pool-num">60%</span><span class="layer-title">Training and licensed corpus</span><span class="layer-desc">Approved, deduplicated training exposure and quality weights that are set in advance.</span></li>
+        <li style="--share: 20"><span class="pool-num">20%</span><span class="layer-title">Prompt and workflow reuse</span><span class="layer-desc">Verified paid executions of accepted versions.</span></li>
+        <li style="--share: 20"><span class="pool-num">20%</span><span class="layer-title">Ideas, contributions, and influences</span><span class="layer-desc">Agreed adoption points with reviewed evidence. An influence share needs an explicit agreement.</span></li>
+      </ul>
+    </div>
+    <p class="section-note">These are proposed contract terms, not legal royalty rates. Credit alone does not create a payout. The planned pilot labels each payout as simulated.</p>
+  </div>
+</section>
+
+<section class="formulations" aria-labelledby="commitments-heading">
+  <div class="formulations-inner">
+    <h2 class="section-heading" id="commitments-heading">What the specification commits to</h2>
+    <dl class="guarantees">
+      <div>
+        <dt>Permission before use</dt>
+        <dd>Each asset has a record of the allowed purpose, recipients, territory, and duration.</dd>
+      </div>
+      <div>
+        <dt>Honest attribution</dt>
+        <dd>A verified quotation, a retrieved source, and an estimated influence are different things. The record says which one applies.</dd>
+      </div>
+      <div>
+        <dt>Voluntary syndicates</dt>
+        <dd>Creators can join a group that administers their work under an accepted charter. Membership does not transfer ownership.</dd>
+      </div>
+      <div>
+        <dt>Private conversations</dt>
+        <dd>Conversations are private by default. Shared training needs separate consent.</dd>
+      </div>
+      <div>
+        <dt>Reproducible payments</dt>
+        <dd>The system keeps the event history, calculates exact amounts, and does not settle the same event twice.</dd>
+      </div>
+      <div>
+        <dt>Review and appeal</dt>
+        <dd>Creators can dispute ownership, missing credit, and payments. They can revoke permission.</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<section class="section questions-section" id="documents">
+  <div class="section-inner">
+    <h2 class="section-heading">What exists today</h2>
+    <p class="section-intro">The repository holds draft documents and no software. The license is a custom draft for legal review. It is not an OSI-approved license.</p>
+    <ul class="toc">
+      <li>
+        <a class="toc-item" href="https://github.com/niccolox/sovsrc.llm-ip-ideas/blob/HEAD/docs/SOVEREIGN_SOURCE_AI_CODEX_SPEC.md" rel="noopener">
+          <span class="toc-title">Project and implementation specification</span>
+          <span class="toc-desc">The SIP framework, requirements, data records, APIs, milestones, and acceptance tests.</span>
+        </a>
+      </li>
+      <li>
+        <a class="toc-item" href="https://github.com/niccolox/sovsrc.llm-ip-ideas/blob/HEAD/docs/SOLUTION_ARCHITECTURE.md" rel="noopener">
+          <span class="toc-title">Solution architecture</span>
+          <span class="toc-desc">Stack responsibilities, workflows, model selection, and training gates.</span>
+        </a>
+      </li>
+      <li>
+        <a class="toc-item" href="https://github.com/niccolox/sovsrc.llm-ip-ideas/blob/HEAD/docs/FRONTIER_LAB_IP_AND_CREATOR_REWARDS_AUDIT.md" rel="noopener">
+          <span class="toc-title">Frontier lab terms audit</span>
+          <span class="toc-desc">Eight organizations compared on IP, training permissions, attribution, and compensation.</span>
+        </a>
+      </li>
+      <li>
+        <a class="toc-item" href="https://github.com/niccolox/sovsrc.llm-ip-ideas/blob/HEAD/licenses/SS-SIP-0.1.md" rel="noopener">
+          <span class="toc-title">SS-SIP license draft</span>
+          <span class="toc-desc">A custom license draft for source sharing, contributor credit, and influence notices.</span>
+        </a>
+      </li>
+      <li>
+        <a class="toc-item" href="https://github.com/niccolox/sovsrc.llm-ip-ideas/blob/HEAD/licenses/SYNDICATE-MARKETPLACE-TERMS-0.1.md" rel="noopener">
+          <span class="toc-title">Syndicate marketplace terms</span>
+          <span class="toc-desc">Opt-in listings, commissions, creator rewards, payouts, and appeals.</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="updates">
+  <div class="section-inner">
+    <h2 class="section-heading">Latest changes</h2>
+    <p class="section-intro">Each commit to the repository gets a page. A machine writes the summaries from the change, so read the source before you quote a summary.</p>
+    <ul class="toc updates">
+      <li>
+        <a class="toc-item" href="2026-10-10-f1a9478.html">
+          <span class="toc-num"><time datetime="2026-10-10T12:17:26-07:00">10 Oct 2026</time></span>
+          <span class="toc-title">New draft audit compares model provider terms and proposes creator reward controls</span>
+          <span class="toc-desc">A new draft audit compares provider terms on ownership, training permission, attribution and compensation. It proposes separate rights records and creator reward controls.</span>
+        </a>
+      </li>
+      <li>
+        <a class="toc-item" href="2026-10-10-f6aa195.html">
+          <span class="toc-num"><time datetime="2026-10-10T12:15:54-07:00">10 Oct 2026</time></span>
+          <span class="toc-title">Specifications add proposed creator rewards, licensing and marketplace terms</span>
+          <span class="toc-desc">The documents introduce SIP Creator Rewards and draft licensing and marketplace terms for agreed contribution use. The project remains at specification stage.</span>
+        </a>
+      </li>
+      <li>
+        <a class="toc-item" href="2026-10-10-e4ca3ac.html">
+          <span class="toc-num"><time datetime="2026-10-10T11:47:20-07:00">10 Oct 2026</time></span>
+          <span class="toc-title">Specification adds proposed Super Intellectual Property framework and voluntary syndicates</span>
+          <span class="toc-desc">The revised specification proposes Super Intellectual Property to recognize works, ideas, contributions and influences through evidence and agreements. The project remains at specification stage, with no application, trained model or production payment system.</span>
+        </a>
+      </li>
+    </ul>
+    <div class="cta-row">
+      <a class="btn-quiet" href="updates.html">See all updates</a>
+      <a class="btn-quiet" href="feed.xml">Follow the feed</a>
+    </div>
+  </div>
+</section>
+
+<section class="section claim-section" id="talk">
+  <div class="section-inner">
+    <h2 class="section-heading">Tell us what the specification gets wrong</h2>
+    <p class="claim-text">
+      The project is open for review. If you make source material, work on rights, or build models,
+      read the drafts and send us your objections.
+    </p>
+    <div class="cta-row">
+      <a class="btn" href="mailto:hello@sovsrc.ai?subject=sovsrc.llm">Email us about sovsrc.llm</a>
+      <a class="btn-quiet" href="https://github.com/niccolox/sovsrc.llm-ip-ideas" rel="noopener">Read the specification on GitHub</a>
+    </div>
+  </div>
+</section>
 </main>
+
+<script src="../home.js" defer></script>
 
 <footer class="footer">
   <div class="footer-inner">
@@ -92,7 +265,8 @@
     <nav class="footer-nav" aria-label="Footer navigation">
       <a href="../index.html">Home</a>
       <a href="../news/">News</a>
-      <a href="./">sovsrc.llm updates</a>
+      <a href="./">sovsrc.llm</a>
+      <a href="updates.html">sovsrc.llm updates</a>
       <a href="feed.xml">Feed</a>
       <a href="../manifesto.html">The manifesto</a>
       <a href="mailto:hello@sovsrc.ai">hello@sovsrc.ai</a>
