@@ -5,7 +5,14 @@
   <link href="https://sovsrc.ai/llm/"/>
   <link rel="self" href="https://sovsrc.ai/llm/feed.xml"/>
   <author><name>Sovereign Source AI</name></author>
-  <updated>2026-10-10T20:18:27Z</updated>
+  <updated>2026-10-10T20:20:32Z</updated>
+  <entry>
+    <title>New comparison index proposes training from scratch and holding Nemotron</title>
+    <id>https://sovsrc.ai/llm/2026-10-10-2f1897a.html</id>
+    <link href="https://sovsrc.ai/llm/2026-10-10-2f1897a.html"/>
+    <updated>2026-10-10T20:20:32Z</updated>
+    <summary>The new index proposes Ai2 or Marin training tools for a model trained from scratch on permission-reviewed material. It proposes holding the Nemotron checkpoint because its documented Qwen ancestry fails the proposed selection screen.</summary>
+  </entry>
   <entry>
     <title>Model selection proposal puts Nemotron training target on hold</title>
     <id>https://sovsrc.ai/llm/2026-10-10-67ade12.html</id>
