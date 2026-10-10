@@ -2,7 +2,7 @@
 """Build the llm/ section from the sovsrc.llm update entries.
 
 Reads research/llm-updates/data/<id>.json from the svrnsrc.ai research repo
-(written by tools/llm_updates/watch.py there, one entry for each change to the
+(written by tools/llm_updates/watch.py there, one entry for each commit to the
 sovsrc.llm repository) and writes:
 
   llm/index.html   the stream, newest first, grouped by day
@@ -50,11 +50,11 @@ def pushed(entry: dict) -> list[dict]:
 
 
 def status(entry: dict) -> str:
-    """Where the change is: on GitHub, committed on the author's machine, or not committed."""
+    """Where the change is: on GitHub, or committed on the author's machine only."""
     if pushed(entry):
         return ", ".join(f'<a href="{esc(entry["repo"])}/commit/{c["sha"]}" rel="noopener">'
                          f'commit <code>{c["sha"][:7]}</code></a>' for c in pushed(entry))
-    return "Committed, not on GitHub yet" if entry["commits"] else "Draft, not committed yet"
+    return "Committed, not on GitHub yet"
 
 
 def file_ref(entry: dict, path: str) -> str:
