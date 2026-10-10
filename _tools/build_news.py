@@ -159,6 +159,7 @@ PAGE = """<!DOCTYPE html>
       <a href="../index.html">Home</a>
       <a href="../business/">For small business</a>
       <a href="../index.html#topics">Topics</a>
+      <a href="../llm/">sovsrc.llm updates</a>
       <a href="../manifesto.html">The manifesto</a>
       <a href="mailto:hello@sovsrc.ai">hello@sovsrc.ai</a>
     </nav>
