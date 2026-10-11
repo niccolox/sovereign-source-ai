@@ -5,7 +5,14 @@
   <link href="https://sovsrc.ai/llm/"/>
   <link rel="self" href="https://sovsrc.ai/llm/feed.xml"/>
   <author><name>Sovereign Source AI</name></author>
-  <updated>2026-10-10T23:05:22Z</updated>
+  <updated>2026-10-11T00:42:18Z</updated>
+  <entry>
+    <title>Gemini research proposes permission checks for model training</title>
+    <id>https://sovsrc.ai/llm/2026-10-10-9fd1881.html</id>
+    <link href="https://sovsrc.ai/llm/2026-10-10-9fd1881.html"/>
+    <updated>2026-10-11T00:42:18Z</updated>
+    <summary>A new report proposes excluding Gemini-generated training material from Nemotron adaptation unless a governing agreement expressly permits the workflow. It compares access routes, exceptions and commercial exposure.</summary>
+  </entry>
   <entry>
     <title>New report examines OpenAI restrictions on competing model development</title>
     <id>https://sovsrc.ai/llm/2026-10-10-18589dc.html</id>
