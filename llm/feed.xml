@@ -5,7 +5,14 @@
   <link href="https://sovsrc.ai/llm/"/>
   <link rel="self" href="https://sovsrc.ai/llm/feed.xml"/>
   <author><name>Sovereign Source AI</name></author>
-  <updated>2026-10-12T23:19:52Z</updated>
+  <updated>2026-10-12T23:43:01Z</updated>
+  <entry>
+    <title>SkyRL assessment adds a proposed post-training option</title>
+    <id>https://sovsrc.ai/llm/2026-10-12-e37d776.html</id>
+    <link href="https://sovsrc.ai/llm/2026-10-12-e37d776.html"/>
+    <updated>2026-10-12T23:43:01Z</updated>
+    <summary>The new assessment proposes SkyRL as an optional, self-hosted post-training framework for the research assistant. The work remains research and a proposed pilot, with no installation, GPU training or deployment performed.</summary>
+  </entry>
   <entry>
     <title>Perplexity research adds conditions for a proposed integration</title>
     <id>https://sovsrc.ai/llm/2026-10-12-9923b66.html</id>
