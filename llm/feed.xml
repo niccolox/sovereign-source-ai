@@ -5,7 +5,14 @@
   <link href="https://sovsrc.ai/llm/"/>
   <link rel="self" href="https://sovsrc.ai/llm/feed.xml"/>
   <author><name>Sovereign Source AI</name></author>
-  <updated>2026-10-13T03:05:47Z</updated>
+  <updated>2026-10-13T03:21:33Z</updated>
+  <entry>
+    <title>Research compares national sovereign AI projects and commercial providers</title>
+    <id>https://sovsrc.ai/llm/2026-10-12-520e2b4.html</id>
+    <link href="https://sovsrc.ai/llm/2026-10-12-520e2b4.html"/>
+    <updated>2026-10-13T03:21:33Z</updated>
+    <summary>A new research document compares sovereign AI projects on ownership, compute, model control, source rights and contributor rewards. It proposes supplying permissioned knowledge collections, attribution evidence and contractual content rewards to sovereign AI operators.</summary>
+  </entry>
   <entry>
     <title>Documents propose self-hosted OpenCode 2 for development and experiments</title>
     <id>https://sovsrc.ai/llm/2026-10-12-5bce059.html</id>
