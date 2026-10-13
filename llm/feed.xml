@@ -5,7 +5,14 @@
   <link href="https://sovsrc.ai/llm/"/>
   <link rel="self" href="https://sovsrc.ai/llm/feed.xml"/>
   <author><name>Sovereign Source AI</name></author>
-  <updated>2026-10-13T03:21:33Z</updated>
+  <updated>2026-10-13T03:39:38Z</updated>
+  <entry>
+    <title>SkyRL research adds a proposed training workflow and evaluation criteria</title>
+    <id>https://sovsrc.ai/llm/2026-10-12-d015639.html</id>
+    <link href="https://sovsrc.ai/llm/2026-10-12-d015639.html"/>
+    <updated>2026-10-13T03:39:38Z</updated>
+    <summary>The research document now explains a proposed SkyRL training loop using admitted documents, approved tools and reviewed scoring criteria. It separates learning scores from proposed creator payment eligibility.</summary>
+  </entry>
   <entry>
     <title>Research compares national sovereign AI projects and commercial providers</title>
     <id>https://sovsrc.ai/llm/2026-10-12-520e2b4.html</id>
