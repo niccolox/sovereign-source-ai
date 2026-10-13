@@ -5,7 +5,14 @@
   <link href="https://sovsrc.ai/llm/"/>
   <link rel="self" href="https://sovsrc.ai/llm/feed.xml"/>
   <author><name>Sovereign Source AI</name></author>
-  <updated>2026-10-13T00:12:32Z</updated>
+  <updated>2026-10-13T00:59:53Z</updated>
+  <entry>
+    <title>Meta Muse assessment adds proposed evaluation and teacher candidates</title>
+    <id>https://sovsrc.ai/llm/2026-10-12-27574e2.html</id>
+    <link href="https://sovsrc.ai/llm/2026-10-12-27574e2.html"/>
+    <updated>2026-10-13T00:59:53Z</updated>
+    <summary>The research proposes Wonder and Spark as evaluation baselines and self-hosted Glimmer as a conditional model or teacher candidate. It grants none approval under the project&#x27;s strict provenance and model lineage requirements.</summary>
+  </entry>
   <entry>
     <title>Research summary proposes foundation model and teacher choices</title>
     <id>https://sovsrc.ai/llm/2026-10-12-c3e49ea.html</id>
