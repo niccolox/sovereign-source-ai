@@ -5,7 +5,14 @@
   <link href="https://sovsrc.ai/llm/"/>
   <link rel="self" href="https://sovsrc.ai/llm/feed.xml"/>
   <author><name>Sovereign Source AI</name></author>
-  <updated>2026-10-12T23:43:01Z</updated>
+  <updated>2026-10-13T00:12:32Z</updated>
+  <entry>
+    <title>Research summary proposes foundation model and teacher choices</title>
+    <id>https://sovsrc.ai/llm/2026-10-12-c3e49ea.html</id>
+    <link href="https://sovsrc.ai/llm/2026-10-12-c3e49ea.html"/>
+    <updated>2026-10-13T00:12:32Z</updated>
+    <summary>The new research summary proposes KL3M for a source-provenance pilot and OLMo-core for training newly initialized weights on admitted sources. The project remains at specification stage and has not benchmarked or approved any model for production.</summary>
+  </entry>
   <entry>
     <title>SkyRL assessment adds a proposed post-training option</title>
     <id>https://sovsrc.ai/llm/2026-10-12-e37d776.html</id>
