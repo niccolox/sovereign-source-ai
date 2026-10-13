@@ -5,7 +5,14 @@
   <link href="https://sovsrc.ai/llm/"/>
   <link rel="self" href="https://sovsrc.ai/llm/feed.xml"/>
   <author><name>Sovereign Source AI</name></author>
-  <updated>2026-10-13T02:30:51Z</updated>
+  <updated>2026-10-13T03:05:47Z</updated>
+  <entry>
+    <title>Documents propose self-hosted OpenCode 2 for development and experiments</title>
+    <id>https://sovsrc.ai/llm/2026-10-12-5bce059.html</id>
+    <link href="https://sovsrc.ai/llm/2026-10-12-5bce059.html"/>
+    <updated>2026-10-13T03:05:47Z</updated>
+    <summary>The documents propose evaluating self-hosted OpenCode 2 as an engineering assistant and experiment interface with separately approved models. The assessment reports no installation or runtime validation.</summary>
+  </entry>
   <entry>
     <title>Documents add a proposed commercial plan for research publishers</title>
     <id>https://sovsrc.ai/llm/2026-10-12-fa195a8.html</id>
