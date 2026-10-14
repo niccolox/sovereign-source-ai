@@ -5,7 +5,14 @@
   <link href="https://sovsrc.ai/llm/"/>
   <link rel="self" href="https://sovsrc.ai/llm/feed.xml"/>
   <author><name>Sovereign Source AI</name></author>
-  <updated>2026-10-14T19:37:32Z</updated>
+  <updated>2026-10-14T20:17:00Z</updated>
+  <entry>
+    <title>Documentation gains a searchable library and licensed-content billing research</title>
+    <id>https://sovsrc.ai/llm/2026-10-14-a2ab5f7.html</id>
+    <link href="https://sovsrc.ai/llm/2026-10-14-a2ab5f7.html"/>
+    <updated>2026-10-14T20:17:00Z</updated>
+    <summary>The repository adds a searchable documentation library and research proposing separate compute and content charges. The library identifies the platform as a proposal.</summary>
+  </entry>
   <entry>
     <title>New research compares proposed distillation and training data options</title>
     <id>https://sovsrc.ai/llm/2026-10-14-4cfef87.html</id>
@@ -208,12 +215,5 @@
     <link href="https://sovsrc.ai/llm/2026-10-10-2f1897a.html"/>
     <updated>2026-10-10T20:20:32Z</updated>
     <summary>The new index proposes Ai2 or Marin training tools for a model trained from scratch on permission-reviewed material. It proposes holding the Nemotron checkpoint because its documented Qwen ancestry fails the proposed selection screen.</summary>
-  </entry>
-  <entry>
-    <title>Model selection proposal puts Nemotron training target on hold</title>
-    <id>https://sovsrc.ai/llm/2026-10-10-67ade12.html</id>
-    <link href="https://sovsrc.ai/llm/2026-10-10-67ade12.html"/>
-    <updated>2026-10-10T20:18:27Z</updated>
-    <summary>The documents put the proposed Nemotron 3 Nano training target on hold because its official card discloses Qwen use. No replacement model has approval.</summary>
   </entry>
 </feed>
