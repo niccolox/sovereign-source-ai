@@ -5,7 +5,14 @@
   <link href="https://sovsrc.ai/llm/"/>
   <link rel="self" href="https://sovsrc.ai/llm/feed.xml"/>
   <author><name>Sovereign Source AI</name></author>
-  <updated>2026-10-13T05:05:49Z</updated>
+  <updated>2026-10-14T01:53:39Z</updated>
+  <entry>
+    <title>Research adds ten commercial options for training an LLM from scratch</title>
+    <id>https://sovsrc.ai/llm/2026-10-13-dea2f26.html</id>
+    <link href="https://sovsrc.ai/llm/2026-10-13-dea2f26.html"/>
+    <updated>2026-10-14T01:53:39Z</updated>
+    <summary>New procurement research compares ten commercial training offerings and proposes AWS SageMaker AI as the general-purpose managed-training candidate. The shortlist reflects proposed project fit, not measured performance.</summary>
+  </entry>
   <entry>
     <title>Business plan proposes research services for markets and community syndicates</title>
     <id>https://sovsrc.ai/llm/2026-10-12-dfe9131.html</id>
