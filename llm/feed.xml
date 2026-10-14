@@ -5,7 +5,14 @@
   <link href="https://sovsrc.ai/llm/"/>
   <link rel="self" href="https://sovsrc.ai/llm/feed.xml"/>
   <author><name>Sovereign Source AI</name></author>
-  <updated>2026-10-14T02:41:17Z</updated>
+  <updated>2026-10-14T02:53:46Z</updated>
+  <entry>
+    <title>New article examines the business case for proposed contributor rewards</title>
+    <id>https://sovsrc.ai/llm/2026-10-13-afd6cf2.html</id>
+    <link href="https://sovsrc.ai/llm/2026-10-13-afd6cf2.html"/>
+    <updated>2026-10-14T02:53:46Z</updated>
+    <summary>A new opinion article explains how proposed contributor payments could reduce useful-data costs and support customer growth. The project remains at the specification stage.</summary>
+  </entry>
   <entry>
     <title>New article proposes content rewards from AI revenue</title>
     <id>https://sovsrc.ai/llm/2026-10-13-28262d5.html</id>
@@ -208,12 +215,5 @@
     <link href="https://sovsrc.ai/llm/2026-10-10-168ffe3.html"/>
     <updated>2026-10-10T19:28:53Z</updated>
     <summary>New documents propose a research assistant that checks source permissions, provides attribution receipts and records eligible contributor use. The project remains at specification stage; no application, trained model or production payment system exists.</summary>
-  </entry>
-  <entry>
-    <title>Project specification document added</title>
-    <id>https://sovsrc.ai/llm/2026-10-10-8452a53.html</id>
-    <link href="https://sovsrc.ai/llm/2026-10-10-8452a53.html"/>
-    <updated>2026-10-10T19:28:41Z</updated>
-    <summary>The repository adds a project specification document. The diff contains no text to describe its proposals.</summary>
   </entry>
 </feed>
