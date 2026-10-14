@@ -5,7 +5,14 @@
   <link href="https://sovsrc.ai/llm/"/>
   <link rel="self" href="https://sovsrc.ai/llm/feed.xml"/>
   <author><name>Sovereign Source AI</name></author>
-  <updated>2026-10-14T05:34:01Z</updated>
+  <updated>2026-10-14T19:13:04Z</updated>
+  <entry>
+    <title>Documentation gains GitHub Pages configuration</title>
+    <id>https://sovsrc.ai/llm/2026-10-14-f96522c.html</id>
+    <link href="https://sovsrc.ai/llm/2026-10-14-f96522c.html"/>
+    <updated>2026-10-14T19:13:04Z</updated>
+    <summary>The documents now specify GitHub Pages publishing for sovsrc.si, with the README as the homepage. The configuration uses Jekyll to build the documentation site.</summary>
+  </entry>
   <entry>
     <title>Research proposes a managed community compute experiment</title>
     <id>https://sovsrc.ai/llm/2026-10-13-96ea430.html</id>
@@ -208,12 +215,5 @@
     <link href="https://sovsrc.ai/llm/2026-10-10-f1a9478.html"/>
     <updated>2026-10-10T19:29:33Z</updated>
     <summary>A new draft audit compares provider terms on ownership, training permission, attribution and compensation. It proposes separate rights records and creator reward controls.</summary>
-  </entry>
-  <entry>
-    <title>Specifications add proposed creator rewards, licensing and marketplace terms</title>
-    <id>https://sovsrc.ai/llm/2026-10-10-f6aa195.html</id>
-    <link href="https://sovsrc.ai/llm/2026-10-10-f6aa195.html"/>
-    <updated>2026-10-10T19:29:20Z</updated>
-    <summary>The documents introduce SIP Creator Rewards and draft licensing and marketplace terms for agreed contribution use. The project remains at specification stage.</summary>
   </entry>
 </feed>
