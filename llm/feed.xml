@@ -5,7 +5,14 @@
   <link href="https://sovsrc.ai/llm/"/>
   <link rel="self" href="https://sovsrc.ai/llm/feed.xml"/>
   <author><name>Sovereign Source AI</name></author>
-  <updated>2026-10-14T02:03:08Z</updated>
+  <updated>2026-10-14T02:13:10Z</updated>
+  <entry>
+    <title>Training research expands to twelve commercial offerings</title>
+    <id>https://sovsrc.ai/llm/2026-10-13-481a21a.html</id>
+    <link href="https://sovsrc.ai/llm/2026-10-13-481a21a.html"/>
+    <updated>2026-10-14T02:13:10Z</updated>
+    <summary>The research adds Modal and Baseten to a twelve-provider comparison for proposed training from scratch. It proposes different candidates for small experiments, enterprise training and supplier-assisted model development.</summary>
+  </entry>
   <entry>
     <title>Research document proposes an open-source stack for an independent LLM</title>
     <id>https://sovsrc.ai/llm/2026-10-13-a38ca6f.html</id>
