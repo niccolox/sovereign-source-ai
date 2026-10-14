@@ -5,7 +5,14 @@
   <link href="https://sovsrc.ai/llm/"/>
   <link rel="self" href="https://sovsrc.ai/llm/feed.xml"/>
   <author><name>Sovereign Source AI</name></author>
-  <updated>2026-10-14T19:13:04Z</updated>
+  <updated>2026-10-14T19:37:32Z</updated>
+  <entry>
+    <title>New research compares proposed distillation and training data options</title>
+    <id>https://sovsrc.ai/llm/2026-10-14-4cfef87.html</id>
+    <link href="https://sovsrc.ai/llm/2026-10-14-4cfef87.html"/>
+    <updated>2026-10-14T19:37:32Z</updated>
+    <summary>Two new reports assess proposed routes for portable model distillation and permissioned training data. They compare providers, source permissions, deployment control and contributor compensation.</summary>
+  </entry>
   <entry>
     <title>Documentation gains GitHub Pages configuration</title>
     <id>https://sovsrc.ai/llm/2026-10-14-f96522c.html</id>
@@ -208,12 +215,5 @@
     <link href="https://sovsrc.ai/llm/2026-10-10-67ade12.html"/>
     <updated>2026-10-10T20:18:27Z</updated>
     <summary>The documents put the proposed Nemotron 3 Nano training target on hold because its official card discloses Qwen use. No replacement model has approval.</summary>
-  </entry>
-  <entry>
-    <title>New draft audit compares model provider terms and proposes creator reward controls</title>
-    <id>https://sovsrc.ai/llm/2026-10-10-f1a9478.html</id>
-    <link href="https://sovsrc.ai/llm/2026-10-10-f1a9478.html"/>
-    <updated>2026-10-10T19:29:33Z</updated>
-    <summary>A new draft audit compares provider terms on ownership, training permission, attribution and compensation. It proposes separate rights records and creator reward controls.</summary>
   </entry>
 </feed>
