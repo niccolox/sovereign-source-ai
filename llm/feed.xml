@@ -5,7 +5,14 @@
   <link href="https://sovsrc.ai/llm/"/>
   <link rel="self" href="https://sovsrc.ai/llm/feed.xml"/>
   <author><name>Sovereign Source AI</name></author>
-  <updated>2026-10-15T16:31:21Z</updated>
+  <updated>2026-10-15T17:55:32Z</updated>
+  <entry>
+    <title>Patent research compares claims relevant to the proposed platform</title>
+    <id>https://sovsrc.ai/llm/2026-10-15-597883a.html</id>
+    <link href="https://sovsrc.ai/llm/2026-10-15-597883a.html"/>
+    <updated>2026-10-15T17:55:32Z</updated>
+    <summary>A new research document compares twelve US patents and published applications relevant to proposed attribution, contributor payments, licensed generation and marketplaces.</summary>
+  </entry>
   <entry>
     <title>New draft proposes shared records for LLM rights and contributor awards</title>
     <id>https://sovsrc.ai/llm/2026-10-15-73f8567.html</id>
@@ -208,12 +215,5 @@
     <link href="https://sovsrc.ai/llm/2026-10-10-921cc30.html"/>
     <updated>2026-10-10T22:36:19Z</updated>
     <summary>New research records ancestry conflicts for the proposed Nemotron 3 Ultra target and outlines performance evaluation and supplier review proposals. The performance review reports no model downloads or benchmark runs.</summary>
-  </entry>
-  <entry>
-    <title>Specifications select Nemotron 3 Ultra and propose commercial integrations</title>
-    <id>https://sovsrc.ai/llm/2026-10-10-4510d4e.html</id>
-    <link href="https://sovsrc.ai/llm/2026-10-10-4510d4e.html"/>
-    <updated>2026-10-10T21:53:16Z</updated>
-    <summary>The proposed architecture selects NVIDIA Nemotron 3 Ultra while retaining an unresolved conflict with the earlier model ancestry requirement. The specification also proposes commercial software, licensed content supply and payout candidates without establishing vendor agreements or live integrations.</summary>
   </entry>
 </feed>
