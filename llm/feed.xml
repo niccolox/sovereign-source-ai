@@ -5,7 +5,14 @@
   <link href="https://sovsrc.ai/llm/"/>
   <link rel="self" href="https://sovsrc.ai/llm/feed.xml"/>
   <author><name>Sovereign Source AI</name></author>
-  <updated>2026-10-15T18:09:49Z</updated>
+  <updated>2026-10-15T20:39:50Z</updated>
+  <entry>
+    <title>Sovereign Source removes detailed proposal documents from its public collection</title>
+    <id>https://sovsrc.ai/llm/2026-10-15-e568383.html</id>
+    <link href="https://sovsrc.ai/llm/2026-10-15-e568383.html"/>
+    <updated>2026-10-15T20:39:50Z</updated>
+    <summary>The repository removes documents covering proposed implementation requirements, contributor reward standards and business plans. These deletions concern proposals, not an operating model or payment service.</summary>
+  </entry>
   <entry>
     <title>New comparison maps proposed requirements to patent claims</title>
     <id>https://sovsrc.ai/llm/2026-10-15-5f7a4bf.html</id>
@@ -208,12 +215,5 @@
     <link href="https://sovsrc.ai/llm/2026-10-10-9fd1881.html"/>
     <updated>2026-10-11T00:42:18Z</updated>
     <summary>A new report proposes excluding Gemini-generated training material from Nemotron adaptation unless a governing agreement expressly permits the workflow. It compares access routes, exceptions and commercial exposure.</summary>
-  </entry>
-  <entry>
-    <title>New report examines OpenAI restrictions on competing model development</title>
-    <id>https://sovsrc.ai/llm/2026-10-10-18589dc.html</id>
-    <link href="https://sovsrc.ai/llm/2026-10-10-18589dc.html"/>
-    <updated>2026-10-10T23:05:22Z</updated>
-    <summary>A new research report examines OpenAI output-use restrictions and proposes permission checks for Sovereign Source model development. It distinguishes hosted customization from independently distributed models.</summary>
   </entry>
 </feed>
