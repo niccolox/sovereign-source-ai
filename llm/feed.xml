@@ -5,7 +5,14 @@
   <link href="https://sovsrc.ai/llm/"/>
   <link rel="self" href="https://sovsrc.ai/llm/feed.xml"/>
   <author><name>Sovereign Source AI</name></author>
-  <updated>2026-10-17T00:43:32Z</updated>
+  <updated>2026-10-17T01:53:37Z</updated>
+  <entry>
+    <title>New article examines Claude and OpenAI terms for proposed AI development</title>
+    <id>https://sovsrc.ai/llm/2026-10-16-e17f5ec.html</id>
+    <link href="https://sovsrc.ai/llm/2026-10-16-e17f5ec.html"/>
+    <updated>2026-10-17T01:53:37Z</updated>
+    <summary>A new public article examines how Claude and OpenAI terms could affect proposed competing-model development. It distinguishes ordinary application engineering, competing-model code, and generated training material.</summary>
+  </entry>
   <entry>
     <title>Diagram source now uses a Mermaid initialization directive</title>
     <id>https://sovsrc.ai/llm/2026-10-16-3870f7e.html</id>
@@ -208,12 +215,5 @@
     <link href="https://sovsrc.ai/llm/2026-10-11-19390b0.html"/>
     <updated>2026-10-12T01:29:09Z</updated>
     <summary>New research proposes evaluating KL3M and its separate Data Project in a bounded provenance pilot. KL3M remains a research candidate alongside the selected Nemotron 3 Ultra target.</summary>
-  </entry>
-  <entry>
-    <title>Hermes Agent research proposes an optional interface for Sovereign Source</title>
-    <id>https://sovsrc.ai/llm/2026-10-11-c6717de.html</id>
-    <link href="https://sovsrc.ai/llm/2026-10-11-c6717de.html"/>
-    <updated>2026-10-11T16:43:19Z</updated>
-    <summary>New research proposes evaluating a self-hosted Hermes Agent interface for permission and attribution services. The proposed integration has no implementation or benchmarks.</summary>
   </entry>
 </feed>
