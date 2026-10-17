@@ -5,7 +5,14 @@
   <link href="https://sovsrc.ai/llm/"/>
   <link rel="self" href="https://sovsrc.ai/llm/feed.xml"/>
   <author><name>Sovereign Source AI</name></author>
-  <updated>2026-10-15T20:39:50Z</updated>
+  <updated>2026-10-17T00:42:04Z</updated>
+  <entry>
+    <title>New article examines proposed model development with Nemotron 3 Ultra</title>
+    <id>https://sovsrc.ai/llm/2026-10-16-6106eaa.html</id>
+    <link href="https://sovsrc.ai/llm/2026-10-16-6106eaa.html"/>
+    <updated>2026-10-17T00:42:04Z</updated>
+    <summary>A new article and diagram describe proposed routes to a competing model using Nemotron 3 Ultra. The article separates model permissions, training origins and proposed contributor rewards.</summary>
+  </entry>
   <entry>
     <title>Sovereign Source removes detailed proposal documents from its public collection</title>
     <id>https://sovsrc.ai/llm/2026-10-15-e568383.html</id>
@@ -208,12 +215,5 @@
     <link href="https://sovsrc.ai/llm/2026-10-10-a3ff994.html"/>
     <updated>2026-10-11T05:20:14Z</updated>
     <summary>A new pathway proposes independently authorized development or explicit contractual permission for ChatGPT-assisted model development. The specification adds a proposed requirement to record authorization before using externally generated material.</summary>
-  </entry>
-  <entry>
-    <title>Gemini research proposes permission checks for model training</title>
-    <id>https://sovsrc.ai/llm/2026-10-10-9fd1881.html</id>
-    <link href="https://sovsrc.ai/llm/2026-10-10-9fd1881.html"/>
-    <updated>2026-10-11T00:42:18Z</updated>
-    <summary>A new report proposes excluding Gemini-generated training material from Nemotron adaptation unless a governing agreement expressly permits the workflow. It compares access routes, exceptions and commercial exposure.</summary>
   </entry>
 </feed>
