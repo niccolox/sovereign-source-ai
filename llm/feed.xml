@@ -5,7 +5,14 @@
   <link href="https://sovsrc.ai/llm/"/>
   <link rel="self" href="https://sovsrc.ai/llm/feed.xml"/>
   <author><name>Sovereign Source AI</name></author>
-  <updated>2026-10-17T00:42:04Z</updated>
+  <updated>2026-10-17T00:43:32Z</updated>
+  <entry>
+    <title>Diagram source now uses a Mermaid initialization directive</title>
+    <id>https://sovsrc.ai/llm/2026-10-16-3870f7e.html</id>
+    <link href="https://sovsrc.ai/llm/2026-10-16-3870f7e.html"/>
+    <updated>2026-10-17T00:43:32Z</updated>
+    <summary>The diagram source now places its display settings in a Mermaid initialization directive instead of a separate configuration header.</summary>
+  </entry>
   <entry>
     <title>New article examines proposed model development with Nemotron 3 Ultra</title>
     <id>https://sovsrc.ai/llm/2026-10-16-6106eaa.html</id>
@@ -208,12 +215,5 @@
     <link href="https://sovsrc.ai/llm/2026-10-11-c6717de.html"/>
     <updated>2026-10-11T16:43:19Z</updated>
     <summary>New research proposes evaluating a self-hosted Hermes Agent interface for permission and attribution services. The proposed integration has no implementation or benchmarks.</summary>
-  </entry>
-  <entry>
-    <title>Documents add proposed routes for independent model development</title>
-    <id>https://sovsrc.ai/llm/2026-10-10-a3ff994.html</id>
-    <link href="https://sovsrc.ai/llm/2026-10-10-a3ff994.html"/>
-    <updated>2026-10-11T05:20:14Z</updated>
-    <summary>A new pathway proposes independently authorized development or explicit contractual permission for ChatGPT-assisted model development. The specification adds a proposed requirement to record authorization before using externally generated material.</summary>
   </entry>
 </feed>
