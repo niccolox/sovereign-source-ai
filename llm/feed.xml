@@ -5,7 +5,14 @@
   <link href="https://sovsrc.ai/llm/"/>
   <link rel="self" href="https://sovsrc.ai/llm/feed.xml"/>
   <author><name>Sovereign Source AI</name></author>
-  <updated>2026-10-17T01:53:37Z</updated>
+  <updated>2026-10-18T01:39:04Z</updated>
+  <entry>
+    <title>New analysis examines Harness2 for proposed sovereign AI development</title>
+    <id>https://sovsrc.ai/llm/2026-10-17-affc98c.html</id>
+    <link href="https://sovsrc.ai/llm/2026-10-17-affc98c.html"/>
+    <updated>2026-10-18T01:39:04Z</updated>
+    <summary>A new article examines Harness2 as a possible component for proposed sovereign AI workflows. It describes integration possibilities, licensing considerations and evaluation limits.</summary>
+  </entry>
   <entry>
     <title>New article examines Claude and OpenAI terms for proposed AI development</title>
     <id>https://sovsrc.ai/llm/2026-10-16-e17f5ec.html</id>
@@ -208,12 +215,5 @@
     <link href="https://sovsrc.ai/llm/2026-10-12-9923b66.html"/>
     <updated>2026-10-12T23:19:52Z</updated>
     <summary>The new research proposes studying Perplexity’s publisher rewards while requiring negotiated permission for any search partnership. It records no established account, API integration, partnership or training permission.</summary>
-  </entry>
-  <entry>
-    <title>KL3M research adds a proposed provenance and rewards pilot</title>
-    <id>https://sovsrc.ai/llm/2026-10-11-19390b0.html</id>
-    <link href="https://sovsrc.ai/llm/2026-10-11-19390b0.html"/>
-    <updated>2026-10-12T01:29:09Z</updated>
-    <summary>New research proposes evaluating KL3M and its separate Data Project in a bounded provenance pilot. KL3M remains a research candidate alongside the selected Nemotron 3 Ultra target.</summary>
   </entry>
 </feed>
