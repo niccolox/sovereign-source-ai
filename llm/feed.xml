@@ -5,7 +5,14 @@
   <link href="https://sovsrc.ai/llm/"/>
   <link rel="self" href="https://sovsrc.ai/llm/feed.xml"/>
   <author><name>Sovereign Source AI</name></author>
-  <updated>2026-10-18T01:39:04Z</updated>
+  <updated>2026-10-19T02:00:40Z</updated>
+  <entry>
+    <title>New Super Anthropocene article examines proposed contributor rewards</title>
+    <id>https://sovsrc.ai/llm/2026-10-18-452bef3.html</id>
+    <link href="https://sovsrc.ai/llm/2026-10-18-452bef3.html"/>
+    <updated>2026-10-19T02:00:40Z</updated>
+    <summary>A new opinion article proposes voluntary contributor rewards that connect AI revenue with continuing knowledge creation. It describes an operating rewards platform as an ambition.</summary>
+  </entry>
   <entry>
     <title>New analysis examines Harness2 for proposed sovereign AI development</title>
     <id>https://sovsrc.ai/llm/2026-10-17-affc98c.html</id>
@@ -208,12 +215,5 @@
     <link href="https://sovsrc.ai/llm/2026-10-12-e37d776.html"/>
     <updated>2026-10-12T23:43:01Z</updated>
     <summary>The new assessment proposes SkyRL as an optional, self-hosted post-training framework for the research assistant. The work remains research and a proposed pilot, with no installation, GPU training or deployment performed.</summary>
-  </entry>
-  <entry>
-    <title>Perplexity research adds conditions for a proposed integration</title>
-    <id>https://sovsrc.ai/llm/2026-10-12-9923b66.html</id>
-    <link href="https://sovsrc.ai/llm/2026-10-12-9923b66.html"/>
-    <updated>2026-10-12T23:19:52Z</updated>
-    <summary>The new research proposes studying Perplexity’s publisher rewards while requiring negotiated permission for any search partnership. It records no established account, API integration, partnership or training permission.</summary>
   </entry>
 </feed>
