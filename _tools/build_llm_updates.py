@@ -34,6 +34,14 @@ OUT = SITE / "llm"
 BASE_URL = "https://sovsrc.ai/llm/"
 FEED_ITEMS = 30
 
+# Public full-length articles live outside the generated update directory.
+PUBLIC_ARTICLES = {
+    "docs/SUPER_ANTHROPOCENE_ARTICLE.md": (
+        "../articles/super-anthropocene.html",
+        "Read the full Super Anthropocene article and infographic",
+    ),
+}
+
 esc = html.escape
 
 
@@ -364,6 +372,9 @@ def render_page(e: dict, newer: dict | None, older: dict | None) -> str:
              f'  <h1>{esc(e["title"])}</h1>\n'
              f'  <p class="topic-summary">{esc(e["summary"])}</p>\n'
              f'  <p class="news-meta"><time datetime="{esc(e["when"])}">{day(e["when"])}</time> · {status(e)}</p>\n']
+    for source_path, (url, label) in PUBLIC_ARTICLES.items():
+        if any(f["path"] == source_path for f in e["files"]):
+            parts.append(f'  <p><a href="{esc(url)}">{esc(label)}</a></p>\n')
     for c in e["changes"]:
         refs = ", ".join(file_ref(e, p) for p in c["paths"])
         parts.append(f'\n  <h2>{esc(c["heading"])}</h2>\n'
