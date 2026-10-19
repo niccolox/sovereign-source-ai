@@ -37,7 +37,7 @@ FEED_ITEMS = 30
 # Public full-length articles live outside the generated update directory.
 PUBLIC_ARTICLES = {
     "docs/SUPER_ANTHROPOCENE_ARTICLE.md": (
-        "../articles/super-anthropocene.html",
+        "https://sovsrc.si/docs/SUPER_ANTHROPOCENE_ARTICLE.html",
         "Read the full Super Anthropocene article and infographic",
     ),
 }
