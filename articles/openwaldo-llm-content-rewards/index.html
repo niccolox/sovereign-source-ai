@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Building a Sovereign Source Model with OpenWALDO and LLM Content Rewards · Sovereign Source AI</title>
+<meta name="description" content="Use LLM scores to select training examples, build a traceable model with OpenWALDO, and evaluate it for Sovereign Source.">
+<link rel="canonical" href="https://sovsrc.ai/articles/openwaldo-llm-content-rewards/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Building a Sovereign Source Model with OpenWALDO and LLM Content Rewards">
+<meta property="og:description" content="Use LLM scores to select training examples, build a traceable model with OpenWALDO, and evaluate it for Sovereign Source.">
+<meta property="og:url" content="https://sovsrc.ai/articles/openwaldo-llm-content-rewards/">
+<meta property="article:published_time" content="2026-10-24">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css?v=20261005">
+<link rel="stylesheet" href="./article.css?v=20261024">
+</head>
+<body>
+<a class="skip-link" href="#article">Skip to article</a>
+<div class="ghost" aria-hidden="true"><span class="ghost-line">Sovereign Source AI</span><span class="ghost-line">LLM content rewards</span></div>
+<header class="header">
+  <div class="header-inner">
+    <a href="/" class="logo" aria-label="Sovereign Source AI home">
+      <img class="logo-mark" src="/logo.svg" alt="Sovereign Source AI" height="20" width="38">
+      <span class="logo-text">Sovereign Source AI</span>
+    </a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="/news/">News</a>
+      <a href="/llm/">sovsrc.llm</a>
+      <a href="/#talk" class="nav-cta">Talk to us</a>
+    </nav>
+  </div>
+</header>
+<main>
+<article id="article" class="prose reward-article">
+  <p class="article-meta">Research · <time datetime="2026-10-24">24 Oct 2026</time></p>
+  <h1>Building a Sovereign Source Model with OpenWALDO and LLM Content Rewards</h1>
+<p class="topic-summary">A model that summarizes a purchase order or explains an inventory discrepancy needs a clear definition of useful work. It should preserve the facts, identify missing information, and produce an answer a person can check. Those qualities can become explicit training signals.</p>
+<p>OpenWALDO offers a foundation for tracing the data and artifacts behind that model. An additional layer of LLM-generated content rewards could help choose which examples deserve to shape its behavior. For Sovereign Source, the practical starting point is a private experiment: score candidate responses, review the selections, train a compatible model, and test whether it performs better on unseen business tasks.</p>
+<p>Here, a content reward is a score assigned by an LLM judge to a candidate response. These scores guide training by selecting examples for the training corpus or informing reviewed preference pairs for a later optimization step.</p>
+<h2 id="what-openwaldo-contributes">What OpenWALDO contributes</h2>
+<p>WALDO connects corpus records, training runs, and model artifacts through verifiable bills of materials. Its tooling supports dataset inspection and export, training, and model packaging. The project is under active development, so an experiment should pin the tool version as well as its inputs. <a href="https://github.com/openwaldo/waldo">WALDO project overview</a></p>
+<p>OpenWALDO currently provides the tools to build or extend supported models; it does not yet offer an official pretrained model. A team must select a compatible base or train an architecture itself. Private indexes and local storage allow internal material to remain outside the public corpus. <a href="https://openwaldo.org/faq/">OpenWALDO FAQ</a></p>
+<p>The reward service described here would be an additional component. WALDO’s published compose contract defines training inputs and objectives; a stage labeled “alignment” does not itself enable a reinforcement-learning algorithm. Reward annotations and any external preference-training run need their own recorded interfaces. <a href="https://github.com/openwaldo/waldo/blob/main/docs/MODEL-COMPOSE.md">Model compose guide</a></p>
+<h2 id="define-the-behavior-before-scoring-content">Define the behavior before scoring content</h2>
+<p>Start with one bounded task. A useful Sovereign Source pilot would summarize a supplied business record into a structured response containing the relevant facts, missing fields, and a suggested next step.</p>
+<p>Suppose a synthetic purchase order states that 40 units were ordered, 32 received, and no revised delivery date supplied. A useful response identifies the eight-unit shortfall and asks for the missing date. A response that confidently invents a Friday delivery should fail, however polished its prose.</p>
+<p>The task definition should specify the available evidence, required output fields, acceptable uncertainty, and actions outside the model’s authority. Recommendations remain proposals for a person to review; the model cannot approve a purchase or change stock records.</p>
+<p>This creates a concrete scoring problem: whether an answer satisfies a known task using the evidence it was given.</p>
+<h2 id="build-a-reward-rubric-that-reviewers-can-inspect">Build a reward rubric that reviewers can inspect</h2>
+<p>An LLM judge can compare candidate answers against a versioned rubric. Research on Constitutional AI demonstrates one approach to using AI-generated critiques and preferences in model training. That establishes a useful precedent, while performance on business records still requires a separate experiment. <a href="https://arxiv.org/abs/2212.08073">Constitutional AI</a></p>
+<p>For an initial pilot, use hard rejection conditions before ranking eligible answers. Reject invented quantities or dates, disclosure of excluded information, invalid output structure, and claims that an unauthorized operation has been completed.</p>
+<p>Then score the remaining answers. The following weights are an illustrative starting point to calibrate against human review.</p>
+<div class="table-wrap" role="region" aria-label="Illustrative reward rubric" tabindex="0"><table><thead><tr><th scope="col">Dimension</th><th scope="col">Weight</th><th scope="col">Evidence the judge must consider</th></tr></thead><tbody><tr><td>Factual grounding</td><td>45%</td><td>Claims match the supplied record</td></tr><tr><td>Completeness</td><td>25%</td><td>Required facts and material gaps are covered</td></tr><tr><td>Practical usefulness</td><td>20%</td><td>The suggested next step fits the task and authority</td></tr><tr><td>Clarity</td><td>10%</td><td>The answer is understandable and appropriately concise</td></tr></tbody></table></div>
+<p>Score each dimension from zero to four. For eligible answers, the weighted mean is a ranking aid. A rejection remains a rejection regardless of the total score.</p>
+<p>Have the judge return brief evidence references and reason codes. Preserve the candidate hash, judge model revision, rubric and prompt versions, component scores, and reviewer decision. Keep these annotations in a separate versioned record linked to the source and candidate; they are proposed experiment metadata, not assumed native WALDO fields.</p>
+<h2 id="make-rewards-influence-a-reproducible-training-set">Make rewards influence a reproducible training set</h2>
+<p>The first implementation can use rewards for data selection. Generate a small number of candidate responses for each approved prompt, run deterministic checks, obtain judge assessments, and review which responses enter the training corpus.</p>
+<p>Keep some examples where the correct answer is “the record does not establish that.” A model trained only on complete, confident answers will have little opportunity to learn useful uncertainty.</p>
+<p>Deduplicate related records and split by source before generating candidates. Keep the final evaluation set outside generation, rubric tuning, and training selection. Record the accepted corpus separately from rejected candidates so a later reviewer can reconstruct the selection.</p>
+<p>WALDO can then manage the selected corpus and a compatible training run. The reward influences which examples the model sees; the training objective remains whichever objective the pinned release supports. This approach tests the value of the scoring process without first building an online reinforcement-learning system.</p>
+<figure class="reward-workflow"><figcaption>From source records to a release decision</figcaption><ol><li><span>Approved source records</span></li><li><span>Source based data split</span><p>Reserve a separate evaluation set here. Keep it outside generation, rubric tuning, and training selection.</p></li><li><span>Training prompts and candidate responses</span></li><li><span>Checks and LLM reward assessment</span></li><li><span>Human review and selected corpus</span></li><li><span>WALDO training run</span></li><li><span>Candidate model</span></li><li><span>Independent evaluation</span><p>Evaluate the candidate model against the reserved evaluation set.</p></li><li><span>Release decision</span></li></ol></figure>
+<p>This is the proposed workflow. Source, selection, training, and evaluation records should remain linked across its steps.</p>
+<h2 id="add-preference-optimization-only-when-the-baseline-warrants-it">Add preference optimization only when the baseline warrants it</h2>
+<p>A later experiment could retain pairs of answers: the preferred response and the rejected response for the same prompt. Reviewers should be able to mark a tie, reject both, or flag insufficient evidence instead of forcing a preference.</p>
+<p>Direct Preference Optimization, or DPO, trains a language model from preference pairs without a separately trained reward model and the conventional reinforcement-learning loop. It provides a possible next step once the preference labels are credible. <a href="https://arxiv.org/abs/2305.18290">DPO paper</a></p>
+<p>For this design, DPO would run through an explicitly integrated external trainer, such as Hugging Face TRL, with compatible model and dataset formats. It should not be presented as a built-in WALDO compose option. Record the exported dataset hash, base revision, trainer version, settings, and resulting checkpoint, and link that external run to the experiment’s provenance. <a href="https://huggingface.co/docs/trl/dpo_trainer">TRL DPO documentation</a></p>
+<p>Compare preference training against the simpler selected-example baseline. The additional machinery earns its place only if it improves the outcomes that matter.</p>
+<h2 id="test-whether-the-judge-rewards-useful-work">Test whether the judge rewards useful work</h2>
+<p>A higher judge score does not establish that a model has improved. LLM judges can favor particular answer positions, longer responses, or outputs resembling their own. Research on MT-Bench documents these limitations. <a href="https://arxiv.org/abs/2306.05685">LLM judge evaluation</a></p>
+<p>The pilot should shuffle answer order, conceal the generating model’s identity, and include concise correct answers alongside fluent incorrect ones. Treat all candidate text as untrusted input to the judge. An instruction embedded in a candidate must not override the scoring rubric.</p>
+<p>Calibrate the judge on a human-reviewed set that includes disagreement and abstention cases. Investigate systematic differences, then freeze the rubric before the final evaluation. A second judge can expose disagreements, but agreement between models is not a substitute for evidence.</p>
+<p>Compare the original and trained models on the same reserved cases. Measure factual errors, valid structured outputs, coverage of required fields, human corrections, latency, and inference cost. Report the sample size and uncertainty alongside any claimed improvement. Preserve failures and regressions in the release decision.</p>
+<h2 id="bring-a-qualified-model-into-sovereign-source">Bring a qualified model into Sovereign Source</h2>
+<p>For Sovereign Source, the first integration should stay narrow: one private model endpoint serving one advisory workflow. A compatible WALDO export can be served through Ollama and connected to the application’s Python model adapter. OpenWALDO documents Ollama and other export formats; the chosen architecture, prompt template, and structured-output behavior still need compatibility tests. <a href="https://openwaldo.org/training/">Training and export workflow</a></p>
+<p>Run training separately from the application’s production services. Preserve the existing model as a baseline and rollback option, and qualify the candidate before routing operational requests to it. The application should continue to validate output and retain authority over business writes.</p>
+<p>The pilot’s deliverable is a model accompanied by its evidence: permitted source material, reproducible selection decisions, a recorded training process, and independent evaluation. That gives the community a specific result to inspect, challenge, and improve—and gives Sovereign Source a defensible basis for deciding whether the model belongs in production.</p>
+  <a href="/news/" class="back-link">Back to news</a>
+</article>
+</main>
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><span class="footer-logo-text">Sovereign Source AI</span><p class="footer-tagline">sovsrc.ai</p></div>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="/">Home</a><a href="/news/">News</a><a href="/llm/">sovsrc.llm updates</a><a href="/manifesto.html">The manifesto</a><a href="mailto:hello@sovsrc.ai">hello@sovsrc.ai</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>
